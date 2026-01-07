@@ -123,99 +123,88 @@ class RomsFunEnhancedClient {
       // Extract file download link from download page
       if (downloadPage) {
         await downloadPage.waitForLoadState('domcontentloaded').catch(() => {});
-        await downloadPage.waitForTimeout(2000);
+        await downloadPage.waitForTimeout(3000); // Wait for countdown and button to appear
         
-        // Save HTML for debugging
-        const downloadPageHtml = await downloadPage.content();
-        const fs = require('fs');
-        const path = require('path');
-        const outputDir = path.join(__dirname, '..', 'output');
-        if (!fs.existsSync(outputDir)) {
-          fs.mkdirSync(outputDir, { recursive: true });
-        }
-        fs.writeFileSync(path.join(outputDir, 'download-page-direct.html'), downloadPageHtml);
-        console.log(`      📄 Download page HTML saved to output/download-page-direct.html`);
+        console.log(`      Waiting for download button to appear...`);
         
-        // Take screenshot for debugging
-        await downloadPage.screenshot({ path: 'output/download-page-direct.png', fullPage: true });
-        console.log(`      📸 Download page screenshot saved to output/download-page-direct.png`);
-        
-        const fileLink = await downloadPage.evaluate(() => {
-          // Debug: Log all links
-          const allLinks = Array.from(document.querySelectorAll('a'));
-          console.log('=== ALL LINKS ON DOWNLOAD PAGE ===');
-          allLinks.forEach((l, i) => {
-            console.log(`[${i}] ${l.href}`);
-            console.log(`    Text: "${l.textContent?.trim()}"`);
-            console.log(`    Class: "${l.className}"`);
-          });
-          
-          // Look for the actual file link (typically on CDN with .zip/.rar/.7z extension)
-          const links = Array.from(document.querySelectorAll('a'));
-          
-          // Priority 1: Links with file extensions or CDN domain
-          let downloadLink = links.find(link => {
-            const href = link.href.toLowerCase();
-            return href.includes('.zip') || href.includes('.rar') || 
-                   href.includes('.7z') || href.includes('.iso') ||
-                   href.includes('statics.romsfun.com') || 
-                   href.includes('sto.romsfast.com') ||
-                   href.includes('cdn.romsfun.com');
-          });
-          
-          if (downloadLink) {
-            console.log('✓ Found by Priority 1 (file extension/CDN):', downloadLink.href);
-            return downloadLink.href;
-          }
-          
-          // Priority 2: Button or download links with common text
-          downloadLink = links.find(link => {
-            const text = link.textContent?.toLowerCase() || '';
-            const href = link.href.toLowerCase();
-            return (text.includes('download') || 
-                    text.includes('click here') || 
-                    text.includes('get') ||
-                    link.classList.contains('download') ||
-                    link.classList.contains('btn')) &&
-                   !href.includes('javascript') &&
-                   href.startsWith('http');
-          });
-          
-          if (downloadLink) {
-            console.log('✓ Found by Priority 2 (button/text):', downloadLink.href);
-            return downloadLink.href;
-          }
-          
-          // Priority 3: Any external link (not romsfun.com page)
-          downloadLink = links.find(link => {
-            const href = link.href.toLowerCase();
-            return href.startsWith('http') && 
-                   !href.includes('romsfun.com/') &&
-                   !href.includes('javascript') &&
-                   !href.includes('facebook') &&
-                   !href.includes('twitter') &&
-                   !href.includes('google');
-          });
-          
-          if (downloadLink) {
-            console.log('✓ Found by Priority 3 (external link):', downloadLink.href);
-            return downloadLink.href;
-          }
-          
-          console.log('✗ No download link found!');
-          return undefined;
+        // Wait for download button to become visible (it's hidden initially)
+        await downloadPage.waitForSelector('#download-button:not(.hidden)', { timeout: 10000 }).catch(() => {
+          console.log(`      ⚠️ Download button didn't appear, trying to find link anyway...`);
         });
-
+        
+        // Click the download button to trigger the actual download
+        // This will navigate to the real CDN link
+        console.log(`      Clicking download button...`);
+        
+        const finalDownloadUrl = await Promise.race([
+          // Option 1: Listen for navigation to CDN URL
+          new Promise<string>((resolve) => {
+            downloadPage.on('response', (response: any) => {
+              const url = response.url();
+              if (url.includes('sto.romsfast.com') || 
+                  url.includes('statics.romsfun.com') || 
+                  url.includes('cdn.romsfun.com') ||
+                  url.match(/\.(zip|rar|7z|iso)(\?|$)/i)) {
+                console.log(`      ✓ Detected CDN URL from response: ${url}`);
+                resolve(url);
+              }
+            });
+          }),
+          
+          // Option 2: Click and wait for navigation
+          (async () => {
+            try {
+              const downloadButton = await downloadPage.$('#download-link');
+              if (downloadButton) {
+                // Get href before clicking
+                const href = await downloadButton.getAttribute('href');
+                if (href) {
+                  console.log(`      ✓ Found href on button: ${href}`);
+                  return href;
+                }
+                
+                // Try clicking
+                await downloadButton.click({ timeout: 5000 });
+                await downloadPage.waitForTimeout(2000);
+              }
+            } catch (e) {
+              console.log(`      ⚠️ Click failed, trying to extract from HTML...`);
+            }
+            
+            // Fallback: extract from HTML
+            const fileLink = await downloadPage.evaluate(() => {
+              const links = Array.from(document.querySelectorAll('a'));
+              const downloadLink = links.find(link => {
+                const href = link.href.toLowerCase();
+                return href.includes('.zip') || href.includes('.rar') || 
+                       href.includes('.7z') || href.includes('.iso') ||
+                       href.includes('statics.romsfun.com') || 
+                       href.includes('sto.romsfast.com') ||
+                       href.includes('cdn.romsfun.com');
+              });
+              return downloadLink?.href;
+            });
+            
+            if (fileLink) {
+              console.log(`      ✓ Extracted from HTML: ${fileLink}`);
+              return fileLink;
+            }
+            
+            return undefined;
+          })(),
+        ]).then(url => url).catch(() => undefined);
+        
+        // Get cookies from browser context
+        const cookies = await downloadPage.context().cookies();
+        const cookieString = cookies.map((cookie: any) => `${cookie.name}=${cookie.value}`).join('; ');
+        
+        console.log(`      📋 Cookies (${cookies.length} total)`);
+        
         await downloadPage.close().catch(() => {});
         
-        if (fileLink) {
-          console.log(`      ✓ Direct link extracted: ${fileLink}`);
-          
-          // Get cookies from browser context
-          const cookies = await downloadPage.context().cookies();
-          const cookieString = cookies.map((cookie: any) => `${cookie.name}=${cookie.value}`).join('; ');
-          
-          return { url: fileLink, cookies: cookieString };
+        if (finalDownloadUrl) {
+          console.log(`      ✓ Final download URL: ${finalDownloadUrl}`);
+          return { url: finalDownloadUrl, cookies: cookieString };
         }
       }
 
@@ -723,6 +712,7 @@ class RomsFunEnhancedClient {
                         'Referer': 'https://romsfun.com/',
                         'Origin': 'https://romsfun.com',
                         'Connection': 'keep-alive',
+                        'Cookie': directLinkData.cookies || '',
                       },
                       timeout: 300000,
                     }, (redirectResponse: any) => {
@@ -1035,9 +1025,9 @@ class RomsFunEnhancedClient {
           // Get direct download link if download link exists
           if (details.downloadLink) {
             console.log(`      Getting direct download link...`);
-            const directLink = await this.getDirectDownloadLink(details.downloadLink);
-            if (directLink) {
-              details.directDownloadLink = directLink;
+            const directLinkData = await this.getDirectDownloadLink(details.downloadLink);
+            if (directLinkData && directLinkData.url) {
+              details.directDownloadLink = directLinkData.url;
               console.log(`      ✓ Direct link found`);
             }
           }

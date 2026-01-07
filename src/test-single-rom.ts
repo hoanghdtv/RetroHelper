@@ -250,10 +250,10 @@ async function testSingleRom() {
       try {
         // Get direct download link
         console.log('Getting direct download link...');
-        const directLink = await client.getDirectDownloadLink(details.downloadLink);
+        const directLinkData = await client.getDirectDownloadLink(details.downloadLink);
         
-        if (directLink) {
-          console.log(`✓ Direct link found: ${directLink}\n`);
+        if (directLinkData && directLinkData.url) {
+          console.log(`✓ Direct link found: ${directLinkData.url}\n`);
           
           // Download the file
           console.log('Downloading ROM file...');
@@ -261,7 +261,7 @@ async function testSingleRom() {
           const http = require('http');
           const url = require('url');
           
-          const downloadUrl = url.parse(directLink);
+          const downloadUrl = url.parse(directLinkData.url);
           const protocol = downloadUrl.protocol === 'https:' ? https : http;
           const downloadDir = path.join(__dirname, '..', 'downloads', 'test');
           
@@ -273,7 +273,7 @@ async function testSingleRom() {
           const filePath = path.join(downloadDir, filename);
           
           await new Promise<void>((resolve, reject) => {
-            const request = protocol.get(directLink, {
+            const request = protocol.get(directLinkData.url, {
               headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 'Accept': '*/*',
@@ -281,6 +281,7 @@ async function testSingleRom() {
                 'Referer': 'https://romsfun.com/',
                 'Origin': 'https://romsfun.com',
                 'Connection': 'keep-alive',
+                'Cookie': directLinkData.cookies || '',
               },
               timeout: 120000, // 2 minutes
             }, (response: any) => {
@@ -297,6 +298,7 @@ async function testSingleRom() {
                       'Referer': 'https://romsfun.com/',
                       'Origin': 'https://romsfun.com',
                       'Connection': 'keep-alive',
+                      'Cookie': directLinkData.cookies || '',
                     },
                     timeout: 120000,
                   }, (redirectResponse: any) => {
