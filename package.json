@@ -1,0 +1,48 @@
+{
+  "name": "retrohelper",
+  "version": "1.0.0",
+  "description": "Fetch RetroAchievements ROM database and save to JSON",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node src/index.ts",
+    "client": "ts-node src/romsfun-client.ts",
+    "fetch:all": "ts-node src/romsfun-fetch-all.ts",
+    "fetch:detailed": "ts-node src/romsfun-fetch-detailed.ts",
+    "fetch:enhanced": "ts-node src/romsfun-enhanced.ts",
+    "query:db": "ts-node src/query-database.ts",
+    "download": "ts-node src/rom-downloader.ts",
+    "test:download": "ts-node src/test-download-link.ts",
+    "test:click": "ts-node src/test-click-download.ts",
+    "test:single-rom": "ts-node src/test-single-rom.ts",
+    "test:romsfun": "ts-node src/test-romsfun.ts",
+    "test:romsfun:playwright": "ts-node src/test-romsfun-playwright.ts",
+    "test:romsfun:simple": "ts-node src/romsfun-simple-client.ts",
+    "inspect:romsfun": "ts-node src/inspect-romsfun.ts",
+    "example:romsfun": "ts-node src/romsfun-example.ts",
+    "build": "tsc",
+    "prod": "npm run build && node dist/index.js"
+  },
+  "keywords": [
+    "retroachievements",
+    "retro",
+    "roms",
+    "gaming"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/sqlite3": "^3.1.11",
+    "axios": "^1.6.5",
+    "cheerio": "^1.1.2",
+    "dotenv": "^16.3.1",
+    "playwright": "^1.57.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
