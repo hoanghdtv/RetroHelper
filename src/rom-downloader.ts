@@ -18,10 +18,32 @@ export class RomDownloader {
   /**
    * Download a ROM file from direct download link
    */
-  async downloadRom(url: string, filename: string, onProgress?: (progress: number, downloaded: number, total: number) => void): Promise<string> {
+  async downloadRom(url: string, filename: string, onProgress?: (progress: number, downloaded: number, total: number) => void, consoleName?: string): Promise<string> {
     try {
       console.log(`\n📥 Downloading: ${filename}`);
       console.log(`   URL: ${url.substring(0, 80)}...`);
+
+      // Ensure filename is safe
+      const safeFilename = filename.replace(/[^a-zA-Z0-9.-]/g, '_');
+      
+      // Create console-specific folder if consoleName is provided
+      let downloadPath = this.downloadDir;
+      if (consoleName) {
+        downloadPath = path.join(this.downloadDir, consoleName);
+        if (!fs.existsSync(downloadPath)) {
+          fs.mkdirSync(downloadPath, { recursive: true });
+          console.log(`   📁 Created folder: ${consoleName}`);
+        }
+      }
+      
+      const filePath = path.join(downloadPath, safeFilename);
+      
+      // Check if file already exists
+      if (fs.existsSync(filePath)) {
+        console.log(`   ⏭️  File already exists, skipping download`);
+        console.log(`   💾 Location: ${filePath}`);
+        return filePath;
+      }
 
       const response = await axios({
         method: 'GET',
@@ -34,10 +56,6 @@ export class RomDownloader {
 
       const totalSize = parseInt(response.headers['content-length'] || '0', 10);
       let downloadedSize = 0;
-
-      // Ensure filename is safe
-      const safeFilename = filename.replace(/[^a-zA-Z0-9.-]/g, '_');
-      const filePath = path.join(this.downloadDir, safeFilename);
 
       // Create write stream
       const writer = fs.createWriteStream(filePath);
@@ -111,7 +129,8 @@ export class RomDownloader {
               console.log(`   Progress: ${progress}% (${this.formatBytes(downloaded)} / ${this.formatBytes(total)})`);
               lastProgress = progress;
             }
-          }
+          },
+          rom.console
         );
 
         downloadedFiles.push(filePath);
@@ -222,7 +241,8 @@ export class RomDownloader {
               console.log(`   Progress: ${progress}% (${this.formatBytes(downloaded)} / ${this.formatBytes(total)})`);
               lastProgress = progress;
             }
-          }
+          },
+          rom.console
         );
 
         downloadedFiles.push(filePath);
@@ -281,7 +301,8 @@ export class RomDownloader {
             console.log(`   Progress: ${progress}% (${this.formatBytes(downloaded)} / ${this.formatBytes(total)})`);
             lastProgress = progress;
           }
-        }
+        },
+        rom.console
       );
 
       return filePath;

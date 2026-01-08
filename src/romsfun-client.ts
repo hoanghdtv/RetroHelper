@@ -121,7 +121,7 @@ export class RomsFunClient {
         
         console.log(`${progress} ${rom.title}`);
 
-        // Download
+        // Download with console name to create console-specific folder
         await this.downloader.downloadRom(
           rom.directDownloadLink!,
           filename,
@@ -129,7 +129,8 @@ export class RomsFunClient {
             if (percent % 10 === 0) {
               console.log(`  Progress: ${percent}% (${this.formatBytes(downloaded)} / ${this.formatBytes(total)})`);
             }
-          }
+          },
+          rom.console
         );
 
         successCount++;

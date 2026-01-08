@@ -248,11 +248,22 @@ class RomsFunEnhancedClient {
         }
 
         // === MAIN IMAGE ===
-        const mainImg = document.querySelector('.entry-content img[alt]:not([alt*="LOGO"]):not([src*="logo"])');
-        if (mainImg) {
-          const src = mainImg.getAttribute('src') || mainImg.getAttribute('data-src');
-          if (src) {
-            result.mainImage = src.startsWith('http') ? src : `https://romsfun.com${src}`;
+        // Try og:image first (Open Graph meta tag)
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) {
+          const content = ogImage.getAttribute('content');
+          if (content) {
+            result.mainImage = content.startsWith('http') ? content : `https://romsfun.com${content}`;
+          }
+        }
+        // Fallback to content image if og:image not found
+        if (!result.mainImage) {
+          const mainImg = document.querySelector('.entry-content img[alt]:not([alt*="LOGO"]):not([src*="logo"])');
+          if (mainImg) {
+            const src = mainImg.getAttribute('src') || mainImg.getAttribute('data-src');
+            if (src) {
+              result.mainImage = src.startsWith('http') ? src : `https://romsfun.com${src}`;
+            }
           }
         }
 
@@ -316,24 +327,43 @@ class RomsFunEnhancedClient {
         });
 
         // === FILE SIZE ===
-        const allText = document.body.innerText;
-        const sizeMatch = allText.match(/Size[:\s]*([0-9.]+\s*(?:KB|MB|GB))/i) ||
-                         allText.match(/File Size[:\s]*([0-9.]+\s*(?:KB|MB|GB))/i) ||
-                         allText.match(/([0-9.]+\s*(?:KB|MB|GB))/i);
-        if (sizeMatch) {
-          result.size = sizeMatch[1] || sizeMatch[0];
+        // Look for span with size (text-sm text-gray-600 containing K or M)
+        const sizeSpans = Array.from(document.querySelectorAll('span.text-sm.text-gray-600'));
+        const sizeSpan = sizeSpans.find(span => {
+          const text = span.textContent?.trim();
+          return text && (text.includes('K') || text.includes('M') || text.includes('G'));
+        });
+        if (sizeSpan) {
+          result.size = sizeSpan.textContent?.trim();
+        }
+
+        // === AVERAGE RATING ===
+        // Look for span with rating value (text-gray-600)
+        const ratingSpan = document.querySelector('span.text-gray-600');
+        if (ratingSpan) {
+          const ratingText = ratingSpan.textContent?.trim();
+          if (ratingText && ratingText.match(/^[0-9.]+$/)) {
+            result.averageRating = ratingText;
+          }
+        }
+
+        // === NUMBER OF REVIEWS ===
+        // Look for span with reviews (text-gray-500 containing "reviews")
+        const reviewSpans = Array.from(document.querySelectorAll('span.text-gray-500'));
+        const reviewSpan = reviewSpans.find(span => span.textContent?.toLowerCase().includes('review'));
+        if (reviewSpan) {
+          const reviewText = reviewSpan.textContent?.trim();
+          const reviewMatch = reviewText?.match(/([0-9,]+)/);
+          if (reviewMatch) {
+            result.numberOfReviews = reviewMatch[1];
+          }
         }
 
         // === DOWNLOAD COUNT ===
+        const allText = document.body.innerText;
         const downloadMatch = allText.match(/([0-9,]+)\s*(?:D|d)ownload/i);
         if (downloadMatch) {
           result.downloadCount = downloadMatch[1];
-        }
-
-        // === VIEWS ===
-        const viewsMatch = allText.match(/([0-9,]+)\s*(?:V|v)iew/i);
-        if (viewsMatch) {
-          result.views = viewsMatch[1];
         }
 
         // === RELEASE DATE === (look for table rows)
@@ -492,11 +522,22 @@ class RomsFunEnhancedClient {
         }
 
         // === MAIN IMAGE ===
-        const mainImg = document.querySelector('.entry-content img[alt]:not([alt*="LOGO"]):not([src*="logo"])');
-        if (mainImg) {
-          const src = mainImg.getAttribute('src') || mainImg.getAttribute('data-src');
-          if (src) {
-            result.mainImage = src.startsWith('http') ? src : `https://romsfun.com${src}`;
+        // Try og:image first (Open Graph meta tag)
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) {
+          const content = ogImage.getAttribute('content');
+          if (content) {
+            result.mainImage = content.startsWith('http') ? content : `https://romsfun.com${content}`;
+          }
+        }
+        // Fallback to content image if og:image not found
+        if (!result.mainImage) {
+          const mainImg = document.querySelector('.entry-content img[alt]:not([alt*="LOGO"]):not([src*="logo"])');
+          if (mainImg) {
+            const src = mainImg.getAttribute('src') || mainImg.getAttribute('data-src');
+            if (src) {
+              result.mainImage = src.startsWith('http') ? src : `https://romsfun.com${src}`;
+            }
           }
         }
 
@@ -534,24 +575,43 @@ class RomsFunEnhancedClient {
         });
 
         // === FILE SIZE ===
+        // Look for span with size (text-sm text-gray-600 containing K or M)
+        const sizeSpans = Array.from(document.querySelectorAll('span.text-sm.text-gray-600'));
+        const sizeSpan = sizeSpans.find(span => {
+          const text = span.textContent?.trim();
+          return text && (text.includes('K') || text.includes('M') || text.includes('G'));
+        });
+        if (sizeSpan) {
+          result.size = sizeSpan.textContent?.trim();
+        }
         const allText = document.body.innerText;
-        const sizeMatch = allText.match(/Size[:\s]*([0-9.]+\s*(?:KB|MB|GB))/i) ||
-                         allText.match(/File Size[:\s]*([0-9.]+\s*(?:KB|MB|GB))/i) ||
-                         allText.match(/([0-9.]+\s*(?:KB|MB|GB))/i);
-        if (sizeMatch) {
-          result.size = sizeMatch[1] || sizeMatch[0];
+
+        // === AVERAGE RATING ===
+        // Look for span with rating value (text-gray-600)
+        const ratingSpan = document.querySelector('span.text-gray-600');
+        if (ratingSpan) {
+          const ratingText = ratingSpan.textContent?.trim();
+          if (ratingText && ratingText.match(/^[0-9.]+$/)) {
+            result.averageRating = ratingText;
+          }
+        }
+
+        // === NUMBER OF REVIEWS ===
+        // Look for span with reviews (text-gray-500 containing "reviews")
+        const reviewSpans = Array.from(document.querySelectorAll('span.text-gray-500'));
+        const reviewSpan = reviewSpans.find(span => span.textContent?.toLowerCase().includes('review'));
+        if (reviewSpan) {
+          const reviewText = reviewSpan.textContent?.trim();
+          const reviewMatch = reviewText?.match(/([0-9,]+)/);
+          if (reviewMatch) {
+            result.numberOfReviews = reviewMatch[1];
+          }
         }
 
         // === DOWNLOAD COUNT ===
         const downloadMatch = allText.match(/([0-9,]+)\s*(?:D|d)ownload/i);
         if (downloadMatch) {
           result.downloadCount = downloadMatch[1];
-        }
-
-        // === VIEWS ===
-        const viewsMatch = allText.match(/([0-9,]+)\s*(?:V|v)iew/i);
-        if (viewsMatch) {
-          result.views = viewsMatch[1];
         }
 
         // === RELEASE DATE ===
@@ -667,9 +727,11 @@ class RomsFunEnhancedClient {
             const path = require('path');
             const url = require('url');
             
-            // Create download directory
-            if (!fs.existsSync(downloadDir)) {
-              fs.mkdirSync(downloadDir, { recursive: true });
+            // Create console-specific download directory
+            const consoleDownloadDir = path.join(downloadDir, consoleName);
+            if (!fs.existsSync(consoleDownloadDir)) {
+              fs.mkdirSync(consoleDownloadDir, { recursive: true });
+              console.log(`      📁 Created folder: ${consoleName}`);
             }
             
             // Sanitize filename
@@ -679,7 +741,18 @@ class RomsFunEnhancedClient {
               .substring(0, 200);
             
             const filename = `${sanitizedTitle}.zip`;
-            const filePath = path.join(downloadDir, filename);
+            const filePath = path.join(consoleDownloadDir, filename);
+            
+            // Check if file already exists
+            if (fs.existsSync(filePath)) {
+              console.log(`      ⏭️  File already exists, skipping download`);
+              console.log(`      💾 Location: ${filePath}`);
+              return {
+                ...rom,
+                downloaded: true,
+                downloadPath: filePath,
+              };
+            }
             
             // Download with native https/http module
             const downloadUrl = url.parse(directLinkData.url);

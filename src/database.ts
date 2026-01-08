@@ -15,7 +15,8 @@ export interface Rom {
   region?: string[];
   size?: string;
   downloadCount?: string;
-  views?: string;
+  numberOfReviews?: string;
+  averageRating?: string;
   downloadLink?: string;
   directDownloadLink?: string;
   relatedRoms?: RelatedRom[];
@@ -91,7 +92,8 @@ export class RomDatabase {
         region TEXT,
         size TEXT,
         downloadCount TEXT,
-        views TEXT,
+        numberOfReviews TEXT,
+        averageRating TEXT,
         downloadLink TEXT,
         directDownloadLink TEXT,
         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -136,8 +138,8 @@ export class RomDatabase {
       INSERT OR REPLACE INTO roms (
         title, url, console, description, mainImage, screenshots, 
         genre, releaseDate, publisher, region, size, downloadCount, 
-        views, downloadLink, directDownloadLink, updatedAt
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+        numberOfReviews, averageRating, downloadLink, directDownloadLink, updatedAt
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
     `, [
       rom.title,
       rom.url,
@@ -151,7 +153,8 @@ export class RomDatabase {
       region,
       rom.size || null,
       rom.downloadCount || null,
-      rom.views || null,
+      rom.numberOfReviews || null,
+      rom.averageRating || null,
       rom.downloadLink || null,
       rom.directDownloadLink || null,
     ]);
@@ -274,7 +277,8 @@ export class RomDatabase {
       region: row.region ? JSON.parse(row.region) : undefined,
       size: row.size,
       downloadCount: row.downloadCount,
-      views: row.views,
+      numberOfReviews: row.numberOfReviews,
+      averageRating: row.averageRating,
       downloadLink: row.downloadLink,
       directDownloadLink: row.directDownloadLink,
       relatedRoms: relatedRows.map(r => ({

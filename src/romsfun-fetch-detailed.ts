@@ -94,96 +94,263 @@ class RomsFunDetailedClient {
    * Get ROM details from its page
    */
   async getRomDetails(romUrl: string, romTitle: string, consoleName: string): Promise<Rom> {
-    const page = await this.createPage();
-    
-    try {
-      const url = romUrl.startsWith('http') ? romUrl : `${this.baseUrl}${romUrl}`;
-      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-      await page.waitForTimeout(1500);
-
-      const details = await page.evaluate(({ pageUrl, title, consoleSlug }: { pageUrl: string; title: string; consoleSlug: string }) => {
-        const result: any = {
-          title: title,
-          url: pageUrl,
-          console: consoleSlug,
+      const page = await this.createPage();
+      
+      try {
+        const url = romUrl.startsWith('http') ? romUrl : `${this.baseUrl}${romUrl}`;
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+        await page.waitForTimeout(1500);
+  
+        const details = await page.evaluate(({ pageUrl, title, consoleSlug }: { pageUrl: string; title: string; consoleSlug: string }) => {
+          const result: any = {
+            title: title,
+            url: pageUrl,
+            console: consoleSlug,
+          };
+  
+          // === TITLE ===
+          const titleEl = document.querySelector('h1.entry-title');
+          if (titleEl) {
+            result.title = titleEl.textContent?.trim() || title;
+          }
+  
+          // === DESCRIPTION ===
+          const descEl = document.querySelector('.revert.page-content p');
+          if (descEl) {
+            result.description = descEl.textContent?.trim();
+          }
+  
+          // === MAIN IMAGE ===
+          // Try og:image first (Open Graph meta tag)
+          const ogImage = document.querySelector('meta[property="og:image"]');
+          if (ogImage) {
+            const content = ogImage.getAttribute('content');
+            if (content) {
+              result.mainImage = content.startsWith('http') ? content : `https://romsfun.com${content}`;
+            }
+          }
+          // Fallback to content image if og:image not found
+          if (!result.mainImage) {
+            const mainImg = document.querySelector('.entry-content img[alt]:not([alt*="LOGO"]):not([src*="logo"])');
+            if (mainImg) {
+              const src = mainImg.getAttribute('src') || mainImg.getAttribute('data-src');
+              if (src) {
+                result.mainImage = src.startsWith('http') ? src : `https://romsfun.com${src}`;
+              }
+            }
+          }
+  
+          // === SCREENSHOTS === (look for gallery/slider images)
+          result.screenshots = [];
+          
+          // Method 1: Images with "Screenshot" in alt text
+          const screenshotByAlt = document.querySelectorAll('img[alt*="Screenshot"], img[alt*="screenshot"]');
+          screenshotByAlt.forEach(img => {
+            const src = img.getAttribute('src') || img.getAttribute('data-src');
+            if (src && !src.includes('LOGO') && !src.includes('logo')) {
+              const fullSrc = src.startsWith('http') ? src : `https://romsfun.com${src}`;
+              if (!result.screenshots.includes(fullSrc)) {
+                result.screenshots.push(fullSrc);
+              }
+            }
+          });
+          
+          // Method 2: Images in lightgallery container
+          const lgImages = document.querySelectorAll('.lg-thumb-item img, [data-lg-item-id] img');
+          lgImages.forEach(img => {
+            const src = img.getAttribute('src') || img.getAttribute('data-src');
+            if (src && !src.includes('LOGO') && !src.includes('logo')) {
+              const fullSrc = src.startsWith('http') ? src : `https://romsfun.com${src}`;
+              if (!result.screenshots.includes(fullSrc)) {
+                result.screenshots.push(fullSrc);
+              }
+            }
+          });
+          
+          // Method 3: Images with specific classes (h-36 is common for thumbnails)
+          const thumbImages = document.querySelectorAll('img.h-36');
+          thumbImages.forEach(img => {
+            const src = img.getAttribute('src') || img.getAttribute('data-src');
+            if (src && !src.includes('LOGO') && !src.includes('logo')) {
+              const fullSrc = src.startsWith('http') ? src : `https://romsfun.com${src}`;
+              if (!result.screenshots.includes(fullSrc)) {
+                result.screenshots.push(fullSrc);
+              }
+            }
+          });
+  
+          // === GENRE ===
+          result.genre = [];
+          const genreLinks = document.querySelectorAll('a[href*="genres"]');
+          genreLinks.forEach(link => {
+            const text = link.textContent?.trim();
+            if (text && !result.genre.includes(text)) {
+              result.genre.push(text);
+            }
+          });
+  
+          // === REGION ===
+          result.region = [];
+          const regionLinks = document.querySelectorAll('a[href*="/region/"]');
+          regionLinks.forEach(link => {
+            const text = link.textContent?.trim();
+            if (text && !result.region.includes(text)) {
+              result.region.push(text);
+            }
+          });
+  
+          // === FILE SIZE ===
+          // Look for span with size (text-sm text-gray-600 containing K or M)
+          const sizeSpans = Array.from(document.querySelectorAll('span.text-sm.text-gray-600'));
+          const sizeSpan = sizeSpans.find(span => {
+            const text = span.textContent?.trim();
+            return text && (text.includes('K') || text.includes('M') || text.includes('G'));
+          });
+          if (sizeSpan) {
+            result.size = sizeSpan.textContent?.trim();
+          }
+  
+          // === AVERAGE RATING ===
+          // Look for span with rating value (text-gray-600)
+          const ratingSpan = document.querySelector('span.text-gray-600');
+          if (ratingSpan) {
+            const ratingText = ratingSpan.textContent?.trim();
+            if (ratingText && ratingText.match(/^[0-9.]+$/)) {
+              result.averageRating = ratingText;
+            }
+          }
+  
+          // === NUMBER OF REVIEWS ===
+          // Look for span with reviews (text-gray-500 containing "reviews")
+          const reviewSpans = Array.from(document.querySelectorAll('span.text-gray-500'));
+          const reviewSpan = reviewSpans.find(span => span.textContent?.toLowerCase().includes('review'));
+          if (reviewSpan) {
+            const reviewText = reviewSpan.textContent?.trim();
+            const reviewMatch = reviewText?.match(/([0-9,]+)/);
+            if (reviewMatch) {
+              result.numberOfReviews = reviewMatch[1];
+            }
+          }
+  
+          // === DOWNLOAD COUNT ===
+          const allText = document.body.innerText;
+          const downloadMatch = allText.match(/([0-9,]+)\s*(?:D|d)ownload/i);
+          if (downloadMatch) {
+            result.downloadCount = downloadMatch[1];
+          }
+  
+          // === RELEASE DATE === (look for table rows)
+          const dateRow = Array.from(document.querySelectorAll('tr')).find(tr => 
+            tr.textContent?.includes('Release Date')
+          );
+          if (dateRow) {
+            const dateCell = dateRow.querySelector('td:last-child');
+            if (dateCell) {
+              result.releaseDate = dateCell.textContent?.trim();
+            }
+          }
+  
+          // === PUBLISHER === (look for table rows)
+          const publisherRow = Array.from(document.querySelectorAll('tr')).find(tr => 
+            tr.textContent?.includes('Publisher')
+          );
+          if (publisherRow) {
+            const publisherCell = publisherRow.querySelector('td:last-child');
+            if (publisherCell) {
+              result.publisher = publisherCell.textContent?.trim();
+            }
+          }
+  
+          // === DOWNLOAD LINK ===
+          const downloadBtn = document.querySelector('a[href*="download"]');
+          if (downloadBtn) {
+            const href = downloadBtn.getAttribute('href');
+            if (href) {
+              result.downloadLink = href.startsWith('http') ? href : `https://romsfun.com${href}`;
+            }
+          }
+  
+          // === RELATED ROMS ===
+          result.relatedRoms = [];
+          const relatedSection = Array.from(document.querySelectorAll('h2, h3')).find(h => 
+            h.textContent?.includes('Related ROMs') || h.textContent?.includes('Related Games')
+          );
+          
+          if (relatedSection) {
+            // Find the container after the heading
+            let container = relatedSection.nextElementSibling;
+            while (container && !container.classList.contains('space-y-4')) {
+              container = container.nextElementSibling;
+            }
+            
+            if (container) {
+              const relatedItems = container.querySelectorAll('.bg-white.rounded-xl');
+              relatedItems.forEach(item => {
+                const relatedRom: any = {};
+                
+                // Title and URL
+                const titleLink = item.querySelector('h3 a');
+                if (titleLink) {
+                  relatedRom.title = titleLink.textContent?.trim();
+                  const href = titleLink.getAttribute('href');
+                  if (href) {
+                    relatedRom.url = href.startsWith('http') ? href : `https://romsfun.com${href}`;
+                  }
+                }
+                
+                // Image
+                const img = item.querySelector('img');
+                if (img) {
+                  const src = img.getAttribute('src');
+                  if (src && !src.includes('logo')) {
+                    relatedRom.image = src.startsWith('http') ? src : `https://romsfun.com${src}`;
+                  }
+                }
+                
+                // Console (from image alt or link)
+                const consoleImg = item.querySelector('a[href*="/roms/"] img[alt]');
+                if (consoleImg) {
+                  relatedRom.console = consoleImg.getAttribute('alt') || titleLink?.textContent?.trim() || 'Unknown';
+                } else {
+                  relatedRom.console = titleLink?.textContent?.trim() || 'Unknown';
+                }
+                
+                // Download count and size from badges
+                const badges = item.querySelectorAll('.badge');
+                badges.forEach((badge, index) => {
+                  const text = badge.textContent?.trim();
+                  if (text) {
+                    // First badge is usually download count, second is size
+                    if (index === 0 && text.match(/[0-9,]+/)) {
+                      relatedRom.downloadCount = text.replace(/[^0-9,]/g, '');
+                    } else if (index === 1 && (text.includes('G') || text.includes('M') || text.includes('K'))) {
+                      relatedRom.size = text.trim();
+                    }
+                  }
+                });
+                
+                if (relatedRom.title && relatedRom.url) {
+                  result.relatedRoms.push(relatedRom);
+                }
+              });
+            }
+          }
+  
+          return result;
+        }, { pageUrl: url, title: romTitle, consoleSlug: consoleName });
+  
+        return details as Rom;
+      } catch (error) {
+        console.error(`    ✗ Error fetching details: ${error}`);
+        return {
+          title: romTitle,
+          url: romUrl,
+          console: consoleName,
         };
-
-        // Get description
-        const descEl = document.querySelector('.description, .content, .game-description, .rom-description, p.description');
-        if (descEl) {
-          result.description = descEl.textContent?.trim().substring(0, 500);
-        }
-
-        // Get image
-        const imgEl = document.querySelector('.game-image img, .rom-image img, img[alt*="ROM"], img[alt*="Game"], .main-image img');
-        if (imgEl) {
-          const src = imgEl.getAttribute('src') || imgEl.getAttribute('data-src');
-          if (src) {
-            result.image = src.startsWith('http') ? src : `https://romsfun.com${src}`;
-          }
-        }
-
-        // Get download link
-        const downloadBtn = document.querySelector('a[href*="download"], .download-button, .btn-download');
-        if (downloadBtn) {
-          const href = downloadBtn.getAttribute('href');
-          if (href) {
-            result.downloadLink = href.startsWith('http') ? href : `https://romsfun.com${href}`;
-          }
-        }
-
-        // Get metadata from info sections
-        const infoElements = document.querySelectorAll('.info-item, .meta-item, .detail-item, .game-info li, .rom-info li');
-        infoElements.forEach(el => {
-          const text = el.textContent?.trim() || '';
-          
-          if (text.toLowerCase().includes('size') || text.toLowerCase().includes('file size')) {
-            const match = text.match(/[\d.]+\s*(KB|MB|GB)/i);
-            if (match) result.size = match[0];
-          }
-          
-          if (text.toLowerCase().includes('region')) {
-            result.region = text.split(':')[1]?.trim() || text;
-          }
-          
-          if (text.toLowerCase().includes('language')) {
-            result.language = text.split(':')[1]?.trim() || text;
-          }
-          
-          if (text.toLowerCase().includes('genre') || text.toLowerCase().includes('category')) {
-            result.genre = text.split(':')[1]?.trim() || text;
-          }
-          
-          if (text.toLowerCase().includes('release') || text.toLowerCase().includes('date')) {
-            result.releaseDate = text.split(':')[1]?.trim() || text;
-          }
-        });
-
-        // Try to get size from download button or file info
-        if (!result.size) {
-          const sizeEl = document.querySelector('.file-size, .size, [class*="size"]');
-          if (sizeEl) {
-            const sizeText = sizeEl.textContent?.trim();
-            const match = sizeText?.match(/[\d.]+\s*(KB|MB|GB)/i);
-            if (match) result.size = match[0];
-          }
-        }
-
-        return result;
-      }, { pageUrl: url, title: romTitle, consoleSlug: consoleName });
-
-      return details as Rom;
-    } catch (error) {
-      console.error(`    ✗ Error fetching details: ${error}`);
-      return {
-        title: romTitle,
-        url: romUrl,
-        console: consoleName,
-      };
-    } finally {
-      await page.close();
+      } finally {
+        await page.close();
+      }
     }
-  }
 
   /**
    * Get ROMs for a specific console with detailed information
