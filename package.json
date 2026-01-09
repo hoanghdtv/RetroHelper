@@ -18,8 +18,10 @@
     "test:romsfun": "ts-node src/test-romsfun.ts",
     "test:romsfun:playwright": "ts-node src/test-romsfun-playwright.ts",
     "test:romsfun:simple": "ts-node src/romsfun-simple-client.ts",
+    "test:trending": "ts-node src/test-trending.ts",
     "inspect:romsfun": "ts-node src/inspect-romsfun.ts",
     "example:romsfun": "ts-node src/romsfun-example.ts",
+
     "build": "tsc",
     "prod": "npm run build && node dist/index.js"
   },
