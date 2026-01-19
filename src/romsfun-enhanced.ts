@@ -241,6 +241,19 @@ class RomsFunEnhancedClient {
           result.title = titleEl.textContent?.trim() || title;
         }
 
+        // === TYPE ===
+        // Type is in a table row with text "Type" in first td and link in second td
+        const typeRow = Array.from(document.querySelectorAll('tr')).find(tr => {
+          const firstTd = tr.querySelector('td');
+          return firstTd && firstTd.textContent?.includes('Type');
+        });
+        if (typeRow) {
+          const typeLink = typeRow.querySelector('td:last-child a');
+          if (typeLink) {
+            result.romType = typeLink.textContent?.trim();
+          }
+        }
+
         // === DESCRIPTION ===
         const descEl = document.querySelector('.revert.page-content p');
         if (descEl) {
@@ -1044,18 +1057,23 @@ class RomsFunEnhancedClient {
 
   /**
    * Get ROMs for a specific console with detailed information
+   * @param consoleSlug - Console slug
+   * @param maxPages - Number of pages to fetch
+   * @param startPage - Starting page number
+   * @param skipDirectLink - Skip fetching direct download links (default: false)
    */
-  async getRomsByConsoleDetailed(consoleSlug: string, maxPages = 1): Promise<Rom[]> {
+  async getRomsByConsoleDetailed(consoleSlug: string, maxPages = 1, startPage = 1, skipDirectLink = false, excludeHacks = false): Promise<Rom[]> {
     const allRoms: Rom[] = [];
     
     console.log(`\nFetching ROMs for: ${consoleSlug}`);
 
     // First, get ROM list
-    for (let currentPage = 1; currentPage <= maxPages; currentPage++) {
+    const endPage = startPage + maxPages - 1;
+    for (let currentPage = startPage; currentPage <= endPage; currentPage++) {
       const page = await this.createPage();
       
       try {
-        const url = `${this.baseUrl}/roms/${consoleSlug}/?page=${currentPage}`;
+        const url = `${this.baseUrl}/roms/${consoleSlug}/page/${currentPage}`;
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
         await page.waitForTimeout(1500);
 
@@ -1095,14 +1113,22 @@ class RomsFunEnhancedClient {
           
           const details = await this.getRomDetails(rom.url, rom.title, consoleSlug);
           
-          // Get direct download link if download link exists
-          if (details.downloadLink) {
+          // Get direct download link if download link exists and not skipped
+          if (!skipDirectLink && details.downloadLink) {
             console.log(`      Getting direct download link...`);
             const directLinkData = await this.getDirectDownloadLink(details.downloadLink);
             if (directLinkData && directLinkData.url) {
               details.directDownloadLink = directLinkData.url;
               console.log(`      ✓ Direct link found`);
             }
+          } else if (skipDirectLink) {
+            console.log(`      ⊘ Skipping direct link`);
+          }
+          
+          // Skip if excludeHacks is true and ROM is a hack
+          if (excludeHacks && details.romType === 'Hack') {
+            console.log(`      ⊘ Skipping hack ROM`);
+            continue;
           }
           
           allRoms.push(details);

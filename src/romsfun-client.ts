@@ -27,20 +27,29 @@ export class RomsFunClient {
    * @param consoleName - Console slug (e.g., 'game-boy', 'nes', 'snes')
    * @param pageCount - Number of pages to fetch (default: 1)
    * @param autoDownload - Whether to automatically download ROMs after fetching (default: false)
+   * @param startPage - Starting page number (default: 1)
+   * @param skipDirectLink - Skip fetching direct download links (default: false)
+   * @param excludeHacks - Exclude ROMs with romType 'Hack' (default: false)
    * @returns Array of fetched ROMs
    */
   async fetchAndDownloadRoms(
     consoleName: string,
     pageCount: number = 1,
-    autoDownload: boolean = false
+    autoDownload: boolean = false,
+    startPage: number = 1,
+    skipDirectLink: boolean = false,
+    excludeHacks: boolean = false
   ): Promise<Rom[]> {
     try {
       // Initialize database
       await this.database.init();
       
+      const endPage = startPage + pageCount - 1;
       console.log(`\n=== Fetching ROMs: ${consoleName} ===`);
-      console.log(`Pages: ${pageCount}`);
-      console.log(`Auto-download: ${autoDownload ? 'Yes' : 'No'}\n`);
+      console.log(`Pages: ${startPage}${pageCount > 1 ? ` to ${endPage}` : ''} (${pageCount} page${pageCount > 1 ? 's' : ''})`);
+      console.log(`Auto-download: ${autoDownload ? 'Yes' : 'No'}`);
+      console.log(`Skip direct link: ${skipDirectLink ? 'Yes' : 'No'}`);
+      console.log(`Exclude hacks: ${excludeHacks ? 'Yes' : 'No'}\n`);
 
       let roms: Rom[];
 
@@ -57,7 +66,10 @@ export class RomsFunClient {
         // Fetch ROMs with enhanced client (includes direct download links)
         roms = await this.enhancedClient.getRomsByConsoleDetailed(
           consoleName,
-          pageCount
+          pageCount,
+          startPage,
+          skipDirectLink,
+          excludeHacks
         );
       }
 
@@ -79,9 +91,13 @@ export class RomsFunClient {
       // Statistics
       const withDirectLinks = roms.filter(r => r.directDownloadLink).length;
       const withDownloaded = roms.filter((r: any) => r.downloaded === true).length;
+      const hacksCount = roms.filter(r => r.romType === 'Hack').length;
       
       console.log('Statistics:');
       console.log(`  Total ROMs: ${roms.length}`);
+      if (hacksCount > 0) {
+        console.log(`  Hacks: ${hacksCount} (${((hacksCount/roms.length)*100).toFixed(1)}%)`);
+      }
       console.log(`  With direct links: ${withDirectLinks} (${((withDirectLinks/roms.length)*100).toFixed(1)}%)`);
       if (autoDownload) {
         console.log(`  Successfully downloaded: ${withDownloaded} (${((withDownloaded/roms.length)*100).toFixed(1)}%)`);
@@ -100,12 +116,14 @@ export class RomsFunClient {
   /**
    * Download ROMs that were already fetched
    * @param roms - Array of ROMs to download
+   * @param maxRetries - Maximum number of retry attempts per ROM (default: 3)
    */
-  async downloadFetchedRoms(roms: Rom[]): Promise<void> {
+  async downloadFetchedRoms(roms: Rom[], maxRetries: number = 3): Promise<void> {
     console.log(`\n=== Downloading ${roms.length} ROMs ===\n`);
 
     const downloadableRoms = roms.filter(r => r.directDownloadLink);
-    console.log(`Downloadable ROMs: ${downloadableRoms.length}/${roms.length}\n`);
+    console.log(`Downloadable ROMs: ${downloadableRoms.length}/${roms.length}`);
+    console.log(`Retry attempts per ROM: ${maxRetries}\n`);
 
     let successCount = 0;
     let skipCount = 0;
@@ -122,6 +140,7 @@ export class RomsFunClient {
         console.log(`${progress} ${rom.title}`);
 
         // Download with console name to create console-specific folder
+        // Pass maxRetries to enable automatic retry on failure
         await this.downloader.downloadRom(
           rom.directDownloadLink!,
           filename,
@@ -130,17 +149,19 @@ export class RomsFunClient {
               console.log(`  Progress: ${percent}% (${this.formatBytes(downloaded)} / ${this.formatBytes(total)})`);
             }
           },
-          rom.console
+          rom.console,
+          maxRetries,  // Enable retry logic
+          2000         // 2 second delay between retries
         );
 
         successCount++;
         
         // Rate limiting
         if (i < downloadableRoms.length - 1) {
-          await this.sleep(2000);
+          await this.sleep(1000);
         }
       } catch (error) {
-        console.error(`  ✗ Failed: ${error}`);
+        console.error(`  ✗ Failed after all retry attempts: ${error}`);
         failCount++;
       }
     }
@@ -288,20 +309,30 @@ async function main() {
 === RomsFun Client Usage ===
 
 Commands:
-  fetch <console> <pages> [--download]   - Fetch ROMs and optionally download
-  download <console> [limit]              - Download ROMs from database
-  search <query>                          - Search and download ROMs
-  list <console> [limit]                  - List ROMs without downloading
-  stats                                   - Show database statistics
+  fetch <console> <pages> [--download] [--page N] - Fetch ROMs and optionally download
+  download <console> [limit]                       - Download ROMs from database
+  search <query>                                   - Search and download ROMs
+  list <console> [limit]                           - List ROMs without downloading
+  stats                                            - Show database statistics
+
+Options:
+  --download                   - Auto-download ROMs after fetching
+  --page N or --start-page N   - Start from page N (default: 1)
+  --skip-direct-link           - Skip fetching direct download links (faster)
+  --nohack                     - Exclude ROMs with romType 'Hack'
 
 Examples:
-  npm run client -- fetch nes 5           # Fetch 5 pages of NES ROMs
-  npm run client -- fetch nes 5 --download # Fetch and download
-  npm run client -- download nes 10       # Download first 10 NES ROMs from DB
-  npm run client -- download nes all      # Download all NES ROMs from DB
-  npm run client -- search "Pokemon"      # Search and download Pokemon ROMs
-  npm run client -- list game-boy 20      # List first 20 Game Boy ROMs
-  npm run client -- stats                 # Show database statistics
+  npm run client -- fetch nes 5                      # Fetch pages 1-5 of NES ROMs
+  npm run client -- fetch nes 1 --page 3             # Fetch only page 3 of NES ROMs
+  npm run client -- fetch nes 3 --page 5             # Fetch pages 5-7 of NES ROMs
+  npm run client -- fetch nes 5 --download           # Fetch pages 1-5 and download
+  npm run client -- fetch nes 5 --skip-direct-link   # Fetch without direct links (faster)
+  npm run client -- fetch nes 5 --nohack             # Fetch without hack ROMs
+  npm run client -- download nes 10                  # Download first 10 NES ROMs from DB
+  npm run client -- download nes all                 # Download all NES ROMs from DB
+  npm run client -- search "Pokemon"                 # Search and download Pokemon ROMs
+  npm run client -- list game-boy 20                 # List first 20 Game Boy ROMs
+  npm run client -- stats                            # Show database statistics
 `);
     process.exit(0);
   }
@@ -315,13 +346,22 @@ Examples:
         const consoleName = args[1];
         const pageCount = parseInt(args[2]) || 1;
         const autoDownload = args.includes('--download');
+        const skipDirectLink = args.includes('--skip-direct-link');
+        const excludeHacks = args.includes('--nohack');
+        
+        // Check for --page or --start-page option
+        let startPage = 1;
+        const pageIndex = args.findIndex(arg => arg === '--page' || arg === '--start-page');
+        if (pageIndex !== -1 && args[pageIndex + 1]) {
+          startPage = parseInt(args[pageIndex + 1]) || 1;
+        }
         
         if (!consoleName) {
           console.error('Error: Console name required');
           process.exit(1);
         }
         
-        await client.fetchAndDownloadRoms(consoleName, pageCount, autoDownload);
+        await client.fetchAndDownloadRoms(consoleName, pageCount, autoDownload, startPage, skipDirectLink, excludeHacks);
         break;
       }
 
