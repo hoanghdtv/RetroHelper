@@ -16,75 +16,109 @@ export class RomDownloader {
   }
 
   /**
-   * Download a ROM file from direct download link
+   * Download a ROM file from direct download link with retry logic
    */
-  async downloadRom(url: string, filename: string, onProgress?: (progress: number, downloaded: number, total: number) => void, consoleName?: string): Promise<string> {
-    try {
-      console.log(`\n📥 Downloading: ${filename}`);
-      console.log(`   URL: ${url.substring(0, 80)}...`);
-
-      // Ensure filename is safe
-      const safeFilename = filename.replace(/[^a-zA-Z0-9.-]/g, '_');
-      
-      // Create console-specific folder if consoleName is provided
-      let downloadPath = this.downloadDir;
-      if (consoleName) {
-        downloadPath = path.join(this.downloadDir, consoleName);
-        if (!fs.existsSync(downloadPath)) {
-          fs.mkdirSync(downloadPath, { recursive: true });
-          console.log(`   📁 Created folder: ${consoleName}`);
+  async downloadRom(url: string, filename: string, onProgress?: (progress: number, downloaded: number, total: number) => void, consoleName?: string, maxRetries: number = 3, retryDelay: number = 2000): Promise<string> {
+    let lastError: Error | null = null;
+    
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        if (attempt === 1) {
+          console.log(`\n📥 Downloading: ${filename}`);
+          console.log(`   URL: ${url.substring(0, 80)}...`);
+        } else {
+          console.log(`   🔄 Retry attempt ${attempt}/${maxRetries}`);
         }
-      }
-      
-      const filePath = path.join(downloadPath, safeFilename);
-      
-      // Check if file already exists
-      if (fs.existsSync(filePath)) {
-        console.log(`   ⏭️  File already exists, skipping download`);
-        console.log(`   💾 Location: ${filePath}`);
+
+        // Ensure filename is safe
+        const safeFilename = filename.replace(/[^a-zA-Z0-9.-]/g, '_');
+        
+        // Create console-specific folder if consoleName is provided
+        let downloadPath = this.downloadDir;
+        if (consoleName) {
+          downloadPath = path.join(this.downloadDir, consoleName);
+          if (!fs.existsSync(downloadPath)) {
+            fs.mkdirSync(downloadPath, { recursive: true });
+            console.log(`   📁 Created folder: ${consoleName}`);
+          }
+        }
+        
+        const filePath = path.join(downloadPath, safeFilename);
+        
+        // Check if file already exists
+        if (fs.existsSync(filePath)) {
+          console.log(`   ⏭️  File already exists, skipping download`);
+          console.log(`   💾 Location: ${filePath}`);
+          return filePath;
+        }
+
+        const response = await axios({
+          method: 'GET',
+          url: url,
+          responseType: 'stream',
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+          },
+          timeout: 30000, // 30 second timeout
+        });
+
+        const totalSize = parseInt(response.headers['content-length'] || '0', 10);
+        let downloadedSize = 0;
+
+        // Create write stream
+        const writer = fs.createWriteStream(filePath);
+
+        // Track download progress
+        response.data.on('data', (chunk: Buffer) => {
+          downloadedSize += chunk.length;
+          if (onProgress && totalSize > 0) {
+            const progress = Math.round((downloadedSize / totalSize) * 100);
+            onProgress(progress, downloadedSize, totalSize);
+          }
+        });
+
+        // Pipe response to file
+        response.data.pipe(writer);
+
+        // Wait for download to complete
+        await new Promise((resolve, reject) => {
+          writer.on('finish', resolve);
+          writer.on('error', reject);
+          response.data.on('error', reject);
+        });
+
+        console.log(`   ✓ Downloaded: ${this.formatBytes(downloadedSize)}`);
+        console.log(`   💾 Saved to: ${filePath}`);
+
         return filePath;
-      }
-
-      const response = await axios({
-        method: 'GET',
-        url: url,
-        responseType: 'stream',
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
-        },
-      });
-
-      const totalSize = parseInt(response.headers['content-length'] || '0', 10);
-      let downloadedSize = 0;
-
-      // Create write stream
-      const writer = fs.createWriteStream(filePath);
-
-      // Track download progress
-      response.data.on('data', (chunk: Buffer) => {
-        downloadedSize += chunk.length;
-        if (onProgress && totalSize > 0) {
-          const progress = Math.round((downloadedSize / totalSize) * 100);
-          onProgress(progress, downloadedSize, totalSize);
+      } catch (error: any) {
+        lastError = error;
+        
+        // Clean up partial download if it exists
+        const safeFilename = filename.replace(/[^a-zA-Z0-9.-]/g, '_');
+        let downloadPath = this.downloadDir;
+        if (consoleName) {
+          downloadPath = path.join(this.downloadDir, consoleName);
         }
-      });
-
-      // Pipe response to file
-      response.data.pipe(writer);
-
-      // Wait for download to complete
-      await new Promise((resolve, reject) => {
-        writer.on('finish', resolve);
-        writer.on('error', reject);
-      });
-
-      console.log(`   ✓ Downloaded: ${this.formatBytes(downloadedSize)}`);
-      console.log(`   💾 Saved to: ${filePath}`);
-
-      return filePath;
-    } catch (error: any) {
-      throw new Error(`Failed to download: ${error.message}`);
+        const filePath = path.join(downloadPath, safeFilename);
+        
+        if (fs.existsSync(filePath)) {
+          try {
+            fs.unlinkSync(filePath);
+          } catch (unlinkError) {
+            // Ignore unlink errors
+          }
+        }
+        
+        if (attempt < maxRetries) {
+          console.log(`   ✗ Failed: ${error.message}`);
+          console.log(`   ⏳ Waiting ${retryDelay/1000}s before retry...`);
+          await new Promise(resolve => setTimeout(resolve, retryDelay));
+        }
+      }
     }
+    
+    throw new Error(`Failed to download after ${maxRetries} attempts: ${lastError?.message}`);
   }
 
   /**

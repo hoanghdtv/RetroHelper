@@ -20,6 +20,7 @@ export interface Rom {
   downloadLink?: string;
   directDownloadLink?: string;
   relatedRoms?: RelatedRom[];
+  romType?: string;
 }
 
 export interface RelatedRom {
@@ -29,6 +30,7 @@ export interface RelatedRom {
   console: string;
   downloadCount?: string;
   size?: string;
+  romType?: string;
 }
 
 export class RomDatabase {
@@ -97,7 +99,8 @@ export class RomDatabase {
         downloadLink TEXT,
         directDownloadLink TEXT,
         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-        updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+        updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+        romType TEXT
       )
     `);
 
@@ -112,6 +115,7 @@ export class RomDatabase {
         console TEXT,
         downloadCount TEXT,
         size TEXT,
+        romType TEXT,
         FOREIGN KEY (romId) REFERENCES roms(id) ON DELETE CASCADE
       )
     `);
@@ -138,8 +142,8 @@ export class RomDatabase {
       INSERT OR REPLACE INTO roms (
         title, url, console, description, mainImage, screenshots, 
         genre, releaseDate, publisher, region, size, downloadCount, 
-        numberOfReviews, averageRating, downloadLink, directDownloadLink, updatedAt
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+        numberOfReviews, averageRating, downloadLink, directDownloadLink, updatedAt, romType
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)
     `, [
       rom.title,
       rom.url,
@@ -157,6 +161,7 @@ export class RomDatabase {
       rom.averageRating || null,
       rom.downloadLink || null,
       rom.directDownloadLink || null,
+      rom.romType || null,
     ]);
 
     // Get the ROM ID
@@ -170,8 +175,8 @@ export class RomDatabase {
     if (rom.relatedRoms && rom.relatedRoms.length > 0) {
       for (const relatedRom of rom.relatedRoms) {
         await this.run(`
-          INSERT INTO related_roms (romId, title, url, image, console, downloadCount, size)
-          VALUES (?, ?, ?, ?, ?, ?, ?)
+          INSERT INTO related_roms (romId, title, url, image, console, downloadCount, size, romType)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         `, [
           romId,
           relatedRom.title,
@@ -180,6 +185,7 @@ export class RomDatabase {
           relatedRom.console,
           relatedRom.downloadCount || null,
           relatedRom.size || null,
+          relatedRom.romType || null,
         ]);
       }
     }
@@ -288,7 +294,9 @@ export class RomDatabase {
         console: r.console,
         downloadCount: r.downloadCount,
         size: r.size,
+        romType: r.romType,
       })),
+      romType: row.romType,
     };
   }
 
