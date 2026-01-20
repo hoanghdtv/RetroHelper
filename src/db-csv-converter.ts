@@ -439,6 +439,13 @@ export class DbCsvConverter {
     const db = new RomDatabase(dbPath);
     await db.init();
 
+    // Disable foreign keys temporarily for faster import and avoid issues
+    await db['run']('PRAGMA foreign_keys = OFF');
+    await db['run']('PRAGMA synchronous = OFF');
+    await db['run']('PRAGMA journal_mode = MEMORY');
+
+    console.log('Database optimizations enabled for import');
+
     // Create a map of old romId to new romId
     const romIdMap = new Map<number, number>();
 
@@ -561,6 +568,15 @@ export class DbCsvConverter {
 
       console.log(`✓ Related ROMs: ${relatedSuccessCount} imported, ${relatedSkipCount} skipped (parent not found), ${relatedErrorCount} failed`);
     }
+
+    // Re-enable foreign keys and optimize database
+    console.log('\nOptimizing database...');
+    await db['run']('PRAGMA foreign_keys = ON');
+    await db['run']('PRAGMA synchronous = FULL');
+    await db['run']('PRAGMA journal_mode = DELETE');
+    await db['run']('PRAGMA optimize');
+    await db['run']('VACUUM');
+    console.log('✓ Database optimized');
 
     console.log(`\n=== Import Summary ===`);
     console.log(`  ROMs Success: ${successCount}`);
