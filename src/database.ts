@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export interface Rom {
+  id?: number;
   title: string;
   url: string;
   console: string;
@@ -24,6 +25,8 @@ export interface Rom {
 }
 
 export interface RelatedRom {
+  id?: number;
+  romId?: number;
   title: string;
   url: string;
   image?: string;
@@ -194,6 +197,27 @@ export class RomDatabase {
   }
 
   /**
+   * Insert a related ROM directly
+   * @param romId - Parent ROM ID
+   * @param relatedRom - Related ROM data
+   */
+  async saveRelatedRom(romId: number, relatedRom: RelatedRom): Promise<void> {
+    await this.run(`
+      INSERT INTO related_roms (romId, title, url, image, console, downloadCount, size, romType)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `, [
+      romId,
+      relatedRom.title,
+      relatedRom.url,
+      relatedRom.image || null,
+      relatedRom.console,
+      relatedRom.downloadCount || null,
+      relatedRom.size || null,
+      relatedRom.romType || null,
+    ]);
+  }
+
+  /**
    * Get ROM by URL
    */
   async getRomByUrl(url: string): Promise<Rom | null> {
@@ -286,6 +310,7 @@ export class RomDatabase {
    */
   private rowToRom(row: any, relatedRows: any[]): Rom {
     return {
+      id: row.id,
       title: row.title,
       url: row.url,
       console: row.console,
@@ -303,6 +328,8 @@ export class RomDatabase {
       downloadLink: row.downloadLink,
       directDownloadLink: row.directDownloadLink,
       relatedRoms: relatedRows.map(r => ({
+        id: r.id,
+        romId: r.romId,
         title: r.title,
         url: r.url,
         image: r.image,
