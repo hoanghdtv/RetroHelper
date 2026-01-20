@@ -320,6 +320,7 @@ Options:
   --page N or --start-page N   - Start from page N (default: 1)
   --skip-direct-link           - Skip fetching direct download links (faster)
   --nohack                     - Exclude ROMs with romType 'Hack'
+  --output-db <path>           - Specify custom database path (default: ./output/roms.db)
 
 Examples:
   npm run client -- fetch nes 5                      # Fetch pages 1-5 of NES ROMs
@@ -338,7 +339,16 @@ Examples:
   }
 
   const command = args[0];
-  const client = new RomsFunClient();
+  
+  // Check for custom database path
+  let dbPath = './output/roms.db';
+  const dbIndex = args.findIndex(arg => arg === '--output-db');
+  if (dbIndex !== -1 && args[dbIndex + 1]) {
+    dbPath = args[dbIndex + 1];
+    console.log(`Using custom database path: ${dbPath}`);
+  }
+  
+  const client = new RomsFunClient(dbPath);
 
   try {
     switch (command) {

@@ -7,6 +7,7 @@
     "start": "ts-node src/index.ts",
     "dev": "ts-node src/index.ts",
     "client": "ts-node src/romsfun-client.ts",
+    "convert": "ts-node src/db-csv-converter.ts",
     "fetch:all": "ts-node src/romsfun-fetch-all.ts",
     "fetch:detailed": "ts-node src/romsfun-fetch-detailed.ts",
     "fetch:enhanced": "ts-node src/romsfun-enhanced.ts",
@@ -36,6 +37,8 @@
     "@types/sqlite3": "^3.1.11",
     "axios": "^1.6.5",
     "cheerio": "^1.1.2",
+    "csv-parse": "^6.1.0",
+    "csv-stringify": "^6.6.0",
     "dotenv": "^16.3.1",
     "playwright": "^1.57.0",
     "sqlite3": "^5.1.7"

@@ -222,6 +222,21 @@ export class RomDatabase {
   }
 
   /**
+   * Get all ROMs from database
+   */
+  async getAllRoms(): Promise<Rom[]> {
+    const rows = await this.all('SELECT * FROM roms ORDER BY console, title') as any[];
+    
+    const roms: Rom[] = [];
+    for (const row of rows) {
+      const relatedRows = await this.all('SELECT * FROM related_roms WHERE romId = ?', [row.id]) as any[];
+      roms.push(this.rowToRom(row, relatedRows));
+    }
+
+    return roms;
+  }
+
+  /**
    * Get statistics
    */
   async getStats(): Promise<any> {
