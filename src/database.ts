@@ -143,11 +143,12 @@ export class RomDatabase {
     // Insert or replace ROM
     await this.run(`
       INSERT OR REPLACE INTO roms (
-        title, url, console, description, mainImage, screenshots, 
+        id, title, url, console, description, mainImage, screenshots, 
         genre, releaseDate, publisher, region, size, downloadCount, 
         numberOfReviews, averageRating, downloadLink, directDownloadLink, updatedAt, romType
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)
+      ) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)
     `, [
+      rom.id,
       rom.title,
       rom.url,
       rom.console,
@@ -168,8 +169,8 @@ export class RomDatabase {
     ]);
 
     // Get the ROM ID
-    const row = await this.get('SELECT id FROM roms WHERE url = ?', [rom.url]) as any;
-    const romId = row.id;
+    const row = await this.get('SELECT id FROM roms WHERE id = ?', [rom.id]) as any;
+    const romId = rom.id || row.id;
 
     // Delete old related ROMs
     await this.run('DELETE FROM related_roms WHERE romId = ?', [romId]);
@@ -178,9 +179,10 @@ export class RomDatabase {
     if (rom.relatedRoms && rom.relatedRoms.length > 0) {
       for (const relatedRom of rom.relatedRoms) {
         await this.run(`
-          INSERT INTO related_roms (romId, title, url, image, console, downloadCount, size, romType)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+          INSERT INTO related_roms (id,romId, title, url, image, console, downloadCount, size, romType)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         `, [
+          relatedRom.id,
           romId,
           relatedRom.title,
           relatedRom.url,
@@ -203,9 +205,10 @@ export class RomDatabase {
    */
   async saveRelatedRom(romId: number, relatedRom: RelatedRom): Promise<void> {
     await this.run(`
-      INSERT INTO related_roms (romId, title, url, image, console, downloadCount, size, romType)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+      INSERT INTO related_roms (id,romId, title, url, image, console, downloadCount, size, romType)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `, [
+      relatedRom.id,
       romId,
       relatedRom.title,
       relatedRom.url,
