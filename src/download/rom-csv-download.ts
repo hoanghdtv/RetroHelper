@@ -3,6 +3,7 @@ import * as path from 'path';
 import * as https from 'https';
 import * as http from 'http';
 import { parse } from 'csv-parse/sync';
+import { stringify } from 'csv-stringify/sync';
 import { Rom } from '../database';
 import * as cheerio from 'cheerio';
 import { chromium } from 'playwright';
@@ -310,7 +311,7 @@ function selectBestDownloadOption(options: RomDownloadOption[], preferredRegion:
   return nonDemoOptions[0];
 }
 
-async function getRedirectLink(url: string): Promise<string | null> {
+async function getRedirectLink(url: string, repository: string = 'romsfun'): Promise<string | null> {
   console.log(`    🔄 Getting redirect link from: ${url}`);
   
   const browser = await chromium.launch({ headless: true });
@@ -321,17 +322,27 @@ async function getRedirectLink(url: string): Promise<string | null> {
   try {
     let finalUrl: string | null = null;
     
+    // CDN domains based on repository
+    const cdnDomains: Record<string, string[]> = {
+      'romsfun': ['sto.romsfast.com', 'statics.romsfun.com', 'cdn.romsfun.com'],
+      'romsmania': ['dl.romsmania.cc', 'cdn.romsmania.cc'],
+      'edgeemu': ['files.edgeemu.net', 'cdn.edgeemu.net'],
+      // Add more repositories as needed
+    };
+    
+    const domains = cdnDomains[repository] || cdnDomains['romsfun'];
+    
     // Listen for CDN responses
     page.on('response', async (response) => {
       const respUrl = response.url();
       
       // Check if this is a CDN download URL
-      if (respUrl.includes('sto.romsfast.com') || 
-          respUrl.includes('statics.romsfun.com') || 
-          respUrl.includes('cdn.romsfun.com') ||
-          respUrl.includes('github') ||
-          respUrl.includes('raw') ||
-          respUrl.match(/\.(zip|rar|7z|iso)(\?|$)/i)) {
+      const isCdnUrl = domains.some(domain => respUrl.includes(domain)) ||
+        respUrl.includes('github') ||
+        respUrl.includes('raw') ||
+        respUrl.match(/\.(zip|rar|7z|iso)(\?|$)/i);
+      
+      if (isCdnUrl) {
         console.log(`    🔗 Detected CDN URL from response: ${respUrl}`);
         finalUrl = respUrl;
       }
@@ -441,19 +452,88 @@ async function getRedirectLink(url: string): Promise<string | null> {
   }
 }
 
-async function downloadRoms(roms: Rom[], outputDir: string, manualSelectIndex?: number): Promise<void> {
+/**
+ * Update a specific ROM's redirect link in the CSV file
+ * Reads all ROMs, updates the matching one, and writes back
+ */
+function updateRomInCSV(csvPath: string, romToUpdate: Rom): void {
+  // Read all ROMs from CSV
+  const allRoms = parseCSVToRoms(csvPath);
+  
+  // Find and update the matching ROM (by title and url)
+  let updated = false;
+  for (let i = 0; i < allRoms.length; i++) {
+    if (allRoms[i].title === romToUpdate.title && allRoms[i].url === romToUpdate.url) {
+      allRoms[i].directDownloadLink = romToUpdate.directDownloadLink;
+      updated = true;
+      break;
+    }
+  }
+  
+  if (!updated) {
+    console.log(`    ⚠️  Warning: Could not find ROM in CSV to update`);
+    return;
+  }
+  
+  // Convert all ROMs back to CSV format
+  const csvRecords = allRoms.map(rom => ({
+    id: rom.id || '',
+    title: rom.title,
+    url: rom.url,
+    console: rom.console,
+    description: rom.description || '',
+    mainImage: rom.mainImage || '',
+    screenshots: Array.isArray(rom.screenshots) ? rom.screenshots.join('|') : '',
+    genre: Array.isArray(rom.genre) ? rom.genre.join('|') : '',
+    releaseDate: rom.releaseDate || '',
+    publisher: rom.publisher || '',
+    region: Array.isArray(rom.region) ? rom.region.join('|') : '',
+    size: rom.size || '',
+    downloadCount: rom.downloadCount || '',
+    numberOfReviews: rom.numberOfReviews || '',
+    averageRating: rom.averageRating || '',
+    downloadLink: rom.downloadLink || '',
+    directDownloadLink: rom.directDownloadLink || '',
+    romType: rom.romType || ''
+  }));
+  
+  // Write back to CSV
+  const csvContent = stringify(csvRecords, {
+    header: true,
+    columns: [
+      'id', 'title', 'url', 'console', 'description', 'mainImage', 
+      'screenshots', 'genre', 'releaseDate', 'publisher', 'region', 
+      'size', 'downloadCount', 'numberOfReviews', 'averageRating', 
+      'downloadLink', 'directDownloadLink', 'romType'
+    ]
+  });
+  
+  fs.writeFileSync(csvPath, csvContent, 'utf-8');
+  console.log(`    💾 Updated CSV with redirect link`);
+}
+
+async function downloadRoms(
+  roms: Rom[], 
+  outputDir: string, 
+  manualSelectIndex?: number, 
+  csvPath?: string, 
+  fetchRedirectsOnly: boolean = false,
+  repository: string = 'romsfun'
+): Promise<void> {
   // Ensure output directory exists
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  console.log(`\nStarting download of ${roms.length} ROMs to ${outputDir}...\n`);
+  const mode = fetchRedirectsOnly ? 'Fetching redirect links' : 'Starting download';
+  console.log(`\n${mode} for ${roms.length} ROMs${fetchRedirectsOnly ? '' : ` to ${outputDir}`}...\n`);
   if (manualSelectIndex !== undefined) {
     console.log(`Manual selection mode: Will select option index ${manualSelectIndex}\n`);
   }
 
   let successCount = 0;
   let failCount = 0;
+  let skippedCount = 0;
 
   for (let i = 0; i < roms.length; i++) {
     const rom = roms[i];
@@ -464,6 +544,16 @@ async function downloadRoms(roms: Rom[], outputDir: string, manualSelectIndex?: 
     if (rom.directDownloadLink) {
       downloadUrl = rom.directDownloadLink;
       console.log(`[${i + 1}/${roms.length}] 📦 ${rom.title}`);
+      
+      // If in fetch-redirects-only mode and already has link, skip
+      if (fetchRedirectsOnly) {
+        console.log(`    ✅ Already has redirect link - skipping`);
+        skippedCount++;
+        successCount++;
+        console.log('');
+        continue;
+      }
+      
       console.log(`    ℹ️  Using direct download link`);
     } 
     // Otherwise, fetch options from downloadLink page and select best one
@@ -516,17 +606,36 @@ async function downloadRoms(roms: Rom[], outputDir: string, manualSelectIndex?: 
       continue;
     }
 
-    // Get the actual redirect/download link
-    const redirectUrl = await getRedirectLink(downloadUrl);
-    
-    if (!redirectUrl) {
-      console.log(`    ❌ Failed to get redirect download link`);
-      failCount++;
+    // Get the actual redirect/download link only if we don't already have directDownloadLink
+    if (!rom.directDownloadLink) {
+      const redirectUrl = await getRedirectLink(downloadUrl, repository);
+      
+      if (!redirectUrl) {
+        console.log(`    ❌ Failed to get redirect download link`);
+        failCount++;
+        console.log('');
+        continue;
+      }
+      
+      // Customize and save redirect link to ROM object
+      const customizedLink = customizeRedirectLink(redirectUrl, rom, repository);
+      rom.directDownloadLink = customizedLink;
+      
+      // Save to CSV if csvPath provided
+      if (csvPath) {
+        updateRomInCSV(csvPath, rom);
+      }
+      
+      downloadUrl = redirectUrl;
+    }
+
+    // If in fetch-redirects-only mode, skip actual download
+    if (fetchRedirectsOnly) {
+      console.log(`    ✅ Redirect link fetched and saved`);
+      successCount++;
       console.log('');
       continue;
     }
-    
-    downloadUrl = redirectUrl;
 
     // Determine file extension from URL or default to .zip
     let ext = '.zip';
@@ -568,35 +677,215 @@ async function downloadRoms(roms: Rom[], outputDir: string, manualSelectIndex?: 
     console.log('');
   }
 
-  console.log('\n=== Download Summary ===');
-  console.log(`✅ Success: ${successCount}`);
+  console.log(`\n=== ${fetchRedirectsOnly ? 'Redirect Links' : 'Download'} Summary ===`);
+  console.log(`✅ Success: ${successCount}${skippedCount > 0 ? ` (${skippedCount} already had links)` : ''}`);
   console.log(`❌ Failed: ${failCount}`);
   console.log(`📊 Total: ${roms.length}`);
+}
+
+/**
+ * Customize redirect link before saving
+ * You can modify the URL here as needed
+ */
+function customizeRedirectLink(redirectLink: string, rom: Rom, repository: string): string {
+  // Example customizations:
+  // Uncomment and modify as needed
+  
+  // Option 1: Save to GitHub repository
+  const ext = path.extname(redirectLink.split('?')[0]) || '.zip';
+  const filename = sanitizeFilename(`${rom.title}${ext}`);
+  return `https://github.com/hoanghdtv/${repository}/raw/refs/heads/main/` + encodeURIComponent(filename);
+  
+  // Option 2: Remove token parameters
+  // return redirectLink.split('?')[0];
+  
+  // Option 3: Change domain
+  // return redirectLink.replace('sto.romsfast.com', 'cdn.myserver.com');
+  
+  // Default: Return as-is
+  return redirectLink;
+}
+
+/**
+ * Save redirect links to CSV file
+ * This will update the CSV with the redirect links fetched from download pages
+ * Only processes ROMs that don't have directDownloadLink yet
+ */
+async function saveRedirectLinksToCSV(
+  roms: Rom[], 
+  csvPath: string, 
+  outputCsvPath?: string,
+  repository: string = 'romsfun'
+): Promise<void> {
+  console.log(`\n🔄 Fetching and saving redirect links...`);
+  
+  const outputPath = outputCsvPath || csvPath.replace('.csv', '-with-redirects.csv');
+  
+  let processedCount = 0;
+  let successCount = 0;
+  let failCount = 0;
+  let skippedCount = 0;
+  
+  // Process each ROM
+  for (let i = 0; i < roms.length; i++) {
+    const rom = roms[i];
+    processedCount++;
+    
+    console.log(`\n[${i + 1}/${roms.length}] 📦 ${rom.title}`);
+    
+    // Skip if already has directDownloadLink
+    if (rom.directDownloadLink) {
+      console.log(`    ✅ Already has redirect link - skipping`);
+      skippedCount++;
+      successCount++;
+      continue;
+    }
+    
+    // Skip if no downloadLink
+    if (!rom.downloadLink) {
+      console.log(`    ⚠️  No download link available`);
+      failCount++;
+      continue;
+    }
+    
+    try {
+      // Fetch download options
+      const options = await fetchDownloadOptions(rom.downloadLink);
+      
+      if (options.length === 0) {
+        console.log(`    ⚠️  No download options found`);
+        failCount++;
+        continue;
+      }
+      
+      // Auto-select best option
+      const selectedOption = selectBestDownloadOption(options);
+      
+      if (!selectedOption) {
+        console.log(`    ⚠️  Could not select download option`);
+        failCount++;
+        continue;
+      }
+      
+      console.log(`    ✓ Selected: ${selectedOption.title}`);
+      
+      // Get redirect link
+      const redirectLink = await getRedirectLink(selectedOption.url, repository);
+      
+      if (!redirectLink) {
+        console.log(`    ❌ Failed to get redirect link`);
+        failCount++;
+        continue;
+      }
+      
+      // Customize the redirect link
+      const customizedLink = customizeRedirectLink(redirectLink, rom, repository);
+      
+      // Update ROM object
+      rom.directDownloadLink = customizedLink;
+      
+      console.log(`    ✅ Saved redirect link`);
+      successCount++;
+      
+      // Small delay to avoid rate limiting
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+    } catch (error) {
+      console.log(`    ❌ Error: ${error instanceof Error ? error.message : 'Unknown'}`);
+      failCount++;
+    }
+  }
+  
+  // Write updated ROMs to CSV
+  console.log(`\n📝 Writing to ${outputPath}...`);
+  
+  // Convert ROMs to CSV format
+  const csvRecords = roms.map(rom => ({
+    id: rom.id || '',
+    title: rom.title,
+    url: rom.url,
+    console: rom.console,
+    description: rom.description || '',
+    mainImage: rom.mainImage || '',
+    screenshots: Array.isArray(rom.screenshots) ? rom.screenshots.join('|') : '',
+    genre: Array.isArray(rom.genre) ? rom.genre.join('|') : '',
+    releaseDate: rom.releaseDate || '',
+    publisher: rom.publisher || '',
+    region: Array.isArray(rom.region) ? rom.region.join('|') : '',
+    size: rom.size || '',
+    downloadCount: rom.downloadCount || '',
+    numberOfReviews: rom.numberOfReviews || '',
+    averageRating: rom.averageRating || '',
+    downloadLink: rom.downloadLink || '',
+    directDownloadLink: rom.directDownloadLink || '',
+    romType: rom.romType || ''
+  }));
+  
+  // Write to CSV with headers
+  const csvContent = stringify(csvRecords, {
+    header: true,
+    columns: [
+      'id', 'title', 'url', 'console', 'description', 'mainImage', 
+      'screenshots', 'genre', 'releaseDate', 'publisher', 'region', 
+      'size', 'downloadCount', 'numberOfReviews', 'averageRating', 
+      'downloadLink', 'directDownloadLink', 'romType'
+    ]
+  });
+  
+  fs.writeFileSync(outputPath, csvContent, 'utf-8');
+  
+  console.log(`\n=== Redirect Links Summary ===`);
+  console.log(`✅ Success: ${successCount} (${skippedCount} already had links)`);
+  console.log(`❌ Failed: ${failCount}`);
+  console.log(`📊 Total: ${processedCount}`);
+  console.log(`📄 Output: ${outputPath}`);
 }
 
 async function main() {
   const argv = process.argv.slice(2);
 
   if (argv.length === 0) {
-    console.log('Usage: npx ts-node src/download/rom-csv-download.ts <csvPath> [--output <dir>] [--limit <n>] [--manual-select <index>]');
+    console.log('Usage: npx ts-node src/download/rom-csv-download.ts <csvPath> [options]');
     console.log('');
-    console.log('Example:');
+    console.log('Download ROMs:');
     console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --output downloads/nes');
     console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --output downloads/nes --limit 10');
     console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --limit 1 --manual-select 2');
     console.log('');
+    console.log('Fetch redirect links only (no download):');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --fetch-redirects-only');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --fetch-redirects-only --limit 10');
+    console.log('');
+    console.log('Save redirect links to new CSV:');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --save-redirects');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --save-redirects --limit 5');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --save-redirects --output-csv output/roms-updated.csv');
+    console.log('');
     console.log('Options:');
-    console.log('  --output <dir>          Output directory for downloaded ROMs');
-    console.log('  --limit <n>             Limit to first N ROMs');
-    console.log('  --manual-select <index> Manually select download option by index (0-based)');
+    console.log('  --output <dir>           Output directory for downloaded ROMs');
+    console.log('  --limit <n>              Limit to first N ROMs');
+    console.log('  --manual-select <index>  Manually select download option by index (0-based)');
+    console.log('  --fetch-redirects-only   Fetch and save redirect links to CSV only (no download)');
+    console.log('  --save-redirects         Save redirect links to CSV instead of downloading');
+    console.log('  --output-csv <path>      Output CSV path (for --save-redirects mode)');
+    console.log('  --repository <name>      Repository name (default: romsfun)');
     process.exit(1);
   }
 
   const csvPath = argv[0];
   
   // Parse optional arguments
+  const saveRedirects = argv.includes('--save-redirects');
+  const fetchRedirectsOnly = argv.includes('--fetch-redirects-only');
+  
   const outputIndex = argv.indexOf('--output');
   const outputDir = outputIndex !== -1 ? argv[outputIndex + 1] : path.join('downloads', path.basename(path.dirname(csvPath)));
+  
+  const repositoryIndex = argv.indexOf('--repository');
+  const repository = repositoryIndex !== -1 ? argv[repositoryIndex + 1] : 'romsfun';
+  
+  const outputCsvIndex = argv.indexOf('--output-csv');
+  const outputCsvPath = outputCsvIndex !== -1 ? argv[outputCsvIndex + 1] : undefined;
   
   const limitIndex = argv.indexOf('--limit');
   const limit = limitIndex !== -1 ? parseInt(argv[limitIndex + 1], 10) : undefined;
@@ -614,8 +903,12 @@ async function main() {
       roms = roms.slice(0, limit);
     }
 
-    // Download ROMs
-    await downloadRoms(roms, outputDir, manualSelect);
+    // Choose mode: save redirects to new CSV, fetch redirects only, or download
+    if (saveRedirects) {
+      await saveRedirectLinksToCSV(roms, csvPath, outputCsvPath, repository);
+    } else {
+      await downloadRoms(roms, outputDir, manualSelect, csvPath, fetchRedirectsOnly, repository);
+    }
 
   } catch (error) {
     console.error('Error:', error);
