@@ -1,3 +1,9 @@
+
+npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --output downloads/nes --repository nes-roms
+
+
+
+
 📋 Tóm tắt 3 chế độ hoạt động:
 1. Download ROMs (default)
 Nếu ROM đã có directDownloadLink → Dùng ngay, không fetch

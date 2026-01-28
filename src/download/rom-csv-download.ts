@@ -715,7 +715,8 @@ async function saveRedirectLinksToCSV(
   roms: Rom[], 
   csvPath: string, 
   outputCsvPath?: string,
-  repository: string = 'romsfun'
+  repository: string = 'romsfun',
+  outputDir?: string
 ): Promise<void> {
   console.log(`\n🔄 Fetching and saving redirect links...`);
   
@@ -785,6 +786,42 @@ async function saveRedirectLinksToCSV(
       rom.directDownloadLink = customizedLink;
       
       console.log(`    ✅ Saved redirect link`);
+      
+      // Download file if outputDir is provided and file doesn't exist
+      if (outputDir) {
+        // Determine file extension from URL or default to .zip
+        let ext = '.zip';
+        const urlPath = redirectLink.split('?')[0];
+        const urlExt = path.extname(urlPath);
+        if (urlExt) {
+          ext = urlExt;
+        }
+
+        const filename = sanitizeFilename(`${rom.title}${ext}`);
+        const destPath = path.join(outputDir, filename);
+
+        // Create output directory if it doesn't exist
+        if (!fs.existsSync(outputDir)) {
+          fs.mkdirSync(outputDir, { recursive: true });
+        }
+
+        // Check if file already exists
+        if (fs.existsSync(destPath)) {
+          console.log(`    ⏭️  File already exists: ${filename}`);
+        } else {
+          try {
+            console.log(`    ⬇️  Downloading: ${filename}`);
+            await downloadFile(redirectLink, destPath);
+            
+            const stats = fs.statSync(destPath);
+            const sizeKB = (stats.size / 1024).toFixed(2);
+            console.log(`    ✅ Downloaded: ${filename} (${sizeKB} KB)`);
+          } catch (error) {
+            console.log(`    ❌ Download failed: ${error instanceof Error ? error.message : 'Unknown'}`);
+          }
+        }
+      }
+      
       successCount++;
       
       // Small delay to avoid rate limiting
@@ -860,6 +897,7 @@ async function main() {
     console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --save-redirects');
     console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --save-redirects --limit 5');
     console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --save-redirects --output-csv output/roms-updated.csv');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --save-redirects --output downloads/nes  # Also download files');
     console.log('');
     console.log('Options:');
     console.log('  --output <dir>           Output directory for downloaded ROMs');
@@ -905,7 +943,9 @@ async function main() {
 
     // Choose mode: save redirects to new CSV, fetch redirects only, or download
     if (saveRedirects) {
-      await saveRedirectLinksToCSV(roms, csvPath, outputCsvPath, repository);
+      // In save-redirects mode, also download files if --output is specified
+      const downloadDir = outputIndex !== -1 ? outputDir : undefined;
+      await saveRedirectLinksToCSV(roms, csvPath, outputCsvPath, repository, downloadDir);
     } else {
       await downloadRoms(roms, outputDir, manualSelect, csvPath, fetchRedirectsOnly, repository);
     }
