@@ -1,5 +1,6 @@
 
 npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --output downloads/nes --repository nes-roms
+npx ts-node src/download/rom-csv-download.ts output/topn64-split/roms.csv --output downloads/n64 --repository n64-roms
 
 
 
