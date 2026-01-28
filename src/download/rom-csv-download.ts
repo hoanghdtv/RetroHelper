@@ -1,0 +1,483 @@
+import * as fs from 'fs';
+import * as path from 'path';
+import * as https from 'https';
+import * as http from 'http';
+import { parse } from 'csv-parse/sync';
+import { Rom } from '../database';
+import * as cheerio from 'cheerio';
+
+// Program to read CSV file and download ROM files
+// Usage: npx ts-node src/download/rom-csv-download.ts <csvPath> [--output <dir>] [--limit <n>] [--manual-select <index>]
+// Example: 
+//   npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --output downloads/nes --limit 10
+//   npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --output downloads/nes --limit 1 --manual-select 0
+
+interface DownloadOptions {
+  csvPath: string;
+  outputDir: string;
+  limit?: number;
+  manualSelectIndex?: number;
+}
+
+function parseCSVToRoms(csvPath: string): Rom[] {
+  console.log(`Reading CSV from ${csvPath}...`);
+  
+  if (!fs.existsSync(csvPath)) {
+    throw new Error(`CSV file not found: ${csvPath}`);
+  }
+
+  const csvContent = fs.readFileSync(csvPath, 'utf-8');
+  const records = parse(csvContent, {
+    columns: true,
+    skip_empty_lines: true,
+    trim: true,
+  });
+
+  const roms: Rom[] = records.map((record: any) => {
+    // Parse arrays from CSV (stored as pipe-separated or comma-separated)
+    const parseArray = (value: string | undefined): string[] | undefined => {
+      if (!value || value.trim() === '') return undefined;
+      // Try pipe separator first, then comma
+      if (value.includes('|')) {
+        return value.split('|').map(s => s.trim()).filter(s => s);
+      }
+      return value.split(',').map(s => s.trim()).filter(s => s);
+    };
+
+    return {
+      id: record.id ? parseInt(record.id, 10) : undefined,
+      title: record.title,
+      url: record.url,
+      console: record.console,
+      description: record.description || undefined,
+      mainImage: record.mainImage || undefined,
+      screenshots: parseArray(record.screenshots),
+      genre: parseArray(record.genre),
+      releaseDate: record.releaseDate || undefined,
+      publisher: record.publisher || undefined,
+      region: parseArray(record.region),
+      size: record.size || undefined,
+      downloadCount: record.downloadCount || undefined,
+      numberOfReviews: record.numberOfReviews || undefined,
+      averageRating: record.averageRating || undefined,
+      downloadLink: record.downloadLink || undefined,
+      directDownloadLink: record.directDownloadLink || undefined,
+      romType: record.romType || undefined,
+    };
+  });
+
+  console.log(`Parsed ${roms.length} ROMs from CSV`);
+  return roms;
+}
+
+function downloadFile(url: string, destPath: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const protocol = url.startsWith('https') ? https : http;
+    
+    const file = fs.createWriteStream(destPath);
+    
+    const request = protocol.get(url, { 
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      }
+    }, (response) => {
+      // Handle redirects
+      if (response.statusCode === 301 || response.statusCode === 302) {
+        const redirectUrl = response.headers.location;
+        if (redirectUrl) {
+          file.close();
+          fs.unlinkSync(destPath);
+          downloadFile(redirectUrl, destPath).then(resolve).catch(reject);
+          return;
+        }
+      }
+
+      if (response.statusCode !== 200) {
+        file.close();
+        fs.unlinkSync(destPath);
+        reject(new Error(`Failed to download: HTTP ${response.statusCode}`));
+        return;
+      }
+
+      response.pipe(file);
+
+      file.on('finish', () => {
+        file.close();
+        resolve();
+      });
+
+      file.on('error', (err) => {
+        file.close();
+        fs.unlinkSync(destPath);
+        reject(err);
+      });
+    });
+
+    request.on('error', (err) => {
+      file.close();
+      if (fs.existsSync(destPath)) {
+        fs.unlinkSync(destPath);
+      }
+      reject(err);
+    });
+  });
+}
+
+function sanitizeFilename(filename: string): string {
+  // Remove or replace invalid characters for filenames
+  return filename
+    .replace(/[<>:"/\\|?*]/g, '_')
+    .replace(/\s+/g, '_')
+    .substring(0, 200); // Limit length
+}
+
+interface RomDownloadOption {
+  title: string;
+  url: string;
+  region?: string;
+  version?: string;
+}
+
+function fetchHTML(url: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const protocol = url.startsWith('https') ? https : http;
+    
+    protocol.get(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      }
+    }, (response) => {
+      // Handle redirects
+      if (response.statusCode === 301 || response.statusCode === 302) {
+        const redirectUrl = response.headers.location;
+        if (redirectUrl) {
+          fetchHTML(redirectUrl).then(resolve).catch(reject);
+          return;
+        }
+      }
+
+      if (response.statusCode !== 200) {
+        reject(new Error(`HTTP ${response.statusCode}`));
+        return;
+      }
+
+      let data = '';
+      response.on('data', chunk => data += chunk);
+      response.on('end', () => resolve(data));
+      response.on('error', reject);
+    }).on('error', reject);
+  });
+}
+
+async function fetchDownloadOptions(downloadPageUrl: string): Promise<RomDownloadOption[]> {
+  console.log(`    🔍 Fetching download options from: ${downloadPageUrl}`);
+  
+  try {
+    const html = await fetchHTML(downloadPageUrl);
+    const $ = cheerio.load(html);
+    const options: RomDownloadOption[] = [];
+    
+    // Strategy 1: Look for download buttons/links in a list or table
+    $('a[href*="cdn"], a[href*=".zip"], a[href*=".rar"], a[href*=".7z"], a[href*="download"]').each((_, link) => {
+      const href = $(link).attr('href');
+      const text = $(link).text().trim();
+      
+      // Filter out navigation/non-download links, FAQ links, and make absolute URLs
+      if (href && 
+          !href.includes('javascript:') && 
+          !href.includes('#') &&
+          !href.includes('download-limit-faq') &&
+          !href.includes('/faq')) {
+        let absoluteUrl = href;
+        if (!href.startsWith('http')) {
+          const baseUrl = new URL(downloadPageUrl);
+          absoluteUrl = new URL(href, baseUrl.origin).toString();
+        }
+        
+        // Try to extract region/version info from text
+        const regionMatch = text.match(/\((USA|Europe|Japan|World|EU|US|JP)\)/i);
+        const region = regionMatch ? regionMatch[1] : undefined;
+        
+        options.push({
+          title: text || 'Download',
+          url: absoluteUrl,
+          region: region,
+        });
+      }
+    });
+    
+    // Strategy 2: Look for table rows with download info
+    $('table tr').each((_, row) => {
+      const cells = $(row).find('td');
+      if (cells.length >= 2) {
+        const link = $(row).find('a[href*=".zip"], a[href*="cdn"], a[href*="download"]').first();
+        const href = link.attr('href');
+        
+        if (href) {
+          let absoluteUrl = href;
+          if (!href.startsWith('http')) {
+            const baseUrl = new URL(downloadPageUrl);
+            absoluteUrl = new URL(href, baseUrl.origin).toString();
+          }
+          
+          const title = cells.map((_, c) => $(c).text().trim()).get().filter(t => t).join(' - ');
+          
+          options.push({
+            title: title || 'Download',
+            url: absoluteUrl,
+          });
+        }
+      }
+    });
+    
+    // Remove duplicates by URL
+    const uniqueOptions = Array.from(
+      new Map(options.map(opt => [opt.url, opt])).values()
+    );
+    
+    console.log(`    📋 Found ${uniqueOptions.length} download options`);
+    return uniqueOptions;
+    
+  } catch (error) {
+    console.log(`    ❌ Error fetching download options: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    return [];
+  }
+}
+
+function printDownloadOptions(options: RomDownloadOption[]): void {
+  console.log(`\n    📋 Available download options:`);
+  options.forEach((opt, index) => {
+    const regionInfo = opt.region ? ` [${opt.region}]` : '';
+    console.log(`    ${index + 1}. ${opt.title}${regionInfo}`);
+    console.log(`       URL: ${opt.url}`);
+  });
+  console.log('');
+}
+
+function selectDownloadOptionByIndex(options: RomDownloadOption[], index: number): RomDownloadOption | null {
+  if (index < 0 || index >= options.length) {
+    console.log(`    ❌ Invalid selection: index ${index} out of range (0-${options.length - 1})`);
+    return null;
+  }
+  
+  const selected = options[index];
+  console.log(`    ✓ Selected [${index + 1}]: ${selected.title}`);
+  return selected;
+}
+
+function selectBestDownloadOption(options: RomDownloadOption[], preferredRegion: string = 'USA'): RomDownloadOption | null {
+  if (options.length === 0) return null;
+  
+  // Rule 1: If only one option, select it
+  if (options.length === 1) {
+    console.log(`    ✓ Auto-selected (only option): ${options[0].title}`);
+    return options[0];
+  }
+  
+  // Rule 2: Filter out Demo versions
+  const nonDemoOptions = options.filter(opt => 
+    !opt.title.toLowerCase().includes('demo')
+  );
+  
+  if (nonDemoOptions.length === 0) {
+    console.log(`    ⚠️  All options are Demo versions, selecting first one`);
+    return options[0];
+  }
+  
+  if (nonDemoOptions.length === 1) {
+    console.log(`    ✓ Auto-selected (only non-demo): ${nonDemoOptions[0].title}`);
+    return nonDemoOptions[0];
+  }
+  
+  // Rule 3: Select by region priority
+  const regionPriority = [preferredRegion, 'USA', 'US', 'World', 'Europe', 'EU'];
+  
+  for (const region of regionPriority) {
+    const match = nonDemoOptions.find(opt => 
+      opt.region?.toLowerCase() === region.toLowerCase() ||
+      opt.title.toLowerCase().includes(`(${region.toLowerCase()})`) ||
+      opt.title.toLowerCase().includes(region.toLowerCase())
+    );
+    if (match) {
+      console.log(`    ✓ Auto-selected (region: ${region}): ${match.title}`);
+      return match;
+    }
+  }
+  
+  // Default to first non-demo option
+  console.log(`    ✓ Auto-selected (default): ${nonDemoOptions[0].title}`);
+  return nonDemoOptions[0];
+}
+
+async function downloadRoms(roms: Rom[], outputDir: string, manualSelectIndex?: number): Promise<void> {
+  // Ensure output directory exists
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  console.log(`\nStarting download of ${roms.length} ROMs to ${outputDir}...\n`);
+  if (manualSelectIndex !== undefined) {
+    console.log(`Manual selection mode: Will select option index ${manualSelectIndex}\n`);
+  }
+
+  let successCount = 0;
+  let failCount = 0;
+
+  for (let i = 0; i < roms.length; i++) {
+    const rom = roms[i];
+    
+    let downloadUrl: string | undefined;
+    
+    // If directDownloadLink exists, use it directly
+    if (rom.directDownloadLink) {
+      downloadUrl = rom.directDownloadLink;
+      console.log(`[${i + 1}/${roms.length}] 📦 ${rom.title}`);
+      console.log(`    ℹ️  Using direct download link`);
+    } 
+    // Otherwise, fetch options from downloadLink page and select best one
+    else if (rom.downloadLink) {
+      console.log(`[${i + 1}/${roms.length}] 📦 ${rom.title}`);
+      try {
+        const options = await fetchDownloadOptions(rom.downloadLink);
+        
+        if (options.length === 0) {
+          console.log(`    ⚠️  No download options found`);
+          failCount++;
+          console.log('');
+          continue;
+        }
+        
+        // Print all available options
+        printDownloadOptions(options);
+        
+        // Select option based on mode
+        let selected: RomDownloadOption | null = null;
+        
+        if (manualSelectIndex !== undefined) {
+          // Manual selection by index
+          selected = selectDownloadOptionByIndex(options, manualSelectIndex);
+        } else {
+          // Auto-select best option
+          selected = selectBestDownloadOption(options);
+        }
+        
+        if (selected) {
+          downloadUrl = selected.url;
+        }
+      } catch (error) {
+        console.log(`    ⚠️  Could not fetch download options: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        failCount++;
+        console.log('');
+        continue;
+      }
+    } else {
+      console.log(`[${i + 1}/${roms.length}] ⚠️  Skipping "${rom.title}" - no download link`);
+      failCount++;
+      console.log('');
+      continue;
+    }
+
+    if (!downloadUrl) {
+      console.log(`    ⚠️  No download URL selected`);
+      failCount++;
+      console.log('');
+      continue;
+    }
+
+    // Determine file extension from URL or default to .zip
+    let ext = '.zip';
+    const urlPath = downloadUrl.split('?')[0]; // Remove query params
+    const urlExt = path.extname(urlPath);
+    if (urlExt) {
+      ext = urlExt;
+    }
+
+    const filename = sanitizeFilename(`${rom.title}${ext}`);
+    const destPath = path.join(outputDir, filename);
+
+    // Skip if already exists
+    if (fs.existsSync(destPath)) {
+      console.log(`[${i + 1}/${roms.length}] ⏭️  Already exists: ${filename}`);
+      successCount++;
+      continue;
+    }
+
+    try {
+      console.log(`    ⬇️  Downloading from: ${downloadUrl}`);
+      
+      await downloadFile(downloadUrl, destPath);
+      
+      const stats = fs.statSync(destPath);
+      const sizeKB = (stats.size / 1024).toFixed(2);
+      console.log(`    ✅ Success: ${filename} (${sizeKB} KB)`);
+      successCount++;
+      
+      // Small delay to avoid overwhelming servers
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+    } catch (error) {
+      console.log(`    ❌ Failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      failCount++;
+    }
+
+    console.log('');
+  }
+
+  console.log('\n=== Download Summary ===');
+  console.log(`✅ Success: ${successCount}`);
+  console.log(`❌ Failed: ${failCount}`);
+  console.log(`📊 Total: ${roms.length}`);
+}
+
+async function main() {
+  const argv = process.argv.slice(2);
+
+  if (argv.length === 0) {
+    console.log('Usage: npx ts-node src/download/rom-csv-download.ts <csvPath> [--output <dir>] [--limit <n>] [--manual-select <index>]');
+    console.log('');
+    console.log('Example:');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --output downloads/nes');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --output downloads/nes --limit 10');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --limit 1 --manual-select 2');
+    console.log('');
+    console.log('Options:');
+    console.log('  --output <dir>          Output directory for downloaded ROMs');
+    console.log('  --limit <n>             Limit to first N ROMs');
+    console.log('  --manual-select <index> Manually select download option by index (0-based)');
+    process.exit(1);
+  }
+
+  const csvPath = argv[0];
+  
+  // Parse optional arguments
+  const outputIndex = argv.indexOf('--output');
+  const outputDir = outputIndex !== -1 ? argv[outputIndex + 1] : path.join('downloads', path.basename(path.dirname(csvPath)));
+  
+  const limitIndex = argv.indexOf('--limit');
+  const limit = limitIndex !== -1 ? parseInt(argv[limitIndex + 1], 10) : undefined;
+
+  const manualSelectIndex = argv.indexOf('--manual-select');
+  const manualSelect = manualSelectIndex !== -1 ? parseInt(argv[manualSelectIndex + 1], 10) : undefined;
+
+  try {
+    // Read and parse CSV
+    let roms = parseCSVToRoms(csvPath);
+
+    // Apply limit if specified
+    if (limit && limit > 0) {
+      console.log(`Limiting to first ${limit} ROMs`);
+      roms = roms.slice(0, limit);
+    }
+
+    // Download ROMs
+    await downloadRoms(roms, outputDir, manualSelect);
+
+  } catch (error) {
+    console.error('Error:', error);
+    process.exit(1);
+  }
+}
+
+if (require.main === module) {
+  main();
+}
