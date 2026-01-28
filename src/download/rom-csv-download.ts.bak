@@ -310,16 +310,14 @@ function selectBestDownloadOption(options: RomDownloadOption[], preferredRegion:
   return nonDemoOptions[0];
 }
 
-async function getRedirectLink(url: string): Promise<string | null> {
+async function getRedirectLink(url: string): Promise<string> {
   console.log(`    🔄 Getting redirect link from: ${url}`);
   
   const browser = await chromium.launch({ headless: true });
-  const page = await browser.newPage({
-    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-  });
+  const page = await browser.newPage();
   
   try {
-    let finalUrl: string | null = null;
+    let finalUrl = url;
     
     // Listen for CDN responses
     page.on('response', async (response) => {
@@ -332,7 +330,7 @@ async function getRedirectLink(url: string): Promise<string | null> {
           respUrl.includes('github') ||
           respUrl.includes('raw') ||
           respUrl.match(/\.(zip|rar|7z|iso)(\?|$)/i)) {
-        console.log(`    🔗 Detected CDN URL from response: ${respUrl}`);
+        console.log(`    � Detected CDN URL: ${respUrl}`);
         finalUrl = respUrl;
       }
     });
@@ -343,101 +341,79 @@ async function getRedirectLink(url: string): Promise<string | null> {
       timeout: 20000 
     });
     
-    console.log(`    ⏳ Waiting for download button to appear (countdown)...`);
+    console.log(`    ⏳ Waiting for download button to appear...`);
     
     // Wait for countdown/button (usually 3-5 seconds)
-    await page.waitForTimeout(8000);
+    await page.waitForTimeout(3000);
     
     // Wait for download button to become visible (it starts hidden)
-    try {
-      await page.waitForSelector('#download-link', { 
-        state: 'visible',
-        timeout: 8000 
-      });
-      console.log(`    ✓ Download button appeared`);
-    } catch (e) {
-      console.log(`    ⚠️  Download button didn't appear with standard IDs`);
-    }
+    await page.waitForSelector('#download-button:not(.hidden), #download-link', { 
+      timeout: 10000 
+    }).catch(() => {
+      console.log(`    ℹ️  Download button didn't appear with ID, trying other selectors...`);
+    });
     
-    console.log(`    🖱️  Extracting download link from button...`);
+    console.log(`    🖱️  Attempting to click download button...`);
     
-    // Try to find and get the actual download link from button
+    // Try to find and get the actual download link
     const downloadLink = await page.evaluate(() => {
-      // Try common download link IDs/classes
-      const selectors = [
-        '#download-link',
-        '#download-button',
-        '.download-link',
-        '.download-button',
-        'a[href*="cdn"]',
-        'a[href*=".zip"]',
-        'a[href*="storage"]',
-        'a[href*="github"]',
-        'a[href*="romsfast"]'
-      ];
-      
-      for (const selector of selectors) {
-        const element = document.querySelector(selector) as HTMLAnchorElement;
-        if (element && element.href && element.href.includes('http')) {
-          // Check if it's a real download link (not the page itself)
-          if (element.href.includes('cdn') || 
-              element.href.includes('storage') || 
-              element.href.includes('github') ||
-              element.href.includes('romsfast') ||
-              element.href.includes('.zip') ||
-              element.href.includes('.rar')) {
-            return element.href;
-          }
-        }
+      // Try to find the actual download link
+      const downloadButton = document.querySelector('#download-link') as HTMLAnchorElement;
+      if (downloadButton && downloadButton.href) {
+        return downloadButton.href;
       }
       
-      return null;
+      // Fallback: look for any link that looks like a download
+      const links = Array.from(document.querySelectorAll('a'));
+      const cdnLink = links.find(link => {
+        const href = link.href.toLowerCase();
+        return href.includes('.zip') || href.includes('.rar') || 
+               href.includes('.7z') || href.includes('cdn') ||
+               href.includes('storage') || href.includes('github');
+      });
+      
+      return cdnLink?.href;
     });
     
     if (downloadLink) {
-      console.log(`    ✅ Found download link from button: ${downloadLink}`);
+      console.log(`    ✅ Found download link: ${downloadLink}`);
       finalUrl = downloadLink;
-    }
-    
-    // If we found a CDN URL from response listener, use it
-    if (finalUrl) {
-      await browser.close();
-      console.log(`    ✅ Final redirect URL: ${finalUrl}`);
-      return finalUrl;
-    }
-    
-    // If still no link, try clicking the button as last resort
-    console.log(`    🖱️  Trying to click button to trigger redirect...`);
-    try {
-      const button = await page.$('#download-link, #download-button, a[href*="cdn"]');
-      if (button) {
-        await button.click();
-        console.log(`    ✓ Clicked button, waiting for redirect...`);
-        await page.waitForTimeout(3000);
-        
-        // Check if we captured a CDN URL from response
-        if (finalUrl) {
-          await browser.close();
-          console.log(`    ✅ Got redirect URL after click: ${finalUrl}`);
-          return finalUrl;
+    } else {
+      // Try clicking the button
+      try {
+        const button = await page.$('#download-link, #download-button, .download-btn');
+        if (button) {
+          await button.click();
+          console.log(`    ✓ Clicked button, waiting for redirect...`);
+          await page.waitForTimeout(2000);
+          
+          // Check if URL changed
+          const currentUrl = page.url();
+          if (currentUrl !== url) {
+            finalUrl = currentUrl;
+            console.log(`    🔄 Redirected to: ${currentUrl}`);
+          }
         }
+      } catch (e) {
+        console.log(`    ℹ️  Could not click button`);
       }
-    } catch (e) {
-      console.log(`    ⚠️  Could not click button: ${e instanceof Error ? e.message : 'Unknown'}`);
     }
     
     await browser.close();
     
-    if (!finalUrl) {
-      console.log(`    ❌ Could not get redirect link from button`);
+    if (finalUrl !== url) {
+      console.log(`    ✅ Final download URL: ${finalUrl}`);
+    } else {
+      console.log(`    ℹ️  No redirect found, using original URL`);
     }
     
     return finalUrl;
     
   } catch (error) {
     await browser.close();
-    console.log(`    ❌ Error getting redirect: ${error instanceof Error ? error.message : 'Unknown'}`);
-    return null;
+    console.log(`    ⚠️  Error: ${error instanceof Error ? error.message : 'Unknown'}`);
+    console.log(`    ℹ️  Using original URL`);
+    return url;
   }
 }
 
@@ -517,16 +493,7 @@ async function downloadRoms(roms: Rom[], outputDir: string, manualSelectIndex?: 
     }
 
     // Get the actual redirect/download link
-    const redirectUrl = await getRedirectLink(downloadUrl);
-    
-    if (!redirectUrl) {
-      console.log(`    ❌ Failed to get redirect download link`);
-      failCount++;
-      console.log('');
-      continue;
-    }
-    
-    downloadUrl = redirectUrl;
+    downloadUrl = await getRedirectLink(downloadUrl);
 
     // Determine file extension from URL or default to .zip
     let ext = '.zip';
@@ -541,9 +508,8 @@ async function downloadRoms(roms: Rom[], outputDir: string, manualSelectIndex?: 
 
     // Skip if already exists
     if (fs.existsSync(destPath)) {
-      console.log(`    ⏭️  Already exists: ${filename}`);
+      console.log(`[${i + 1}/${roms.length}] ⏭️  Already exists: ${filename}`);
       successCount++;
-      console.log('');
       continue;
     }
 
