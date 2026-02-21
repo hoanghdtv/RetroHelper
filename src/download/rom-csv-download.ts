@@ -683,6 +683,15 @@ async function downloadRoms(
   console.log(`📊 Total: ${roms.length}`);
 }
 
+export function normalizeFilename(input: string): string {
+  return input
+    .normalize("NFD")                  // tách ký tự + dấu
+    .replace(/[\u0300-\u036f]/g, "")   // xoá toàn bộ dấu
+    .replace(/[^a-zA-Z0-9._-]/g, "_")  // ký tự lạ → _
+    .replace(/\.{2,}/g, ".")           // .. → .
+    .toLowerCase();
+}
+
 /**
  * Customize redirect link before saving
  * You can modify the URL here as needed
@@ -703,7 +712,118 @@ function customizeRedirectLink(redirectLink: string, rom: Rom, repository: strin
   // return redirectLink.replace('sto.romsfast.com', 'cdn.myserver.com');
   
   // Default: Return as-is
-  return redirectLink;
+  // return redirectLink;
+}
+
+/**
+ * Fix/transform direct download links in CSV
+ * Apply custom transformations to existing directDownloadLink values
+ */
+function fixDirectLink(directLink: string, rom: Rom, repository: string): string {
+  // Example fixes:
+  
+  // Fix 1: Convert CDN links to GitHub links
+  const ext = path.extname(directLink.split('?')[0]) || '.zip';
+  const filename = normalizeFilename(`${rom.title}${ext}`);
+  console.log(filename);
+  return `https://github.com/hoanghdtv/${repository}/releases/download/1.0/` + encodeURIComponent(filename);
+  
+  // Fix 2: Remove expired tokens
+  // return directLink.split('?')[0];
+  
+  // Fix 3: Update domain
+  // return directLink.replace('old-cdn.com', 'new-cdn.com');
+  
+  // Fix 4: Add new parameters
+  // return directLink + '?v=2';
+  
+  // Default: Return as-is
+  // return directLink;
+}
+
+/**
+ * Fix direct download links in CSV file
+ * Updates existing directDownloadLink values with custom transformations
+ */
+async function fixDirectLinksInCSV(
+  roms: Rom[],
+  csvPath: string,
+  repository: string = 'romsfun'
+): Promise<void> {
+  console.log(`\n🔧 Fixing direct download links in CSV...`);
+  
+  let processedCount = 0;
+  let fixedCount = 0;
+  let skippedCount = 0;
+  
+  for (let i = 0; i < roms.length; i++) {
+    const rom = roms[i];
+    processedCount++;
+    
+    console.log(`\n[${i + 1}/${roms.length}] 📦 ${rom.title}`);
+    
+    if (!rom.directDownloadLink) {
+      console.log(`    ⚠️  No direct download link to fix`);
+      skippedCount++;
+      continue;
+    }
+    
+    const oldLink = rom.directDownloadLink;
+    const newLink = fixDirectLink(oldLink, rom, repository);
+    
+    if (oldLink === newLink) {
+      // console.log(`    ℹ️  Link unchanged`);
+      skippedCount++;
+    } else {
+      rom.directDownloadLink = newLink;
+      console.log(`    ✅ Fixed link`);
+      console.log(`       Old: ${oldLink.substring(0, 80)}...`);
+      console.log(`       New: ${newLink.substring(0, 80)}...`);
+      fixedCount++;
+    }
+  }
+  
+  // Write updated ROMs back to CSV
+  console.log(`\n📝 Writing to ${csvPath}...`);
+  
+  const csvRecords = roms.map(rom => ({
+    id: rom.id || '',
+    title: rom.title,
+    url: rom.url,
+    console: rom.console,
+    description: rom.description || '',
+    mainImage: rom.mainImage || '',
+    screenshots: Array.isArray(rom.screenshots) ? rom.screenshots.join('|') : '',
+    genre: Array.isArray(rom.genre) ? rom.genre.join('|') : '',
+    releaseDate: rom.releaseDate || '',
+    publisher: rom.publisher || '',
+    region: Array.isArray(rom.region) ? rom.region.join('|') : '',
+    size: rom.size || '',
+    downloadCount: rom.downloadCount || '',
+    numberOfReviews: rom.numberOfReviews || '',
+    averageRating: rom.averageRating || '',
+    downloadLink: rom.downloadLink || '',
+    directDownloadLink: rom.directDownloadLink || '',
+    romType: rom.romType || ''
+  }));
+  
+  const csvContent = stringify(csvRecords, {
+    header: true,
+    columns: [
+      'id', 'title', 'url', 'console', 'description', 'mainImage', 
+      'screenshots', 'genre', 'releaseDate', 'publisher', 'region', 
+      'size', 'downloadCount', 'numberOfReviews', 'averageRating', 
+      'downloadLink', 'directDownloadLink', 'romType'
+    ]
+  });
+  
+  fs.writeFileSync(csvPath, csvContent, 'utf-8');
+  
+  console.log(`\n=== Fix Direct Links Summary ===`);
+  console.log(`✅ Fixed: ${fixedCount}`);
+  console.log(`⏭️  Skipped: ${skippedCount}`);
+  console.log(`📊 Total: ${processedCount}`);
+  console.log(`📄 Output: ${csvPath}`);
 }
 
 /**
@@ -899,12 +1019,18 @@ async function main() {
     console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --save-redirects --output-csv output/roms-updated.csv');
     console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --save-redirects --output downloads/nes  # Also download files');
     console.log('');
+    console.log('Fix existing direct links in CSV:');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --fix-direct-links');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --fix-direct-links --limit 10');
+    console.log('  npx ts-node src/download/rom-csv-download.ts output/topnes-split/roms.csv --fix-direct-links --repository myrepo');
+    console.log('');
     console.log('Options:');
     console.log('  --output <dir>           Output directory for downloaded ROMs');
     console.log('  --limit <n>              Limit to first N ROMs');
     console.log('  --manual-select <index>  Manually select download option by index (0-based)');
     console.log('  --fetch-redirects-only   Fetch and save redirect links to CSV only (no download)');
     console.log('  --save-redirects         Save redirect links to CSV instead of downloading');
+    console.log('  --fix-direct-links       Fix/transform existing direct links in CSV');
     console.log('  --output-csv <path>      Output CSV path (for --save-redirects mode)');
     console.log('  --repository <name>      Repository name (default: romsfun)');
     process.exit(1);
@@ -915,6 +1041,7 @@ async function main() {
   // Parse optional arguments
   const saveRedirects = argv.includes('--save-redirects');
   const fetchRedirectsOnly = argv.includes('--fetch-redirects-only');
+  const fixDirectLinks = argv.includes('--fix-direct-links');
   
   const outputIndex = argv.indexOf('--output');
   const outputDir = outputIndex !== -1 ? argv[outputIndex + 1] : path.join('downloads', path.basename(path.dirname(csvPath)));
@@ -941,8 +1068,10 @@ async function main() {
       roms = roms.slice(0, limit);
     }
 
-    // Choose mode: save redirects to new CSV, fetch redirects only, or download
-    if (saveRedirects) {
+    // Choose mode: fix direct links, save redirects, fetch only, or download
+    if (fixDirectLinks) {
+      await fixDirectLinksInCSV(roms, csvPath, repository);
+    } else if (saveRedirects) {
       // In save-redirects mode, also download files if --output is specified
       const downloadDir = outputIndex !== -1 ? outputDir : undefined;
       await saveRedirectLinksToCSV(roms, csvPath, outputCsvPath, repository, downloadDir);
