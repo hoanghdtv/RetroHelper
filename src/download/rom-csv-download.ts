@@ -687,6 +687,8 @@ export function normalizeFilename(input: string): string {
   return input
     .normalize("NFD")                  // tách ký tự + dấu
     .replace(/[\u0300-\u036f]/g, "")   // xoá toàn bộ dấu
+    .replace(/&/g, ".")                // & → .
+    .replace(/\.7z$/i, ".zip")         // .7z → .zip
     .replace(/[^a-zA-Z0-9._-]/g, "_")  // ký tự lạ → _
     .replace(/\.{2,}/g, ".")           // .. → .
     .toLowerCase();
