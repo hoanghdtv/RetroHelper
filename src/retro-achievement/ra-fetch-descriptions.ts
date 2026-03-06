@@ -53,6 +53,7 @@ interface ResultRow {
   boxArt: string;
   titleScreen: string;
   screenshot: string;
+  rating: string;
   _source: string;
 }
 
@@ -139,23 +140,41 @@ async function fetchWikiInfo(title: string, consoleName: string): Promise<WikiRe
 let raUsername = process.env.RA_USERNAME || '';
 let raApiKey   = process.env.RA_API_KEY   || '';
 
-async function fetchRAImages(gameId: string): Promise<RAImages> {
-  if (!raUsername || !raApiKey) return { icon: '', boxArt: '', titleScreen: '', screenshot: '' };
-  try {
-    const res = await http.get('https://retroachievements.org/API/API_GetGameExtended.php', {
-      params: { z: raUsername, y: raApiKey, i: gameId },
-    });
-    const d = res.data;
-    const toUrl = (p: string | null | undefined) => (p ? `${RA_BASE}${p}` : '');
-    return {
-      icon:        toUrl(d.ImageIcon),
-      boxArt:      toUrl(d.ImageBoxArt),
-      titleScreen: toUrl(d.ImageTitle),
-      screenshot:  toUrl(d.ImageIngame),
-    };
-  } catch {
-    return { icon: '', boxArt: '', titleScreen: '', screenshot: '' };
+async function fetchRAImages(gameId: string, retries = 4): Promise<RAImages> {
+  const empty = { icon: '', boxArt: '', titleScreen: '', screenshot: '' };
+  if (!raUsername || !raApiKey) return empty;
+
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await http.get('https://retroachievements.org/API/API_GetGameExtended.php', {
+        params: { z: raUsername, y: raApiKey, i: gameId },
+      });
+      const d = res.data;
+      // Empty/invalid response (rate limit returned HTML or null)
+      if (!d || typeof d !== 'object' || !d.ID) {
+        if (attempt < retries) {
+          await new Promise(r => setTimeout(r, (attempt + 1) * 1500));
+          continue;
+        }
+        return empty;
+      }
+      const toUrl = (p: string | null | undefined) => (p ? `${RA_BASE}${p}` : '');
+      return {
+        icon:        toUrl(d.ImageIcon),
+        boxArt:      toUrl(d.ImageBoxArt),
+        titleScreen: toUrl(d.ImageTitle),
+        screenshot:  toUrl(d.ImageIngame),
+      };
+    } catch (err: any) {
+      const status = err?.response?.status;
+      if ((status === 429 || status === 503 || !status) && attempt < retries) {
+        await new Promise(r => setTimeout(r, (attempt + 1) * 2000));
+        continue;
+      }
+      return empty;
+    }
   }
+  return empty;
 }
 
 // ─── Rating from player count ────────────────────────────────────────────────
@@ -259,9 +278,17 @@ Options:
   const rows = parseCSV(fs.readFileSync(inputPath, 'utf-8'));
   console.log(`Read ${rows.length} games from ${inputPath}`);
   console.log(`  Images  : ${raApiKey ? 'RA API (icon + box art + title screen + screenshot)' : 'disabled (set RA_API_KEY / --ra-key for RA images)'}`);
-  console.log(`  Rating  : disabled`);
+  if (raApiKey && concurrency > 20) console.log(`  Warning : high concurrency (${concurrency}) may cause RA rate limits — recommend --concurrency 20`);
+  console.log(`  Rating  : calculated from totalPlayers (scale 4.0-5.0)`);
 
   const forceImages = hasFlag('--force-images');
+
+  // Pre-compute rating for every row from totalPlayers (no API needed)
+  const allPlayers = rows.map(r => Number(r.totalPlayers) || 0);
+  const minPlayers = Math.min(...allPlayers.filter(p => p > 0));
+  const maxPlayers = Math.max(...allPlayers);
+  const ratingMap = new Map<string, string>();
+  rows.forEach(r => ratingMap.set(r.id, calcRating(Number(r.totalPlayers) || 0, minPlayers, maxPlayers)));
 
   // Load existing data for --resume
   const existingMap = new Map<string, ResultRow>();
@@ -298,6 +325,9 @@ Options:
     const { id, title, consoleName } = row;
     const prev = existingMap.get(id);
 
+    // Stagger requests slightly to avoid thundering herd on RA API
+    if (i > 0) await new Promise(r => setTimeout(r, i % 10 === 0 ? 200 : 50));
+
     // Per-field skip logic
     const needDesc   = !prev?.description;
     const needImages = !!raApiKey && (forceImages ||
@@ -320,6 +350,7 @@ Options:
       boxArt:      raImages.boxArt,
       titleScreen: raImages.titleScreen,
       screenshot:  raImages.screenshot,
+      rating:      ratingMap.get(id) || '',
       _source:     wikiResult.source,
     };
   });
@@ -344,9 +375,10 @@ Options:
   const allResults: ResultRow[] = rows.map(row => {
     const result = fetchedMap.get(row.id) || existingMap.get(row.id) || {
       id: row.id, title: row.title,
-      description: '', icon: '', boxArt: '', titleScreen: '', screenshot: '', _source: 'none',
+      description: '', icon: '', boxArt: '', titleScreen: '', screenshot: '', rating: '', _source: 'none',
     };
-    return result;
+    // Always apply freshly computed rating
+    return { ...result, rating: ratingMap.get(row.id) || result.rating };
   });
 
   // Stats
@@ -355,13 +387,14 @@ Options:
   console.log(`  Box art     : ${allResults.filter(r => r.boxArt).length}/${allResults.length}${!raApiKey ? '  (use --ra-key to enable)' : ''}`);
   console.log(`  Title screen: ${allResults.filter(r => r.titleScreen).length}/${allResults.length}${!raApiKey ? '  (use --ra-key to enable)' : ''}`);
   console.log(`  Screenshot  : ${allResults.filter(r => r.screenshot).length}/${allResults.length}${!raApiKey ? '  (use --ra-key to enable)' : ''}`);
+  console.log(`  Rating      : ${allResults.filter(r => r.rating).length}/${allResults.length}  (from totalPlayers, scale 4.0–5.0)`);
   // Write CSV
   const outDir = path.dirname(outputPath);
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
-  const header = 'id,title,description,icon,boxArt,titleScreen,screenshot';
+  const header = 'id,title,description,icon,boxArt,titleScreen,screenshot,rating';
   const csvRows = allResults.map(r =>
-    [r.id, esc(r.title), esc(r.description), esc(r.icon), esc(r.boxArt), esc(r.titleScreen), esc(r.screenshot)].join(',')
+    [r.id, esc(r.title), esc(r.description), esc(r.icon), esc(r.boxArt), esc(r.titleScreen), esc(r.screenshot), esc(r.rating)].join(',')
   );
 
   fs.writeFileSync(outputPath, [header, ...csvRows].join('\n'), 'utf-8');
