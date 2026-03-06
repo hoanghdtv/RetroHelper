@@ -30,7 +30,6 @@ dotenv.config();
 const RA_BASE   = 'https://media.retroachievements.org';
 const WIKI_REST = 'https://en.wikipedia.org/api/rest_v1/page/summary';
 const WIKI_API  = 'https://en.wikipedia.org/w/api.php';
-const RAWG_API  = 'https://api.rawg.io/api';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -54,7 +53,6 @@ interface ResultRow {
   boxArt: string;
   titleScreen: string;
   screenshot: string;
-  rating: string;
   _source: string;
 }
 
@@ -160,25 +158,20 @@ async function fetchRAImages(gameId: string): Promise<RAImages> {
   }
 }
 
-// ─── RAWG rating ──────────────────────────────────────────────────────────────
+// ─── Rating from player count ────────────────────────────────────────────────
 
-let rawgKey = '';
-
-async function fetchRawgRating(title: string): Promise<string> {
-  if (!rawgKey) return '';
-  const clean = title.replace(/~[^~]+~/g, '').replace(/\[[^\]]+\]/g, '').trim();
-  try {
-    const res = await http.get(`${RAWG_API}/games`, {
-      params: { key: rawgKey, search: clean, page_size: 3 },
-    });
-    const results: any[] = res.data?.results || [];
-    if (results.length === 0) return '';
-    const cleanLower = clean.toLowerCase();
-    const best = results.find(r => r.name?.toLowerCase() === cleanLower) || results[0];
-    return best.rating ? String(Math.round(best.rating * 10) / 10) : '';
-  } catch {
-    return '';
-  }
+/**
+ * Normalize totalPlayers to a 4.0–5.0 rating using log scale
+ * (log scale so mid-tier games aren't all squashed near 3.0)
+ */
+function calcRating(totalPlayers: number, minPlayers: number, maxPlayers: number): string {
+  if (maxPlayers <= minPlayers) return '4.0';
+  const logVal = Math.log(Math.max(totalPlayers, 1));
+  const logMin = Math.log(Math.max(minPlayers, 1));
+  const logMax = Math.log(Math.max(maxPlayers, 1));
+  const norm = (logVal - logMin) / (logMax - logMin);   // 0..1
+  const rating = 4.0 + norm * 1.0;                      // 4.0..5.0
+  return String(Math.round(rating * 10) / 10);
 }
 
 // ─── CSV helpers ──────────────────────────────────────────────────────────────
@@ -231,7 +224,12 @@ async function runConcurrent<T>(
 
 async function main() {
   const args = process.argv.slice(2);
-  const getArg = (flag: string) => { const i = args.indexOf(flag); return i !== -1 ? args[i + 1] : undefined; };
+  const getArg = (flag: string) => {
+    const i = args.indexOf(flag);
+    if (i === -1) return undefined;
+    const next = args[i + 1];
+    return (next && !next.startsWith('--')) ? next : undefined;
+  };
   const hasFlag = (flag: string) => args.includes(flag);
 
   const inputPath   = getArg('--input');
@@ -239,7 +237,6 @@ async function main() {
   const concurrency = Number(getArg('--concurrency') || '3');
   const resume      = hasFlag('--resume');
 
-  rawgKey    = getArg('--rawg-key') || process.env.RAWG_API_KEY || '';
   raUsername = getArg('--ra-user')  || process.env.RA_USERNAME  || '';
   raApiKey   = getArg('--ra-key')   || process.env.RA_API_KEY   || '';
 
@@ -251,7 +248,6 @@ Options:
   --input <path>    Input CSV from RATool (must have id, title, consoleName columns)
   --output <path>   Output CSV
   --concurrency N   Parallel fetches (default: 3)
-  --rawg-key KEY    RAWG.io API key for ratings (free at rawg.io/apidocs)
   --resume          Skip games already complete; re-fetch only missing fields
   --force-images    With --resume: retry image fetching even for games with empty images
 `);
@@ -263,7 +259,7 @@ Options:
   const rows = parseCSV(fs.readFileSync(inputPath, 'utf-8'));
   console.log(`Read ${rows.length} games from ${inputPath}`);
   console.log(`  Images  : ${raApiKey ? 'RA API (icon + box art + title screen + screenshot)' : 'disabled (set RA_API_KEY / --ra-key for RA images)'}`);
-  console.log(`  Rating  : ${rawgKey ? 'RAWG.io' : 'disabled (use --rawg-key)'}`);
+  console.log(`  Rating  : disabled`);
 
   const forceImages = hasFlag('--force-images');
 
@@ -276,24 +272,23 @@ Options:
 
     const complete = existing.filter(r =>
       !!r.description &&
-      (!raApiKey || r.icon || r.boxArt) &&
-      (!rawgKey  || r.rating)
+      (!raApiKey || (r.icon && r.boxArt && r.titleScreen && r.screenshot))
     ).length;
     const partial = existing.length - complete;
     console.log(`  Resume  : ${complete} complete, ${partial} to process\n`);
   }
 
-  // Helper: is a row fully settled (skip it)?
-  const isComplete = (r: any): boolean => {
-    if (forceImages) return false;
-    if (!r.description) return false;
-    if (raApiKey && !r.icon && !r.boxArt) return false;
-    if (rawgKey && !r.rating) return false;
-    return true;
-  };
+  // With --resume: only skip rows where description is filled AND images are filled (or no raApiKey)
+  const toFetch = resume
+    ? rows.filter(r => {
+        const prev = existingMap.get(r.id);
+        if (!prev) return true;                          // new row
+        if (!prev.description) return true;              // missing description
+        if (raApiKey && (forceImages || !prev.icon || !prev.boxArt || !prev.titleScreen || !prev.screenshot)) return true;
+        return false;
+      })
+    : rows;  // no --resume: process everything
 
-  // Skip only rows that are fully complete
-  const toFetch = rows.filter(r => !existingMap.has(r.id) || !isComplete(existingMap.get(r.id)));
   console.log(`Fetching ${toFetch.length} games (concurrency=${concurrency})...\n`);
 
   const fetched: ResultRow[] = new Array(toFetch.length);
@@ -303,15 +298,19 @@ Options:
     const { id, title, consoleName } = row;
     const prev = existingMap.get(id);
 
-    // Only re-fetch what's missing
+    // Per-field skip logic
     const needDesc   = !prev?.description;
-    const needImages = !!raApiKey && (forceImages || !prev?.icon && !prev?.boxArt);
-    const needRating = !!rawgKey  && !prev?.rating;
+    const needImages = !!raApiKey && (forceImages ||
+      !prev?.icon || !prev?.boxArt || !prev?.titleScreen || !prev?.screenshot);
 
-    const [wikiResult, raImages, rating] = await Promise.all([
+    const [wikiResult, raImages] = await Promise.all([
       needDesc   ? fetchWikiInfo(title, consoleName || '') : Promise.resolve({ description: prev!.description, source: 'cached' as const }),
-      needImages ? fetchRAImages(id) : Promise.resolve({ icon: prev?.icon || '', boxArt: prev?.boxArt || '', titleScreen: prev?.titleScreen || '', screenshot: prev?.screenshot || '' }),
-      needRating ? fetchRawgRating(title) : Promise.resolve(prev?.rating || ''),
+      needImages ? fetchRAImages(id) : Promise.resolve({
+        icon:        prev?.icon        || '',
+        boxArt:      prev?.boxArt      || '',
+        titleScreen: prev?.titleScreen || '',
+        screenshot:  prev?.screenshot  || '',
+      }),
     ]);
 
     fetched[i] = {
@@ -321,8 +320,7 @@ Options:
       boxArt:      raImages.boxArt,
       titleScreen: raImages.titleScreen,
       screenshot:  raImages.screenshot,
-      rating,
-      _source: wikiResult.source,
+      _source:     wikiResult.source,
     };
   });
 
@@ -344,10 +342,11 @@ Options:
   fetched.filter(Boolean).forEach(r => fetchedMap.set(r.id, r));
 
   const allResults: ResultRow[] = rows.map(row => {
-    return fetchedMap.get(row.id) || existingMap.get(row.id) || {
+    const result = fetchedMap.get(row.id) || existingMap.get(row.id) || {
       id: row.id, title: row.title,
-      description: '', icon: '', boxArt: '', titleScreen: '', screenshot: '', rating: '', _source: 'none',
+      description: '', icon: '', boxArt: '', titleScreen: '', screenshot: '', _source: 'none',
     };
+    return result;
   });
 
   // Stats
@@ -356,15 +355,13 @@ Options:
   console.log(`  Box art     : ${allResults.filter(r => r.boxArt).length}/${allResults.length}${!raApiKey ? '  (use --ra-key to enable)' : ''}`);
   console.log(`  Title screen: ${allResults.filter(r => r.titleScreen).length}/${allResults.length}${!raApiKey ? '  (use --ra-key to enable)' : ''}`);
   console.log(`  Screenshot  : ${allResults.filter(r => r.screenshot).length}/${allResults.length}${!raApiKey ? '  (use --ra-key to enable)' : ''}`);
-  console.log(`  Rating      : ${allResults.filter(r => r.rating).length}/${allResults.length}${!rawgKey ? '  (use --rawg-key to enable)' : ''}`);
-
   // Write CSV
   const outDir = path.dirname(outputPath);
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
-  const header = 'id,title,description,icon,boxArt,titleScreen,screenshot,rating';
+  const header = 'id,title,description,icon,boxArt,titleScreen,screenshot';
   const csvRows = allResults.map(r =>
-    [r.id, esc(r.title), esc(r.description), esc(r.icon), esc(r.boxArt), esc(r.titleScreen), esc(r.screenshot), esc(r.rating)].join(',')
+    [r.id, esc(r.title), esc(r.description), esc(r.icon), esc(r.boxArt), esc(r.titleScreen), esc(r.screenshot)].join(',')
   );
 
   fs.writeFileSync(outputPath, [header, ...csvRows].join('\n'), 'utf-8');
