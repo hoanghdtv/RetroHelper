@@ -528,6 +528,118 @@ export async function addRaGameIds(
   console.log(`📄 Saved to : ${csvPath}`);
 }
 
+// ─── RA Screenshots ───────────────────────────────────────────────────────────
+
+const RA_MEDIA_BASE = 'https://media.retroachievements.org';
+
+interface RaGameImages {
+  imageTitle: string;   // title screen  → /Images/xxxxxx.png
+  imageIngame: string;  // in-game shot  → /Images/xxxxxx.png
+  imageBoxArt: string;  // box art       → /Images/xxxxxx.png
+  imageIcon: string;    // icon          → /Images/xxxxxx.png
+}
+
+/**
+ * Fetch image paths for a single RA game via API_GetGame.php.
+ * Returns full URLs using the media CDN base.
+ */
+async function fetchRaGameImages(
+  raGameId: number,
+  apiKey: string,
+  username: string,
+): Promise<RaGameImages | null> {
+  try {
+    const resp = await axios.get('https://retroachievements.org/API/API_GetGame.php', {
+      params: { z: username, y: apiKey, i: raGameId },
+      timeout: 15000,
+    });
+    const g = resp.data;
+    if (!g || !g.ImageIngame) return null;
+    return {
+      imageTitle:  g.ImageTitle  ? `${RA_MEDIA_BASE}${g.ImageTitle}`  : '',
+      imageIngame: g.ImageIngame ? `${RA_MEDIA_BASE}${g.ImageIngame}` : '',
+      imageBoxArt: g.ImageBoxArt ? `${RA_MEDIA_BASE}${g.ImageBoxArt}` : '',
+      imageIcon:   g.ImageIcon   ? `${RA_MEDIA_BASE}${g.ImageIcon}`   : '',
+    };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Update the `screenshots` column for every ROM that has a `raGameId`.
+ * Screenshots are stored as pipe-separated URLs: "imageTitle|imageIngame"
+ *
+ * Also updates `mainImage` if it is empty, using imageBoxArt (falling back to imageIcon).
+ *
+ * Skips ROMs that already have screenshots unless `force` is true.
+ */
+export async function updateScreenshotsFromRA(
+  roms: RomRecord[],
+  csvPath: string,
+  force = false,
+): Promise<void> {
+  const apiKey  = process.env.RA_API_KEY;
+  const username = process.env.RA_USERNAME;
+  if (!apiKey || !username) throw new Error('RA_API_KEY / RA_USERNAME not set in .env');
+
+  const eligible = roms.filter(r => r.raGameId);
+  console.log(`\n🖼️  Updating screenshots from RetroAchievements…`);
+  console.log(`   ROMs with raGameId : ${eligible.length}`);
+  console.log(`   Force re-fetch     : ${force}\n`);
+
+  let updated = 0;
+  let skipped = 0;
+  let failed  = 0;
+
+  for (let i = 0; i < roms.length; i++) {
+    const rom = roms[i];
+
+    if (!rom.raGameId) continue;
+
+    process.stdout.write(`[${i + 1}/${roms.length}] 🎮 ${rom.title} … `);
+
+    // Skip if screenshots already present and not forcing
+    if (!force && rom.screenshots && rom.screenshots.length > 0) {
+      console.log(`⏭️  already has screenshots`);
+      skipped++;
+      continue;
+    }
+
+    const images = await fetchRaGameImages(rom.raGameId, apiKey, username);
+
+    if (!images) {
+      console.log(`❌ Failed to fetch images`);
+      failed++;
+      continue;
+    }
+
+    // Build screenshots list: title screen + in-game (skip empty strings)
+    const shots = [images.imageTitle, images.imageIngame].filter(Boolean);
+    rom.screenshots = shots;
+
+    // Fill mainImage if missing
+    if (!rom.mainImage) {
+      rom.mainImage = images.imageBoxArt || images.imageIcon || '';
+    }
+
+    console.log(`✅ ${shots.length} screenshot(s)`);
+    updated++;
+
+    // Persist after each ROM
+    writeCSV(roms, csvPath);
+
+    // Small delay to respect RA API rate limits
+    await new Promise(r => setTimeout(r, 300));
+  }
+
+  console.log(`\n=== Screenshots Summary ===`);
+  console.log(`✅ Updated  : ${updated}`);
+  console.log(`⏭️  Skipped  : ${skipped}`);
+  console.log(`❌ Failed   : ${failed}`);
+  console.log(`📄 Saved to : ${csvPath}`);
+}
+
 // ─── Display Helpers ──────────────────────────────────────────────────────────
 
 function printRomSummary(rom: RomRecord, index: number, total: number): void {
@@ -576,6 +688,7 @@ async function main() {
     console.log('  --stats               Print statistics summary only');
     console.log('  --add-related         Compute & add relatedRoms column to CSV (saves in place)');
     console.log('  --add-ra-ids          Look up RetroAchievements game IDs via ROM MD5 and save');
+    console.log('  --update-screenshots  Fetch screenshots from RA using raGameId and save to CSV');
     console.log('  --downloads <dir>     ROM downloads directory (default: downloads/<console>)');
     console.log('  --force               Re-compute even if column already filled');
     console.log('  --top <n>             Number of related ROMs per entry (default: 4)');
@@ -586,17 +699,19 @@ async function main() {
     console.log('  npx ts-node src/retro-achievement/ra-csv-update.ts output/topnes-split/roms.csv --stats');
     console.log('  npx ts-node src/retro-achievement/ra-csv-update.ts output/topnes-split/roms.csv --add-related');
     console.log('  npx ts-node src/retro-achievement/ra-csv-update.ts output/topnes-split/roms.csv --add-ra-ids --downloads downloads/nes');
-    console.log('  npx ts-node src/retro-achievement/ra-csv-update.ts output/topnes-split/roms.csv --add-ra-ids --downloads downloads/nes --force');
+    console.log('  npx ts-node src/retro-achievement/ra-csv-update.ts output/topnes-split/roms.csv --update-screenshots');
+    console.log('  npx ts-node src/retro-achievement/ra-csv-update.ts output/topnes-split/roms.csv --update-screenshots --force');
     process.exit(0);
   }
 
   const csvPath = argv[0];
 
   // Parse options
-  const statsOnly     = argv.includes('--stats');
-  const addRelated    = argv.includes('--add-related');
-  const addRaIds      = argv.includes('--add-ra-ids');
-  const forceFlag     = argv.includes('--force');
+  const statsOnly        = argv.includes('--stats');
+  const addRelated       = argv.includes('--add-related');
+  const addRaIds         = argv.includes('--add-ra-ids');
+  const updateScreenshots = argv.includes('--update-screenshots');
+  const forceFlag        = argv.includes('--force');
   const limitIndex    = argv.indexOf('--limit');
   const limit         = limitIndex !== -1 ? parseInt(argv[limitIndex + 1], 10) : undefined;
   const consoleIndex  = argv.indexOf('--console');
@@ -621,6 +736,12 @@ async function main() {
   // --add-ra-ids
   if (addRaIds) {
     await addRaGameIds(roms, csvPath, downloadsDir, forceFlag);
+    return;
+  }
+
+  // --update-screenshots
+  if (updateScreenshots) {
+    await updateScreenshotsFromRA(roms, csvPath, forceFlag);
     return;
   }
 

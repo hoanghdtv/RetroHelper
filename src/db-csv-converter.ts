@@ -65,7 +65,9 @@ export class DbCsvConverter {
       averageRating: rom.averageRating || '',
       downloadLink: rom.downloadLink || '',
       directDownloadLink: rom.directDownloadLink || '',
-      romType: rom.romType || ''
+      romType: rom.romType || '',
+      raGameId: rom.raGameId || '',
+      raRelatedRoms: rom.raRelatedRoms || ''
     }));
 
     // Ensure output directory exists
@@ -95,7 +97,9 @@ export class DbCsvConverter {
         'averageRating',
         'downloadLink',
         'directDownloadLink',
-        'romType'
+        'romType',
+        'raGameId',
+        'raRelatedRoms'
       ]
     });
 
@@ -184,7 +188,9 @@ export class DbCsvConverter {
       averageRating: rom.averageRating || '',
       downloadLink: rom.downloadLink || '',
       directDownloadLink: rom.directDownloadLink || '',
-      romType: rom.romType || ''
+      romType: rom.romType || '',
+      raGameId: rom.raGameId || '',
+      raRelatedRoms: rom.raRelatedRoms || ''
     }));
 
     const romsCsv = stringify(romsData, {
@@ -207,7 +213,9 @@ export class DbCsvConverter {
         'averageRating',
         'downloadLink',
         'directDownloadLink',
-        'romType'
+        'romType',
+        'raGameId',
+        'raRelatedRoms'
       ]
     });
 
@@ -345,7 +353,9 @@ export class DbCsvConverter {
           averageRating: record.averageRating || undefined,
           downloadLink: record.downloadLink || undefined,
           directDownloadLink: record.directDownloadLink || undefined,
-          romType: record.romType || undefined
+          romType: record.romType || undefined,
+          raGameId: record.raGameId ? parseInt(record.raGameId, 10) : undefined,
+          raRelatedRoms: record.raRelatedRoms || undefined
         };
 
         // Check if ROM already exists (if not overwriting)
@@ -460,7 +470,7 @@ export class DbCsvConverter {
       const progress = `[${i + 1}/${romsRecords.length}]`;
 
       try {
-        // Convert CSV row to Rom object (without relatedRoms)
+        // Convert CSV row to Rom object (without relatedRoms array)
         const rom: Rom = {
           id: record.id ? parseInt(record.id) : undefined,
           title: record.title,
@@ -479,7 +489,9 @@ export class DbCsvConverter {
           averageRating: record.averageRating || undefined,
           downloadLink: record.downloadLink || undefined,
           directDownloadLink: record.directDownloadLink || undefined,
-          romType: record.romType || undefined
+          romType: record.romType || undefined,
+          raGameId: record.raGameId ? parseInt(record.raGameId, 10) : undefined,
+          raRelatedRoms: record.raRelatedRoms || undefined
         };
 
         // Check if ROM already exists (if not overwriting)
@@ -664,7 +676,9 @@ export class DbCsvConverter {
         averageRating: rom.averageRating || '',
         downloadLink: rom.downloadLink || '',
         directDownloadLink: rom.directDownloadLink || '',
-        romType: rom.romType || ''
+        romType: rom.romType || '',
+        raGameId: rom.raGameId || '',
+        raRelatedRoms: rom.raRelatedRoms || ''
       }));
 
       // Ensure output directory exists
@@ -693,7 +707,9 @@ export class DbCsvConverter {
           'averageRating',
           'downloadLink',
           'directDownloadLink',
-          'romType'
+          'romType',
+          'raGameId',
+          'raRelatedRoms'
         ]
       });
 

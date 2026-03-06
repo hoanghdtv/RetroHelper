@@ -22,6 +22,8 @@ export interface Rom {
   directDownloadLink?: string;
   relatedRoms?: RelatedRom[];
   romType?: string;
+  raGameId?: number;
+  raRelatedRoms?: string;
 }
 
 export interface RelatedRom {
@@ -103,7 +105,9 @@ export class RomDatabase {
         directDownloadLink TEXT,
         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
         updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-        romType TEXT
+        romType TEXT,
+        raGameId INTEGER,
+        raRelatedRoms TEXT
       )
     `);
 
@@ -128,6 +132,10 @@ export class RomDatabase {
     await this.run(`CREATE INDEX IF NOT EXISTS idx_roms_title ON roms(title)`);
     await this.run(`CREATE INDEX IF NOT EXISTS idx_related_roms_romId ON related_roms(romId)`);
 
+    // Migrate existing databases: add raGameId and raRelatedRoms columns if missing
+    try { await this.run(`ALTER TABLE roms ADD COLUMN raGameId INTEGER`); } catch (_) { /* already exists */ }
+    try { await this.run(`ALTER TABLE roms ADD COLUMN raRelatedRoms TEXT`); } catch (_) { /* already exists */ }
+
     console.log('✓ Database initialized');
   }
 
@@ -145,8 +153,9 @@ export class RomDatabase {
       INSERT OR REPLACE INTO roms (
         id, title, url, console, description, mainImage, screenshots, 
         genre, releaseDate, publisher, region, size, downloadCount, 
-        numberOfReviews, averageRating, downloadLink, directDownloadLink, updatedAt, romType
-      ) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)
+        numberOfReviews, averageRating, downloadLink, directDownloadLink, updatedAt, romType,
+        raGameId, raRelatedRoms
+      ) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?, ?)
     `, [
       rom.id,
       rom.title,
@@ -166,6 +175,8 @@ export class RomDatabase {
       rom.downloadLink || null,
       rom.directDownloadLink || null,
       rom.romType || null,
+      rom.raGameId || null,
+      rom.raRelatedRoms || null,
     ]);
 
     // Get the ROM ID
@@ -342,6 +353,8 @@ export class RomDatabase {
         romType: r.romType,
       })),
       romType: row.romType,
+      raGameId: row.raGameId || undefined,
+      raRelatedRoms: row.raRelatedRoms || undefined,
     };
   }
 
