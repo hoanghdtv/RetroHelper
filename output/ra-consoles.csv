@@ -1,0 +1,85 @@
+id,name,iconUrl,active,isGameSystem
+1,Genesis/Mega Drive,https://static.retroachievements.org/assets/images/system/md.png,true,true
+2,Nintendo 64,https://static.retroachievements.org/assets/images/system/n64.png,true,true
+3,SNES/Super Famicom,https://static.retroachievements.org/assets/images/system/snes.png,true,true
+4,Game Boy,https://static.retroachievements.org/assets/images/system/gb.png,true,true
+5,Game Boy Advance,https://static.retroachievements.org/assets/images/system/gba.png,true,true
+6,Game Boy Color,https://static.retroachievements.org/assets/images/system/gbc.png,true,true
+7,NES/Famicom,https://static.retroachievements.org/assets/images/system/nes.png,true,true
+8,PC Engine/TurboGrafx-16,https://static.retroachievements.org/assets/images/system/pce.png,true,true
+9,Sega CD,https://static.retroachievements.org/assets/images/system/scd.png,true,true
+10,32X,https://static.retroachievements.org/assets/images/system/32x.png,true,true
+11,Master System,https://static.retroachievements.org/assets/images/system/sms.png,true,true
+12,PlayStation,https://static.retroachievements.org/assets/images/system/ps1.png,true,true
+13,Atari Lynx,https://static.retroachievements.org/assets/images/system/lynx.png,true,true
+14,Neo Geo Pocket,https://static.retroachievements.org/assets/images/system/ngp.png,true,true
+15,Game Gear,https://static.retroachievements.org/assets/images/system/gg.png,true,true
+16,GameCube,https://static.retroachievements.org/assets/images/system/gc.png,true,true
+17,Atari Jaguar,https://static.retroachievements.org/assets/images/system/jag.png,true,true
+18,Nintendo DS,https://static.retroachievements.org/assets/images/system/ds.png,true,true
+19,Wii,https://static.retroachievements.org/assets/images/system/wii.png,false,true
+20,Wii U,https://static.retroachievements.org/assets/images/system/wiiu.png,false,true
+21,PlayStation 2,https://static.retroachievements.org/assets/images/system/ps2.png,true,true
+22,Xbox,https://static.retroachievements.org/assets/images/system/xbox.png,false,true
+23,Magnavox Odyssey 2,https://static.retroachievements.org/assets/images/system/mo2.png,true,true
+24,Pokemon Mini,https://static.retroachievements.org/assets/images/system/mini.png,true,true
+25,Atari 2600,https://static.retroachievements.org/assets/images/system/2600.png,true,true
+26,DOS,https://static.retroachievements.org/assets/images/system/dos.png,false,true
+27,Arcade,https://static.retroachievements.org/assets/images/system/arc.png,true,true
+28,Virtual Boy,https://static.retroachievements.org/assets/images/system/vb.png,true,true
+29,MSX,https://static.retroachievements.org/assets/images/system/msx.png,true,true
+30,Commodore 64,https://static.retroachievements.org/assets/images/system/c64.png,false,true
+31,ZX81,https://static.retroachievements.org/assets/images/system/zx81.png,false,true
+32,Oric,https://static.retroachievements.org/assets/images/system/oric.png,false,true
+33,SG-1000,https://static.retroachievements.org/assets/images/system/sg1k.png,true,true
+34,VIC-20,https://static.retroachievements.org/assets/images/system/vic-20.png,false,true
+35,Amiga,https://static.retroachievements.org/assets/images/system/amiga.png,false,true
+36,Atari ST,https://static.retroachievements.org/assets/images/system/ast.png,false,true
+37,Amstrad CPC,https://static.retroachievements.org/assets/images/system/cpc.png,true,true
+38,Apple II,https://static.retroachievements.org/assets/images/system/a2.png,true,true
+39,Saturn,https://static.retroachievements.org/assets/images/system/sat.png,true,true
+40,Dreamcast,https://static.retroachievements.org/assets/images/system/dc.png,true,true
+41,PlayStation Portable,https://static.retroachievements.org/assets/images/system/psp.png,true,true
+42,Philips CD-i,https://static.retroachievements.org/assets/images/system/cd-i.png,false,true
+43,3DO Interactive Multiplayer,https://static.retroachievements.org/assets/images/system/3do.png,true,true
+44,ColecoVision,https://static.retroachievements.org/assets/images/system/cv.png,true,true
+45,Intellivision,https://static.retroachievements.org/assets/images/system/intv.png,true,true
+46,Vectrex,https://static.retroachievements.org/assets/images/system/vect.png,true,true
+47,PC-8000/8800,https://static.retroachievements.org/assets/images/system/8088.png,true,true
+48,PC-9800,https://static.retroachievements.org/assets/images/system/9800.png,false,true
+49,PC-FX,https://static.retroachievements.org/assets/images/system/pc-fx.png,true,true
+50,Atari 5200,https://static.retroachievements.org/assets/images/system/5200.png,false,true
+51,Atari 7800,https://static.retroachievements.org/assets/images/system/7800.png,true,true
+52,Sharp X68000,https://static.retroachievements.org/assets/images/system/x68k.png,false,true
+53,WonderSwan,https://static.retroachievements.org/assets/images/system/ws.png,true,true
+54,Cassette Vision,https://static.retroachievements.org/assets/images/system/ecv.png,false,true
+55,Super Cassette Vision,https://static.retroachievements.org/assets/images/system/escv.png,false,true
+56,Neo Geo CD,https://static.retroachievements.org/assets/images/system/ngcd.png,true,true
+57,Fairchild Channel F,https://static.retroachievements.org/assets/images/system/chf.png,true,true
+58,FM Towns,https://static.retroachievements.org/assets/images/system/fm-towns.png,false,true
+59,ZX Spectrum,https://static.retroachievements.org/assets/images/system/zxs.png,false,true
+60,Game & Watch,https://static.retroachievements.org/assets/images/system/g&w.png,false,true
+61,Nokia N-Gage,https://static.retroachievements.org/assets/images/system/n-gage.png,false,true
+62,Nintendo 3DS,https://static.retroachievements.org/assets/images/system/3ds.png,false,true
+63,Watara Supervision,https://static.retroachievements.org/assets/images/system/wsv.png,true,true
+64,Sharp X1,https://static.retroachievements.org/assets/images/system/x1.png,false,true
+65,TIC-80,https://static.retroachievements.org/assets/images/system/tic-80.png,false,true
+66,Thomson TO8,https://static.retroachievements.org/assets/images/system/to8.png,false,true
+67,PC-6000,https://static.retroachievements.org/assets/images/system/pc-6000.png,false,true
+68,Sega Pico,https://static.retroachievements.org/assets/images/system/pico.png,false,true
+69,Mega Duck,https://static.retroachievements.org/assets/images/system/duck.png,true,true
+70,Zeebo,https://static.retroachievements.org/assets/images/system/zeebo.png,false,true
+71,Arduboy,https://static.retroachievements.org/assets/images/system/ard.png,true,true
+72,WASM-4,https://static.retroachievements.org/assets/images/system/wasm4.png,true,true
+73,Arcadia 2001,https://static.retroachievements.org/assets/images/system/a2001.png,true,true
+74,Interton VC 4000,https://static.retroachievements.org/assets/images/system/vc4000.png,true,true
+75,Elektor TV Games Computer,https://static.retroachievements.org/assets/images/system/elek.png,true,true
+76,PC Engine CD/TurboGrafx-CD,https://static.retroachievements.org/assets/images/system/pccd.png,true,true
+77,Atari Jaguar CD,https://static.retroachievements.org/assets/images/system/jcd.png,true,true
+78,Nintendo DSi,https://static.retroachievements.org/assets/images/system/dsi.png,true,true
+79,TI-83,https://static.retroachievements.org/assets/images/system/ti-83.png,false,true
+80,Uzebox,https://static.retroachievements.org/assets/images/system/uze.png,true,true
+81,Famicom Disk System,https://static.retroachievements.org/assets/images/system/fds.png,true,true
+100,Hubs,https://static.retroachievements.org/assets/images/system/hubs.png,false,false
+101,Events,https://static.retroachievements.org/assets/images/system/events.png,true,false
+102,Standalone,https://static.retroachievements.org/assets/images/system/exe.png,true,true
