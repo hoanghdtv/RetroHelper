@@ -8,6 +8,8 @@
     "dev": "ts-node src/index.ts",
     "client": "ts-node src/romsfun-client.ts",
     "convert": "ts-node src/db-csv-converter.ts",
+    "match-roms": "ts-node src/retro-achievement/match-rom-files.ts",
+    "build-games-db": "ts-node src/retro-achievement/build-games-db.ts",
     "fetch:all": "ts-node src/romsfun-fetch-all.ts",
     "fetch:detailed": "ts-node src/romsfun-fetch-detailed.ts",
     "fetch:enhanced": "ts-node src/romsfun-enhanced.ts",
