@@ -12,7 +12,7 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 1487,Metroid,b2d2d9ed68b3e5e0d29053ea525bd37c,Metroid (USA).nes,nointro,,usa,Metroid (USA).zip,59900
 1472,DuckTales,b480855fff883b20ba403a2009a7f13c,DuckTales (USA).nes,nointro,,usa,DuckTales (USA).zip,83550
 1469,Dr. Mario,5b401f4ca7e1b12af3f29d8fc758dd2f,"Dr. Mario (Japan, USA) (En).nes",nointro,,usa,Dr. Mario (Japan USA) (En).zip,29147
-1466,Donkey Kong,0dd95c3047bb0336823c39fefb7639c3,Donkey Kong (World) (Rev 1) (GameCube Edition).nes,nointro,,world,,
+1466,Donkey Kong,6d4a94c344463e562344249e18e9b99f,Donkey Kong (World) (Rev 1) (GameCube Edition).nes,nointro,,world,Donkey Kong (World) (Rev 1).zip,16270
 1473,Excitebike,2bf3976d15ec25a756846465a16b064c,"Excitebike (Japan, USA) (En) (GameCube Edition).nes",nointro,,usa,Excitebike.zip,17609
 1515,1942,0b66fdf88964235c434daff62837af60,"1942 (Japan, USA) (En).nes",nointro,,usa,1942 (Japan USA) (En).zip,25682
 2016,Teenage Mutant Ninja Turtles,2dddc2cae0a7fe890235aef72a9a86ae,Teenage Mutant Ninja Turtles (USA).nes,nointro,,usa,Teenage Mutant Ninja Turtles (USA).zip,145153
@@ -45,7 +45,7 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 2420,Battle City,a41a8a46771160e97ee5967365c07c83,BattleCity (Japan).nes,nointro,,japan,BattleCity (Japan).zip,15416
 1669,Duck Hunt,fa382374eb4a93a719064ca6c5a4e78c,Duck Hunt (World).nes,nointro,,world,Duck Hunt (World).zip,16118
 1449,Final Fantasy,24ae5edf8375162f91a6846d3202e3d6,Final Fantasy (USA).nes,nointro,,usa,Final Fantasy (USA).zip,146998
-1824,Mario Bros.,b51085d9ab4267746a9ed6fc609a98d0,Mario Bros. (World).nes,nointro,,world,,
+1824,Mario Bros.,b51085d9ab4267746a9ed6fc609a98d0,Mario Bros. (World).nes,nointro,,world,Mario Bros. (World).zip,16525
 1823,Marble Madness,81706abdae6d1d11b0c8986fc4383ec0,Marble Madness (USA).nes,nointro,,usa,Marble Madness (USA).zip,81466
 1452,River City Ransom,439a3420552a300089ddef13b7e83765,River City Ransom (USA).nes,nointro,,usa,River City Ransom (USA).zip,123366
 1661,Double Dragon II: The Revenge,b2f092f2cbb17456109a4df0468fcdd5,Double Dragon II - The Revenge (USA) (Rev 1).nes,nointro,,usa,Double Dragon II - The Revenge (USA) (Rev 1).zip,147528
@@ -77,125 +77,125 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 1533,Adventures of Lolo,bd377b49dcc269c6270ec0ea6336baf5,Adventures of Lolo (USA).nes,nointro,,usa,Adventures of Lolo (USA).zip,36421
 1511,3-D World Runner,29e5e1a5f8b400773ef9d959044456b2,3-D WorldRunner (USA).nes,nointro,,usa,3-D WorldRunner (USA).zip,48277
 1729,Gun.Smoke,20291670aa8d77217fbc0c7dcdc45250,Gun.Smoke (USA).nes,nointro,,usa,Gun.Smoke (USA).zip,72186
-1674,Elevator Action,370f5862746b67637087b3b4cd64b163,Elevator Action (USA).nes,nointro,,usa,,
+1674,Elevator Action,370f5862746b67637087b3b4cd64b163,Elevator Action (USA).nes,nointro,,usa,Elevator Action (USA).zip,21859
 1758,Jackie Chan's Action Kung Fu,4228196e1d200db26ac7bce4f55cdd5b,Jackie Chan's Action Kung Fu (USA).nes,nointro,,usa,Jackie Chan's Action Kung Fu (USA).zip,141811
 1722,Gradius,49c0ffbd6fca692e7c567b4d72ae0847,Gradius (USA).nes,nointro,,usa,Gradius (USA).zip,37773
 4036,Road Fighter,98e6ceaaf5eaf6fec679be36b208318d,Road Fighter (Europe).nes,nointro,,europe,Road_Fighter.zip,16681
 1662,Double Dragon III: The Sacred Stones,bc5f135b34f7fcf06c4eaf72970f654b,Double Dragon III - The Sacred Stones (USA).nes,nointro,,usa,Double Dragon III - The Sacred Stones (USA).zip,150269
 1705,Gauntlet,c64fe24b4facaaed8900cb632c6b7b1b,Gauntlet (USA) (Unl).nes,nointro,,usa,Gauntlet.zip,85031
 1474,Friday the 13th,7b1f3ead3e05455f14babc5c6e9ff3a4,Friday the 13th (USA).nes,nointro,,usa,Friday_the_13th.zip,41674
-2175,Dig Dug,6e5a474e52813c353a78d93630c27730,Dig Dug (Japan).nes,nointro,,japan,,
-5783,Akumajou Densetsu,75dbdf8d0de9b472eed5065bc0fe4129,Akumajou Densetsu (Japan).nes,nointro,,japan,,
-1600,BurgerTime,d2c42603a8ec74f51265c085ae26b9bb,BurgerTime (USA).nes,nointro,,usa,,
+2175,Dig Dug,6e5a474e52813c353a78d93630c27730,Dig Dug (Japan).nes,nointro,,japan,Dig Dug (Japan) (En).zip,14969
+5783,Akumajou Densetsu,75dbdf8d0de9b472eed5065bc0fe4129,Akumajou Densetsu (Japan).nes,nointro,,japan,Akumajou Densetsu (Japan).zip,246876
+1600,BurgerTime,d2c42603a8ec74f51265c085ae26b9bb,BurgerTime (USA).nes,nointro,,usa,BurgerTime (USA).zip,14612
 1525,Adventure Island III,c517ca2fd6199fde0ba4b3847d9bbecf,Adventure Island 3 (USA).nes,nointro,,usa,Adventure Island 3 (USA).zip,141900
 1670,DuckTales 2,b8592879590cddec02fe077217562d00,DuckTales 2 (USA).nes,nointro,,usa,DuckTales 2 (USA).zip,91474
 1985,StarTropics,b1eddbb71994db079aa1dc16c05e7de5,StarTropics (USA).nes,nointro,,usa,StarTropics (USA).zip,256916
-1553,Bad Dudes,b30a3f09b86f3adab09a36bfe674544c,Bad Dudes (USA).nes,nointro,,usa,,
+1553,Bad Dudes,b30a3f09b86f3adab09a36bfe674544c,Bad Dudes (USA).nes,nointro,,usa,Bad Dudes (USA).zip,122783
 2101,Yoshi's Cookie,ed3dc4465e4053bdfe42cc33e4e6a956,Yoshi's Cookie (USA).nes,nointro,,usa,Yoshi's Cookie (USA).zip,70191
-2140,Splatterhouse: Wanpaku Graffiti,d48f63a48cf051a1f3261a29549ba173,Splatterhouse - Wanpaku Graffiti (Japan).nes,nointro,,japan,,
-1760,Jaws,c6d090097f37ad89184b6f58feb36304,Jaws (USA).nes,nointro,,usa,,
+2140,Splatterhouse: Wanpaku Graffiti,d48f63a48cf051a1f3261a29549ba173,Splatterhouse - Wanpaku Graffiti (Japan).nes,nointro,,japan,Splatterhouse - Wanpaku Graffiti (Japan).zip,137857
+1760,Jaws,c6d090097f37ad89184b6f58feb36304,Jaws (USA).nes,nointro,,usa,Jaws (USA).zip,36719
 1768,Journey to Silius,4844ff2dac4a0136050b18ad310a09f9,Journey to Silius (USA).nes,nointro,,usa,Journey to Silius (USA).zip,113624
 2060,Vice: Project Doom,7d836d9dfa536db69d929935a1e28bf3,Vice - Project Doom (USA).nes,nointro,,usa,Vice - Project Doom (USA).zip,172037
 1580,Bionic Commando,cc2e2aa46f56efa41c95ab81de7e05fd,Bionic Commando (USA).nes,nointro,,usa,Bionic Commando (USA).zip,149308
-1657,Donkey Kong 3,a2b5bddb4c7a5a39c8fac13e64494c9a,Donkey Kong 3 (World).nes,nointro,,world,,
-2073,Where's Waldo?,a54e0acfe88fff67cb9dd5a94ac503ff,Where's Waldo (USA).nes,nointro,,usa,,
-1481,Lode Runner,befd5d05eb33f984994230546c2bcfa3,Lode Runner (USA).nes,nointro,,usa,,
+1657,Donkey Kong 3,a2b5bddb4c7a5a39c8fac13e64494c9a,Donkey Kong 3 (World).nes,nointro,,world,Donkey Kong 3 (World).zip,16561
+2073,Where's Waldo?,a54e0acfe88fff67cb9dd5a94ac503ff,Where's Waldo (USA).nes,nointro,,usa,Where's Waldo (USA).zip,129162
+1481,Lode Runner,befd5d05eb33f984994230546c2bcfa3,Lode Runner (USA).nes,nointro,,usa,Lode Runner (USA).zip,16630
 1547,Astyanax,94eafd1d52c7296cd5b9dad6316e5976,Astyanax (USA).nes,nointro,,usa,Astyanax (USA).zip,138194
 1597,The Bugs Bunny Crazy Castle,6bc8f54dc358aa35f6259715e5143b37,"Bugs Bunny Crazy Castle, The (USA).nes",nointro,,usa,"Bugs Bunny Crazy Castle, The (USA).zip",36779
-5790,Astérix,87cf2dbd01609ed6fff6a1a022f41c72,"Asterix (Europe) (En,Fr,De,Es,It).nes",nointro,,europe,,
+5790,Astérix,87cf2dbd01609ed6fff6a1a022f41c72,"Asterix (Europe) (En,Fr,De,Es,It).nes",nointro,,europe,"Asterix (Europe) (En,Fr,De,Es,It).zip",84705
 1728,Gun Nac,2b5c0dae29650691e67a08ea58f554e2,Gun Nac (USA).nes,nointro,,usa,Gun Nac (USA).zip,135329
 4559,Batman: Return of the Joker,830111df30b8511562d4faca6aeb792d,Batman - Return of the Joker (USA).nes,nointro,,usa,Batman - Return of the Joker (USA).zip,206333
 1843,Monster In My Pocket,ac30d59eab5e2240eb5c6c53f41ec49b,Monster in My Pocket (USA).nes,nointro,,usa,Monster in My Pocket (USA).zip,145680
 1682,Faxanadu,28eb470f84bcd54320fa890003d26402,Faxanadu (USA) (Rev 1).nes,nointro,,usa,Faxanadu (USA) (Rev 1).zip,142323
-16549,Pac-Man: Championship Edition,ee8bc8baed5b9c5299e84e80e6490de6,"Pac-Man - Championship Edition (USA, Europe) (Namco Museum Archives Vol 1).nes",nointro,,usa,,
+16549,Pac-Man: Championship Edition,ee8bc8baed5b9c5299e84e80e6490de6,"Pac-Man - Championship Edition (USA, Europe) (Namco Museum Archives Vol 1).nes",nointro,,usa,"Pac-Man - Championship Edition (USA, Europe) (Namco Museum Archives Vol 1).zip",64491
 1459,Blaster Master,12b0dbc4f2b22a50d0bb53c4929217f0,Blaster Master (USA).nes,nointro,,usa,Blaster Master (USA).zip,158378
 1470,Dragon Quest II,ccdb4563c9004d862dcf3a98c7937c22,Dragon Warrior II (USA).nes,nointro,,usa,Dragon Warrior II (USA).zip,127655
 1871,Panic Restaurant,2becf8af763509ccfc9f515dbb503433,Panic Restaurant (USA).nes,nointro,,usa,Panic Restaurant (USA).zip,132036
 2014,Tecmo Super Bowl,f7d01adf9c430ef3db055466ecc18f58,Tecmo Super Bowl (USA).nes,nointro,,usa,Tecmo Super Bowl (USA).zip,213032
 1552,Back to the Future,a14e90da461526694c0620ce040eb169,Back to the Future (USA).nes,nointro,,usa,Back_to_the_Future.zip,36525
 1632,Contra Force,2f2cb4ec9936d23f370f9991e84cce98,Contra Force (USA).nes,nointro,,usa,Contra_Force.zip,166533
-1654,Dig Dug II: Trouble In Paradise,328b2c34d156e1c310495aebb7bf987c,Dig Dug II - Trouble in Paradise (USA).nes,nointro,,usa,,
-8617,~Test Kit~ NES Control Deck Test Cartridge,51d17a6f9eeb0f8ced992de5df979e92,Nintendo World Class Service - Control Deck Test Cartridge (USA) (Test Program).nes,nointro,,usa,,
-1527,Adventures in the Magic Kingdom,c1eda7b38bd8fb314285ddcc766a2458,Adventures in the Magic Kingdom (USA).nes,nointro,,usa,,
+1654,Dig Dug II: Trouble In Paradise,328b2c34d156e1c310495aebb7bf987c,Dig Dug II - Trouble in Paradise (USA).nes,nointro,,usa,Dig Dug II - Trouble in Paradise (USA).zip,25474
+8617,~Test Kit~ NES Control Deck Test Cartridge,51d17a6f9eeb0f8ced992de5df979e92,Nintendo World Class Service - Control Deck Test Cartridge (USA) (Test Program).nes,nointro,,usa,Nintendo World Class Service - Control Deck Test Cartridge (USA) (Test Program).zip,5454
+1527,Adventures in the Magic Kingdom,c1eda7b38bd8fb314285ddcc766a2458,Adventures in the Magic Kingdom (USA).nes,nointro,,usa,Adventures in the Magic Kingdom (USA).zip,135357
 2863,Kid Dracula,5631eae8bc0845bb3b6876ad95832b4f,Kid Dracula (World) (Castlevania Anniversary Collection).nes,nointro,,world,Kid Dracula (World) (Castlevania Anniversary Collection).zip,149541
 1476,Gyruss,1b994bda62ba9a8bf0893133fa012831,Gyruss (USA).nes,nointro,,usa,Gyruss (USA).zip,39943
-1723,The Great Waldo Search,6c65adcc168c838238b2189db61a2ba9,"Great Waldo Search, The (USA).nes",nointro,,usa,,
+1723,The Great Waldo Search,6c65adcc168c838238b2189db61a2ba9,"Great Waldo Search, The (USA).nes",nointro,,usa,"Great Waldo Search, The (USA).zip",106877
 2139,Gimmick!,592cc41069fc872a625d2703d342a224,Mr. Gimmick (Europe).nes,nointro,,europe,Mr. Gimmick (Europe).zip,187214
-2058,Urban Champion,cb7f1463c90cdcdf5ef315c125f12fe2,Urban Champion (World).nes,nointro,,world,,
+2058,Urban Champion,cb7f1463c90cdcdf5ef315c125f12fe2,Urban Champion (World).nes,nointro,,world,Urban Champion (World).zip,15366
 2062,Wacky Races,9ca3418958e5d58e8e2fbb9abf13be51,Wacky Races (USA).nes,nointro,,usa,Wacky Races (USA).zip,119002
-8754,~Unlicensed~ Microsoft Windows 98,4bb42479ad9d6cf94f96bfe590a97310,Microsoft Windows '98 (China) (Aftermarket) (Bootleg) (Bei Tongfang).nes,lostlevel,,china,,
+8754,~Unlicensed~ Microsoft Windows 98,4bb42479ad9d6cf94f96bfe590a97310,Microsoft Windows '98 (China) (Aftermarket) (Bootleg) (Bei Tongfang).nes,lostlevel,,china,FC-WIN98.zip,101618
 1719,The Goonies II,6ce1f32c9177b0b79b390b5ce6a2db52,"Goonies II, The (USA).nes",nointro,,usa,"Goonies II, The (USA).zip",85486
 1692,The Flintstones: The Rescue of Dino and Hoppy,2a5c4d22312d8151d1582d8abdb9eb5e,"Flintstones, The - The Rescue of Dino & Hoppy (USA).nes",nointro,,usa,"Flintstones, The - The Rescue of Dino & Hoppy (USA).zip",181681
 1744,Ice Hockey,51be3c0db685f71f4a69c573345310a2,Ice Hockey (USA).nes,nointro,,usa,Ice Hockey (USA).zip,27502
-1961,Snow Bros.,3d675e5adfa038f68598b9f4d1a37a80,Snow Brothers (USA).nes,nointro,,usa,,
+1961,Snow Bros.,3d675e5adfa038f68598b9f4d1a37a80,Snow Brothers (USA).nes,nointro,,usa,Snow Brothers (USA).zip,92097
 1900,Rad Racer,fa0688fd15c7851878997b0c61b109e9,Rad Racer (USA).nes,nointro,,usa,Rad_Racer.zip,45961
-1628,Commando,7667cebf11c3d7a39575af91606bf412,Commando (USA).nes,nointro,,usa,,
+1628,Commando,7667cebf11c3d7a39575af91606bf412,Commando (USA).nes,nointro,,usa,Commando (USA).zip,59396
 1883,Power Blade,94411c05d00adc7f89b440fe5af4e87f,Power Blade (USA).nes,nointro,,usa,Power Blade (USA).zip,125848
-1520,The Addams Family,4891ff6840da3f608618c100bc064bba,"Addams Family, The (USA).nes",nointro,,usa,,
+1520,The Addams Family,4891ff6840da3f608618c100bc064bba,"Addams Family, The (USA).nes",nointro,,usa,"Addams Family, The (USA).zip",118493
 1776,Kick Master,9e727f762feebe4949c91d29fc5e19fa,KickMaster (USA).nes,nointro,,usa,KickMaster (USA).zip,148866
-2006,Taboo: The Sixth Sense,334936fce3f4d7d0e028bc4589e2b81b,Taboo - The Sixth Sense (USA) (Rev 1).nes,nointro,,usa,,
-1497,RoboCop,4d95586eac0286d269875ebcf864a1e0,RoboCop (USA).nes,nointro,,usa,,
+2006,Taboo: The Sixth Sense,334936fce3f4d7d0e028bc4589e2b81b,Taboo - The Sixth Sense (USA) (Rev 1).nes,nointro,,usa,Taboo - The Sixth Sense (USA) (Rev 1).zip,42042
+1497,RoboCop,4d95586eac0286d269875ebcf864a1e0,RoboCop (USA).nes,nointro,,usa,RoboCop (USA).zip,121227
 1726,The Guardian Legend,3fa50469878212f7feb8fa784404deac,"Guardian Legend, The (USA).nes",nointro,,usa,"Guardian Legend, The (USA).zip",97391
-2017,Tennis,32a5e44b320ae588f560196e49ba13c6,"Tennis (Japan, USA) (En).nes",nointro,,usa,,
+2017,Tennis,32a5e44b320ae588f560196e49ba13c6,"Tennis (Japan, USA) (En).nes",nointro,,usa,"Tennis (Japan, USA) (En).zip",16767
 1492,Pinball Quest,131c36c33edac9248730dd8057e1c87d,Pinball Quest (USA).nes,nointro,,usa,Pinball Quest (USA).zip,110788
-1774,The Karate Kid,eb15f4501bfca4b391ca0d4f0b36d670,"Karate Kid, The (USA).nes",nointro,,usa,,
+1774,The Karate Kid,eb15f4501bfca4b391ca0d4f0b36d670,"Karate Kid, The (USA).nes",nointro,,usa,"Karate Kid, The (USA).zip",40172
 2360,Bucky O'Hare,2c14a62966411eef03ecd66b061156d5,Bucky O'Hare (USA).nes,nointro,,usa,Bucky O'Hare (USA).zip,161370
 1569,Batman Returns,077aef22bae04dbf287ebbc03806da3c,Batman Returns (USA).nes,nointro,,usa,Batman Returns (USA).zip,220353
 1958,Snake Rattle N Roll,7b8b76e5688c7d21d40fe3692861ce1e,Snake Rattle n Roll (USA).nes,nointro,,usa,Snake Rattle n Roll (USA).zip,42787
-4094,Antarctic Adventure,31e504ba213ebff173bf851b45c535c4,Kekkyoku Nankyoku Daibouken (Japan).nes,nointro,,japan,,
-1626,Code Name: Viper,eb0e97837dcf162772934fc64a42b2f8,Code Name - Viper (USA).nes,nointro,,usa,,
+4094,Antarctic Adventure,31e504ba213ebff173bf851b45c535c4,Kekkyoku Nankyoku Daibouken (Japan).nes,nointro,,japan,Kekkyoku Nankyoku Daibouken (Japan).zip,15923
+1626,Code Name: Viper,eb0e97837dcf162772934fc64a42b2f8,Code Name - Viper (USA).nes,nointro,,usa,Code Name - Viper (USA).zip,139664
 1588,Bonk's Adventure,a5f808c245dc1a5e869bfd06e98d1b6f,Bonk's Adventure (USA).nes,nointro,,usa,Bonk's Adventure (USA).zip,146647
-1505,Trojan,7a35172f2c7edf08d63d256252c725e5,Trojan (USA).nes,nointro,,usa,,
+1505,Trojan,7a35172f2c7edf08d63d256252c725e5,Trojan (USA).nes,nointro,,usa,Trojan (USA).zip,76348
 1725,Gremlins 2: The New Batch,845dca95ab1008e045e2eb965e61556c,Gremlins 2 - The New Batch (USA).nes,nointro,,usa,Gremlins 2 - The New Batch (USA).zip,195790
-2238,Pin Bot,6e5ad2ccba578b7060713512e36fc221,Pin Bot (USA).nes,nointro,,usa,,
+2238,Pin Bot,6e5ad2ccba578b7060713512e36fc221,Pin Bot (USA).nes,nointro,,usa,Pin Bot (USA).zip,103897
 4618,The Flintstones: The Surprise at Dinosaur Peak!,56ca85a5e49cafd91050afec60c10713,"Flintstones, The - The Surprise at Dinosaur Peak! (USA).nes",nointro,,usa,"Flintstones, The - The Surprise at Dinosaur Peak! (USA).zip",173847
 3814,EarthBound Beginnings,84e8fed10d7c339f726d52cb152078e1,"EarthBound Beginnings (USA, Europe) (Virtual Console).nes",nointro,,usa,"EarthBound Beginnings (USA, Europe) (Virtual Console).zip",232190
 2432,Gradius II,148f4d81c1b833fd16f8ea51152ad3a9,Gradius II (Japan) (En).nes,nointro,,japan,Gradius II (Japan).zip,168914
-2361,~Unlicensed~ Action 52,233cddd94c3f3d5b9a9f4670a914e74d,Action 52 (USA) (Unl).nes,nointro,,usa,,
-2090,Wrecking Crew,e7d7225dad044b624fbad9c9ca96e835,Wrecking Crew (World).nes,nointro,,world,,
+2361,~Unlicensed~ Action 52,233cddd94c3f3d5b9a9f4670a914e74d,Action 52 (USA) (Unl).nes,nointro,,usa,Action 52 (USA) (Unl).zip,800471
+2090,Wrecking Crew,e7d7225dad044b624fbad9c9ca96e835,Wrecking Crew (World).nes,nointro,,world,Wrecking Crew (World).zip,26512
 5060,Gargoyle's Quest II: The Demon Darkness,8645942fbed0a79192543abf3840e508,Gargoyle's Quest II (USA).nes,nointro,,usa,Gargoyle's Quest II (USA).zip,152341
-1535,Air Fortress,30a0b2dfbc6018e4abcc9a89d5107b83,Air Fortress (USA).nes,nointro,,usa,,
-1908,Renegade,e2f9958f0f9cdef551c5328fad855d33,Renegade (USA).nes,nointro,,usa,,
-4829,Kyatto Ninden Teyandee,d909ecf9d6deb7a35263e6aa6b2f0cfe,Cat Ninden Teyandee (Japan).nes,nointro,,japan,,
+1535,Air Fortress,30a0b2dfbc6018e4abcc9a89d5107b83,Air Fortress (USA).nes,nointro,,usa,Air Fortress (USA).zip,86047
+1908,Renegade,e2f9958f0f9cdef551c5328fad855d33,Renegade (USA).nes,nointro,,usa,Renegade (USA).zip,70438
+4829,Kyatto Ninden Teyandee,d909ecf9d6deb7a35263e6aa6b2f0cfe,Cat Ninden Teyandee (Japan).nes,nointro,,japan,Cat Ninden Teyandee (Japan).zip,168663
 1772,Kabuki: Quantum Fighter,7de9c960328015874a4ce4a1e6136d46,Kabuki - Quantum Fighter (USA).nes,nointro,,usa,Kabuki - Quantum Fighter (USA).zip,123750
 1969,Spider-Man: Return of the Sinister Six,a6eba31c39c78d30f34ac452a5904f41,Spider-Man - Return of the Sinister Six (USA).nes,nointro,,usa,Spider-Man__Return_of_the_Sinister_Six.zip,143322
-4756,Mappy,87ecd2cc23de21ffd69439db9a1ca778,Mappy (Japan).nes,nointro,,japan,,
+4756,Mappy,87ecd2cc23de21ffd69439db9a1ca778,Mappy (Japan).nes,nointro,,japan,Mappy (Japan).zip,15479
 1777,Kickle Cubicle,b764dcf61b2b9b3bedb4a3e1bf0ebfe7,Kickle Cubicle (USA).nes,nointro,,usa,Kickle Cubicle (USA).zip,130950
-2142,Crisis Force,836b1dcd4b31889d0eab3081329b7529,Crisis Force (Japan).nes,nointro,,japan,,
-1861,Nintendo World Cup,17528929488d6c00504b2975546f7ace,Nintendo World Cup (USA).nes,nointro,,usa,,
-4542,~Unlicensed~ Bubble Bath Babes,9facecc44cfd8be8ad8f3bab1eb27cb6,Bubble Bath Babes (USA) (Unl).nes,nointro,,usa,,
+2142,Crisis Force,836b1dcd4b31889d0eab3081329b7529,Crisis Force (Japan).nes,nointro,,japan,Crisis Force (Japan) (En).zip,163668
+1861,Nintendo World Cup,17528929488d6c00504b2975546f7ace,Nintendo World Cup (USA).nes,nointro,,usa,Nintendo World Cup (USA).zip,106966
+4542,~Unlicensed~ Bubble Bath Babes,9facecc44cfd8be8ad8f3bab1eb27cb6,Bubble Bath Babes (USA) (Unl).nes,nointro,,usa,Bubble Bath Babes (USA) (Unl).zip,51989
 1604,Captain America and the Avengers,f5d6c0ccc98ceba73d680b5fd1de8ab2,Captain America and the Avengers (USA).nes,nointro,,usa,Captain America and the Avengers (USA).zip,148778
-4658,Moon Crystal,ffec8e159be007853e63acc41f1e17b4,Moon Crystal (Japan).nes,nointro,,japan,,
-1517,A Nightmare on Elm Street,5f62fab71cf3f8e90ac3af2775c8d630,"Nightmare on Elm Street, A (USA).nes",nointro,,usa,,
-1623,Clu Clu Land,1de41e13a2e691a8cc13b757a46ae3b8,Clu Clu Land (World) (GameCube Edition).nes,nointro,,world,,
+4658,Moon Crystal,ffec8e159be007853e63acc41f1e17b4,Moon Crystal (Japan).nes,nointro,,japan,Moon Crystal (Japan).zip,227936
+1517,A Nightmare on Elm Street,5f62fab71cf3f8e90ac3af2775c8d630,"Nightmare on Elm Street, A (USA).nes",nointro,,usa,"Nightmare on Elm Street, A (USA).zip",89479
+1623,Clu Clu Land,1de41e13a2e691a8cc13b757a46ae3b8,Clu Clu Land (World) (GameCube Edition).nes,nointro,,world,Clu Clu Land (World) (GameCube Edition).zip,16411
 5083,~Unlicensed~ Micro Machines,46a92436a4899fd3adc2f5097cdaa5dd,Micro Machines (USA) (Rev 1) (Unl).nes,nointro,,usa,Micro Machines (USA) (Unl).zip,145694
 1929,Rush 'n Attack,0b423bf38720009871742388b9414878,Rush'n Attack (USA).nes,nointro,,usa,Rush'n Attack (USA).zip,60655
-1971,Spy Hunter,ac55003f1de6b36204f2d0e53d6b8058,Spy Hunter (USA).nes,nointro,,usa,,
-2444,Yie Ar Kung-Fu,3c811b8b45949925cb02cc90befbfa35,Yie Ar Kung-Fu (Japan) (Rev 1.4).nes,nointro,,japan,,
-4767,F-1 Race,fe6e13d1382f94dc0a5391053c4096bc,F1 Race (Japan).nes,nointro,,japan,,
-1769,Joust,54fcf9168a09107cbaaaa6185abf9651,Joust (USA).nes,nointro,,usa,,
+1971,Spy Hunter,ac55003f1de6b36204f2d0e53d6b8058,Spy Hunter (USA).nes,nointro,,usa,Spy Hunter (USA).zip,28984
+2444,Yie Ar Kung-Fu,3c811b8b45949925cb02cc90befbfa35,Yie Ar Kung-Fu (Japan) (Rev 1.4).nes,nointro,,japan,Yie Ar Kung-Fu (Japan) (Rev 1.4).zip,16805
+4767,F-1 Race,fe6e13d1382f94dc0a5391053c4096bc,F1 Race (Japan).nes,nointro,,japan,F1 Race (Japan) (En).zip,15302
+1769,Joust,54fcf9168a09107cbaaaa6185abf9651,Joust (USA).nes,nointro,,usa,Joust (USA).zip,19169
 1957,Smash T.V.,b8d352880e586a779b142d340e17c5e9,Smash T.V. (USA).nes,nointro,,usa,Smash T.V. (USA).zip,102423
 1991,Super Dodge Ball,6e44871b462ce90c99d9a9a8fff637a8,Super Dodge Ball (USA).nes,nointro,,usa,Super Dodge Ball (USA).zip,103102
 1732,Heavy Barrel,0ae012c45606e0dcd6af51ec4dad20b5,Heavy Barrel (USA).nes,nointro,,usa,Heavy Barrel (USA).zip,116115
-3614,Galaxian,01c1f123f436943527f50eb585025b99,Galaxian (Japan).nes,nointro,,japan,,
-2099,Yo! Noid,9f6699315a98a17f953eef92f179992b,Yo! Noid (USA).nes,nointro,,usa,,
-4804,TwinBee,22fb493a8e19550a82b593982f8db840,TwinBee (Japan).nes,nointro,,japan,,
+3614,Galaxian,01c1f123f436943527f50eb585025b99,Galaxian (Japan).nes,nointro,,japan,Galaxian (Japan) (En).zip,10111
+2099,Yo! Noid,9f6699315a98a17f953eef92f179992b,Yo! Noid (USA).nes,nointro,,usa,Yo! Noid (USA).zip,129120
+4804,TwinBee,22fb493a8e19550a82b593982f8db840,TwinBee (Japan).nes,nointro,,japan,TwinBee (Japan).zip,29327
 1717,Golf,f0d94f25db202c935cd8f1cdde10a0aa,"Golf (USA, Asia) (En).nes",nointro,,usa,Golf.zip,16695
-1737,Home Alone,a4c7d9fd8c0691644039b9ed3f9701db,Home Alone (USA) (Rev 1).nes,nointro,,usa,,
-1528,The Adventures of Bayou Billy,1c23920f24486210043c074c0150ff6f,"Adventures of Bayou Billy, The (USA).nes",nointro,,usa,,
+1737,Home Alone,a4c7d9fd8c0691644039b9ed3f9701db,Home Alone (USA) (Rev 1).nes,nointro,,usa,Home Alone (USA) (Rev 1).zip,79469
+1528,The Adventures of Bayou Billy,1c23920f24486210043c074c0150ff6f,"Adventures of Bayou Billy, The (USA).nes",nointro,,usa,"Adventures of Bayou Billy, The (USA).zip",144071
 1482,Maniac Mansion,3905799e081b80a61d4460b7b733c206,Maniac Mansion (USA).nes,nointro,,usa,Maniac Mansion (USA).zip,158403
 1667,Dragon Quest III,16a03048ce659d3d733026b6b72f2470,Dragon Warrior III (USA).nes,nointro|main,,usa,Dragon Warrior III (USA).zip,252530
-1977,Star Force,db9a2c5492bd793d7091cd656c7f28cd,Star Force (USA).nes,nointro,,usa,,
+1977,Star Force,db9a2c5492bd793d7091cd656c7f28cd,Star Force (USA).nes,nointro,,usa,Star Force (USA).zip,26069
 1846,Ms. Pac-Man (Namco),b7f24e66a7df5d102023977ab887d97e,Ms. Pac-Man (USA) (Namco).nes,nointro,,usa,Pac-Man.zip,17848
-2208,Holy Diver,4967b732f01971742542e7ba1f7026e3,"Holy Diver (USA, Europe) (Ja) (Collector's Edition) (Aftermarket) (Unl).nes",nointro,,usa,,
-1868,P.O.W.: Prisoners of War,3575eb3971ba67970021d94185316416,P.O.W. - Prisoners of War (USA).nes,nointro,,usa,,
+2208,Holy Diver,68b496a65571bce9c8e7be7667155c96,"Holy Diver (USA, Europe) (Ja) (Collector's Edition) (Aftermarket) (Unl).nes",nointro,,usa,Holy Diver (Japan).zip,105200
+1868,P.O.W.: Prisoners of War,3575eb3971ba67970021d94185316416,P.O.W. - Prisoners of War (USA).nes,nointro,,usa,P.O.W. - Prisoners of War (USA).zip,113471
 5527,Final Fantasy II,4d259632662a581f8f80ff3dc1c3498e,Final Fantasy II (USA) (Proto).nes,nointro,,usa,Final_Fantasy_II.zip,169789
 2075,Whomp 'Em,7d65f7b3ad4ab20ab92eeb7d720a677a,Whomp 'Em (USA).nes,nointro,,usa,Whomp 'Em (USA).zip,124009
 1596,The Bugs Bunny Birthday Blowout,7622e7d6a786eec7b09948e109c3400a,"Bugs Bunny Birthday Blowout, The (USA).nes",nointro,,usa,"Bugs Bunny Birthday Blowout, The (USA).zip",122286
-1601,Cabal,bff655ca46622be666e620a69f8ed683,Cabal (USA).nes,nointro,,usa,,
+1601,Cabal,bff655ca46622be666e620a69f8ed683,Cabal (USA).nes,nointro,,usa,Cabal (USA).zip,95633
 1700,G.I. Joe: A Real American Hero,fcb354cbdc180abc990da9317d619629,G.I. Joe - A Real American Hero (USA).nes,nointro,,usa,G.I. Joe - A Real American Hero (USA).zip,214555
-1720,The Goonies,465dc95c995e70b3a161f06d67c1942d,Goonies (Japan).nes,nointro,,japan,,
-5553,Final Fantasy III,45a7d02ed0dc92665a30da1d9b4af35d,Final Fantasy III (Japan).nes,nointro,,japan,,
+1720,The Goonies,465dc95c995e70b3a161f06d67c1942d,Goonies (Japan).nes,nointro,,japan,Goonies (Japan).zip,33611
+5553,Final Fantasy III,45a7d02ed0dc92665a30da1d9b4af35d,Final Fantasy III (Japan).nes,nointro,,japan,Final Fantasy III (Japan).zip,332746
 1498,Rygar,50dd77437fafae2ddf89dc6b8967b494,Rygar (USA) (Rev 1).nes,nointro,,usa,Rygar (USA) (Rev 1).zip,76274
-1591,Bram Stoker's Dracula,d8c7ed973232990fa1b7542e6876bd3c,Bram Stoker's Dracula (USA).nes,nointro,,usa,,
+1591,Bram Stoker's Dracula,d8c7ed973232990fa1b7542e6876bd3c,Bram Stoker's Dracula (USA).nes,nointro,,usa,Bram Stokers Dracula (USA).zip,115710
 2078,Willow,831d2e895fd5424ffa0db8ad2a009293,Willow (USA).nes,nointro,,usa,Willow (USA).zip,138016
