@@ -1,15 +1,15 @@
 gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
-7212,Pokémon HeartGold Version | Pokémon SoulSilver Version,258cea3a62ac0d6eb04b5a0fd764d788,Pokemon - HeartGold Version (USA).nds,nointro,,usa,Pokemon - HeartGold Version (USA).zip,60576232
+7212,Pokémon HeartGold Version | Pokémon SoulSilver Version,258cea3a62ac0d6eb04b5a0fd764d788,Pokemon - HeartGold Version (USA).nds,nointro,,usa,Pokemon.-.HeartGold.Version.USA.zip,60576232
 5522,Castlevania: Dawn of Sorrow,"cc0f25b8783fb83cb4588d1c111bdc18
-",Castlevania - Dawn of Sorrow (USA).nds,nointro,,usa,Castlevania - Dawn of Sorrow (USA).zip,24674694
-14806,Sonic Rush,bd4dcf6ad27de0e3212b8c67864df0ec,"Sonic Rush (USA) (En,Ja,Fr,De,Es,It).nds",nointro,,usa,"Sonic Rush (USA) (En,Ja,Fr,De,Es,It).zip",44996519
-14763,Kirby Super Star Ultra,c0c84468ce0c9c7b3b97246ec443df1f,Kirby Super Star Ultra (USA).nds,nointro,,usa,Kirby Super Star Ultra (USA).zip,63315502
-11732,Pokémon Platinum Version,d66ad7a2a0068b5d46e0781ca4953ae9,Pokemon - Platinum Version (USA).nds,nointro,,usa,Pokemon - Platinum Version (USA).zip,50714151
-9983,Super Mario 64 DS,9b40c229313a024f5125513eaf73c084,"Super Mario 64 DS (Europe) (En,Fr,De,Es,It).nds",nointro,,europe,New Super Mario Bros. (Europe) (EnFrDeEsIt).zip,17117026
-9878,Tetris DS,dd12d68dff6cc5fc571374117b6ad1c4,"Tetris DS (USA, Australia).nds",nointro,,usa,Tetris DS (USA).zip,6996716
-16211,Pokémon White Version,77c34ba77f8fa44e7caf04f695db0560,"Pokemon - White Version (USA, Europe) (NDSi Enhanced).nds",nointro,,usa,"Pokemon - White Version (USA, Europe) (NDSi Enhanced).zip",110798062
-12711,Mario Kart DS,8cbf438d5a7c0d9acbe56a9b627ca6c5,"Mario Kart DS (USA, Australia) (En,Fr,De,Es,It).nds",nointro,,usa,"Mario Kart DS (USA) (En,Fr,De,Es,It).zip",19310901
-12747,Phoenix Wright: Ace Attorney,6580f4f45f6378a08914a7784f93e7fe,Phoenix Wright - Ace Attorney (USA).nds,nointro,,usa,Phoenix Wright - Ace Attorney (USA).zip,38655460
+",Castlevania - Dawn of Sorrow (USA).nds,nointro,,usa,Castlevania.-.Dawn.of.Sorrow.USA.zip,24674694
+14806,Sonic Rush,bd4dcf6ad27de0e3212b8c67864df0ec,"Sonic Rush (USA) (En,Ja,Fr,De,Es,It).nds",nointro,,usa,Sonic.Rush.USA.En.Ja.Fr.De.Es.It.zip,44996519
+14763,Kirby Super Star Ultra,c0c84468ce0c9c7b3b97246ec443df1f,Kirby Super Star Ultra (USA).nds,nointro,,usa,Kirby.Super.Star.Ultra.USA.zip,63315502
+11732,Pokémon Platinum Version,d66ad7a2a0068b5d46e0781ca4953ae9,Pokemon - Platinum Version (USA).nds,nointro,,usa,Pokemon.-.Platinum.Version.USA.zip,50714151
+9983,Super Mario 64 DS,9b40c229313a024f5125513eaf73c084,"Super Mario 64 DS (Europe) (En,Fr,De,Es,It).nds",nointro,,europe,New.Super.Mario.Bros.Europe.EnFrDeEsIt.zip,17117026
+9878,Tetris DS,dd12d68dff6cc5fc571374117b6ad1c4,"Tetris DS (USA, Australia).nds",nointro,,usa,Tetris.DS.USA.zip,6996716
+16211,Pokémon White Version,77c34ba77f8fa44e7caf04f695db0560,"Pokemon - White Version (USA, Europe) (NDSi Enhanced).nds",nointro,,usa,Pokemon.-.White.Version.USA.Europe.NDSi.Enhanced.zip,110798062
+12711,Mario Kart DS,8cbf438d5a7c0d9acbe56a9b627ca6c5,"Mario Kart DS (USA, Australia) (En,Fr,De,Es,It).nds",nointro,,usa,Mario.Kart.DS.USA.En.Fr.De.Es.It.zip,19310901
+12747,Phoenix Wright: Ace Attorney,6580f4f45f6378a08914a7784f93e7fe,Phoenix Wright - Ace Attorney (USA).nds,nointro,,usa,Phoenix.Wright.-.Ace.Attorney.USA.zip,38655460
 14700,Kirby: Squeak Squad,df6aeb215ba335a9b2199c3b67af8e74,Kirby - Squeak Squad (USA).nds,nointro,,usa,,
 14853,Pokémon Mystery Dungeon: Explorers of Sky,55f8c2296cc23bf0aa4615bea1e1181e,"Pokemon Mystery Dungeon - Explorers of Sky (Europe) (En,Fr,De,Es,It).nds",nointro,,europe,,
 9407,Castlevania: Portrait of Ruin,9d45cdbb61f211198acce8d2baac379b,"Castlevania - Portrait of Ruin (Europe) (En,Fr,De,Es,It).nds",nointro,,europe,,
