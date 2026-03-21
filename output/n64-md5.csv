@@ -1,21 +1,21 @@
 gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 10003,Super Mario 64,20b854b239203baf6c961b850a4a51a2,Super Mario 64 (USA).z64,nointro,,usa,Super Mario 64 (USA).zip,6236285
 10082,Super Smash Bros.,F7C52568A31AADF26E14DC2B6416B2ED,Super Smash Bros. (USA).z64,nointro,,usa,Super Smash Bros. (USA).zip,12528904
-10113,The Legend of Zelda: Ocarina of Time,5BD1FE107BF8106B2AB6650ABECD54D6,"Legend of Zelda, The - Ocarina of Time (USA).z64",nointro,,usa,,
-10210,Banjo-Kazooie,B29599651A13F681C9923D69354BF4A3,Banjo-Kazooie (USA).z64,nointro,,usa,,
+10113,The Legend of Zelda: Ocarina of Time,5BD1FE107BF8106B2AB6650ABECD54D6,"Legend of Zelda, The - Ocarina of Time (USA).z64",nointro,,usa,"Legend of Zelda, The - Ocarina of Time (USA).zip",26564897
+10210,Banjo-Kazooie,B29599651A13F681C9923D69354BF4A3,Banjo-Kazooie (USA).z64,nointro,,usa,Banjo-Kazooie (USA).zip,16308115
 10679,The Legend of Zelda: Majora's Mask,2A0A8ACB61538235BC1094D297FB6556,"Legend of Zelda, The - Majora's Mask (USA).z64",nointro,,usa,"Legend of Zelda, The - Majora's Mask (USA).zip",27522119
 10075,Donkey Kong 64,9ec41abf2519fc386cadd0731f6e868c,Donkey Kong 64 (USA).z64,nointro,,usa,Donkey Kong 64 (USA).zip,27715023
 10246,Kirby 64: The Crystal Shards,D33E4254336383A17FF4728360562ADA,Kirby 64 - The Crystal Shards (USA).z64,nointro,,usa,Kirby 64 - The Crystal Shards (USA).zip,12214027
-10202,Diddy Kong Racing,4F0E07F0EEAC7E5D7CE3A75461888D03,"Diddy Kong Racing (USA) (En,Fr).z64",nointro,,usa,,
+10202,Diddy Kong Racing,4F0E07F0EEAC7E5D7CE3A75461888D03,"Diddy Kong Racing (USA) (En,Fr).z64",nointro,,usa,"Diddy Kong Racing (USA) (En,Fr).zip",9941186
 10073,GoldenEye 007,70C525880240C1E838B8B1BE35666C3B,GoldenEye 007 (USA).z64,nointro,,usa,GoldenEye 007 (USA).zip,10773748
-10248,Star Fox 64,caf9a78db13ee00002ff63a3c0c5eabb,Star Fox 64 (USA).z64,nointro,,usa,,
+10248,Star Fox 64,caf9a78db13ee00002ff63a3c0c5eabb,Star Fox 64 (USA).z64,nointro,,usa,Star Fox 64 (USA).zip,10608784
 10173,Yoshi's Story,586A092E22604840973B82DFACEAC77A,"Yoshi's Story (USA) (En,Ja).z64",nointro,,usa,"Yoshi's Story (USA) (En,Ja).zip",9606291
 10263,Mario Party,8BC2712139FBF0C56C8EA835802C52DC,Mario Party (USA).z64,nointro,,usa,Mario Party (USA).zip,21533197
 10617,Wave Race 64,2048a640c12d1cf2052ba1629937d2ff,Wave Race 64 - Kawasaki Jet Ski (USA) (Rev 1).z64,nointro,,usa,Wave Race 64 - Kawasaki Jet Ski (USA) (Rev 1).zip,6155852
 10667,Castlevania,06B58673F7D31C56F8FE8186E86F6BD6,Castlevania (USA) (Rev 2).z64,nointro,,usa,Castlevania (USA) (Rev 2).zip,9784882
 10133,F-Zero X,753437D0D8ADA1D12F3F9CF0F0A5171F,F-Zero X (USA).z64,nointro,,usa,F-Zero X (USA).zip,12953815
 10211,Banjo-Tooie,40E98FAA24AC3EBE1D25CB5E5DDF49E4,Banjo-Tooie (USA).z64,nointro,,usa,Banjo-Tooie (USA).zip,32775626
-10181,Pokémon Stadium,ED1378BC12115F71209A77844965BA50,Pokemon Stadium (USA).z64,nointro,,usa,,
+10181,Pokémon Stadium,ED1378BC12115F71209A77844965BA50,Pokemon Stadium (USA).z64,nointro,,usa,Pokemon Stadium (USA).zip,27664145
 10270,Pokémon Puzzle League,E722576A15182CFED6782379CE4BC8BE,Pokemon Puzzle League (USA).z64,nointro,,usa,Pokemon Puzzle League (USA).zip,22610884
 10648,Star Wars: Rogue Squadron,2E458D7CC355D7918493B0E0362C9A20,Star Wars - Rogue Squadron (USA) (Rev 1).z64,nointro,,usa,Star Wars - Rogue Squadron (USA) (Rev 1).zip,14430639
 10259,Mario Golf,903E6929666531D72D05D1E4C522E305,Mario Golf (USA).z64,nointro,,usa,Mario Golf (USA).zip,17314913
@@ -31,7 +31,7 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 10258,Pokémon Stadium 2,1561C75D11CEDF356A8DDB1A4A5F9D5D,Pokemon Stadium 2 (USA).z64,nointro,,usa,Pokemon Stadium 2 (USA).zip,48975651
 10077,Resident Evil 2,1add2c0217662b307cdfd876b35fbf7a,Resident Evil 2 (USA) (Rev 1).z64,nointro,,usa,Resident_Evil_2_(Biohazard_2).zip,65160025
 27577,~Hack~ Shotgun Mario 64,5104073c930d866287e733c1e7b1c7f5,SM64 - Shotgun Mario 64 (v1.0.5) (Dorrieal).z64,nointro|rapatches|rhdc,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/N64/Hacks/Super%20Mario%2064/27577-SM64-ShotgunMario.zip,unknown,,
-10085,Cruis'n USA,00A3E885F8D899646228A21D946B2102,Cruis'n USA (USA).z64,nointro,,usa,,
+10085,Cruis'n USA,00A3E885F8D899646228A21D946B2102,Cruis'n USA (USA).z64,nointro,,usa,Cruis'n USA (USA).zip,4582207
 10116,Mortal Kombat 4,C70B91430866300CE38B49098019EF9D,Mortal Kombat 4 (USA).z64,nointro,,usa,Mortal_Kombat_4.zip,13674259
 10148,Army Men: Sarge's Heroes,B8085C2EDB1C6D23E52ED8C06D92B4F8,Army Men - Sarge's Heroes (USA).z64,nointro,,usa,,
 10256,Mickey's Speedway USA,0BF64427CF68E49C70E9EC2C9D815209,Mickey's Speedway USA (USA).z64,nointro,,usa,,
@@ -41,7 +41,7 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 10157,Harvest Moon 64,6DA848A70D83ECE130D274124760928E,Harvest Moon 64 (USA).z64,nointro,,usa,Harvest Moon 64 (USA).zip,6561688
 10093,Hexen,EB98F1B8C6898AF7417F6882946DA9B3,Hexen (USA).z64,nointro,,usa,Hexen.zip,7834582
 16231,Donald Duck: Goin' Quackers,56bcdfc8f0b41bf60e6a54bc60144251,"Donald Duck - Goin' Quackers (USA) (En,Fr,De,Es,It).z64",nointro,,usa,,
-10080,Doom 64,B67748B64A2CC7EFD2F3AD4504561E0E,Doom 64 (USA).z64,nointro,,usa,,
+10080,Doom 64,B67748B64A2CC7EFD2F3AD4504561E0E,Doom 64 (USA).z64,nointro,,usa,Doom 64 (USA).zip,7306335
 10166,Cruis'n World,aada4cbd938e58a447b399a1d46f03e6,Cruis'n World (USA).z64,nointro,,usa,,
 10081,Mystical Ninja Starring Goemon,643CCE1AB06F97E9590241D27E5C2363,Mystical Ninja Starring Goemon (USA).z64,nointro,,usa,Mystical Ninja Starring Goemon (USA).zip,13318408
 30,Jet Force Gemini,772CC6EAB2620D2D3CDC17BBC26C4F68,Jet Force Gemini (USA).z64,nointro,,usa,Jet Force Gemini (USA).zip,29786319
@@ -126,7 +126,7 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 14447,~Hack~ Super Mario 64: The Green Comet,fff346b40ecb4c9f67a6d5b5e063d03b,SM64 - The Green Comet (Arthurtilly) (1.0.1).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/14447-SM64-GreenComet.zip,unknown,,
 13113,Puyo Puyo Sun 64,b8267c225583a02acc3b74b3178b87e9,Puyo Puyo Sun 64 (Japan) (En) (Zoinkity) (1.1).z64,nointro|rapatches|main,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Translation/English/13113-PuyoPuyoSun64-English.zip,japan,,
 11647,~Hack~ Super Mario 64: The Green Stars,DFBE9B84C87F918B6024EE5F22F33FAE,SM64 - The Green Stars (v2.1) (Kampel125).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/11647-SM64GreenStars.zip,unknown,,
-10127,Duke Nukem: Zero Hour,026789D47DB5FE202A76F89797B33AC7,Duke Nukem - Zero Hour (USA).z64,nointro,,usa,,
+10127,Duke Nukem: Zero Hour,026789D47DB5FE202A76F89797B33AC7,Duke Nukem - Zero Hour (USA).z64,nointro,,usa,Duke Nukem - Zero Hour (USA).zip,24960332
 10223,Gex 3: Deep Cover Gecko,6770DDEC84EB21A5E0D0F55DFD52A01A,Gex 3 - Deep Cover Gecko (USA).z64,nointro,,usa,Gex_3_–_Deep_Cover_Gecko.zip,26555932
 25610,~Hack~ Paper Mario: TTYD64,15a3b3f671c2161ee8c9ab18adf37eb0,Paper Mario - TTYD64 (v1.0.0) (elDexter).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/N64/Hacks/Paper%20Mario/25610-PM-TTYD64.zip,unknown,,
 22459,~Hack~ The Quest For Milk 64,d8c79261b4af8f8917354abce80b22ef,"SM64 - Quest for Milk, The (v1.1) (Deathray9000).z64",nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/22459-QuestforMilk.zip,unknown,,
@@ -155,13 +155,13 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 10532,Wipeout 64,73C6D87DBE50F73F3B44E0F237A546D7,Wipeout 64 (USA).z64,nointro,,usa,Wipeout 64 (USA).zip,6034467
 23760,~Hack~ The Magical Lands,f078e49cf3c4d9ba9a1df31ef776258b,SM64 - The Magical Lands (Papra Mayro 46).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/23760-SM64-TheMagicalLands.zip,unknown,,
 10926,Mortal Kombat Mythologies: Sub-Zero,deec4faec416f4e02d934c2e42c0caad,Mortal Kombat Mythologies - Sub-Zero (USA).z64,nointro,,usa,Mortal_Kombat_Mythologies__Sub-Zero.zip,13742095
-10360,San Francisco Rush: Extreme Racing,F015FC28E1D62A36B4EBF4C79CA8F285,"San Francisco Rush - Extreme Racing (USA) (En,Fr,De).z64",nointro,,usa,,
+10360,San Francisco Rush: Extreme Racing,F015FC28E1D62A36B4EBF4C79CA8F285,"San Francisco Rush - Extreme Racing (USA) (En,Fr,De).z64",nointro,,usa,"San Francisco Rush - Extreme Racing (USA) (En,Fr,De).zip",7949859
 25317,~Hack~ Only Up! 64,c6dd9dc228cd1dde883bf16d881af470,SM64 - Only Up! 64 (v1.1) (Kaze Emanuar).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/25317-SM64-OnlyUp.zip,unknown,,
 17468,~Hack~ Mario's Vacation Course,0806a73f79c1e7a99491b5edfa1081e4,SM64 - Mario's Vacation Course (v1.7.2) (Renou).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/17468-SM64-MariosVacationCourse.zip,unknown,,
 10307,Space Station Silicon Valley,92ee9af3dfeb19a1339f3c75baed1e6b,SpaceStation Silicon Valley (USA) (ExpFBMLSelect Fix) (v1.2) (oz).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Fix/Space%20Station%20Silicon%20Valley/10307-SSSV-Fixes.zip,usa,,
 20051,~Hack~ Gourmet Guy's 1000 IQ Food Quiz,2e09303b4811141c962fbf9f093efac3,Paper Mario - Gourmet Guy's 1000IQ Quiz (v1.0) (Wrymouth).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Paper%20Mario/20051-PM-GourmetGuy1000IQQuiz.zip,unknown,,
 10265,Body Harvest,3B8585ED03E8DDB89D7DE456317545E7,Body Harvest (USA).z64,nointro,,usa,Body Harvest (USA).zip,7122897
-10473,Killer Instinct Gold,8E33AD20C31FEB61D7230FAD28846C5C,Killer Instinct Gold (USA).z64,nointro,,usa,,
+10473,Killer Instinct Gold,8E33AD20C31FEB61D7230FAD28846C5C,Killer Instinct Gold (USA).z64,nointro,,usa,Killer Instinct Gold (USA).zip,12065797
 14695,~Hack~ ~Demo~ The Legend of Peach,df1aca0e6b5ee6e2ea5f9766fa367ff9,LoZOoT - The Legend of Peach (Demo) (MelonSpeedruns).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/N64/Hacks/LoZ%20-%20Ocarina%20of%20Time/14695-LoZOoT-LegendofPeach.zip,unknown,,
 19490,~Hack~ Banjo-Kazooie: How the Gruntch Stole Christmas,7a688e9898b6ee98dcf3904cf1094d04,Banjo-Kazooie - The Gruntch (v1.2) (Kurko Mods).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Banjo-Kazooie/19490-BK-Gruntch.7z,unknown,,
 16760,~Hack~ Another Mario Adventure,b186b69d767a5d9b9cb82325d1ec9d4e,SM64 - Another Mario Adventure  (aglab2) (v1.11).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/16760-AnotherMarioAdv.zip,unknown,,
@@ -182,19 +182,19 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 35528,~Hack~ The Slideverse,adae9361e00f24c8684bb750194b18cf,SM64 - The Slideverse (Full Version) (JakeDower).z64,nointro|rapatches|rhdc,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/N64/Hacks/Super%20Mario%2064/32964-SM64-Slideverse.zip,unknown,,
 10126,Tony Hawk's Pro Skater 3,9D4891BF26881C4541171B0235015FD4,Tony Hawk's Pro Skater 3 (USA).z64,nointro,,usa,Tony_Hawk’s_Pro_Skater_3.zip,15127795
 10471,~Hack~ The Legend of Banjo-Kazooie: The Bear Waker Deluxe,139323805da1aab77537adcaa985f62a,"Legend of Banjo-Kazooie, The - The Bear Waker Deluxe (v1.1) (Markus Kurko).z64",nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Banjo-Kazooie/10471-BK-BearWaker.zip,unknown,,
-11530,Dance Dance Revolution: Disney Dancing Museum,0b86fa9259e2b751111a1701091644b1,Dance Dance Revolution - Disney Dancing Museum (Japan).z64,nointro,,japan,,
+11530,Dance Dance Revolution: Disney Dancing Museum,0b86fa9259e2b751111a1701091644b1,Dance Dance Revolution - Disney Dancing Museum (Japan).z64,nointro,,japan,Dance Dance Revolution - Disney Dancing Museum (Japan).zip,20614789
 14625,~Hack~ Mario's Little Odyssey,af4e6b6ae78cfd2d909d494a0648f625,SM64 - Mario's Little Odyssey (Kaze Emanuar) (2021-05-04).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/14625-MariosLittleOdyssey.zip,unknown,,
 14694,~Hack~ Super Melee Adventure 64,152ffb83c9d8a438ceb67fb02ff805ae,Super Mario 64 - [Hack - Melee Adventure 64 - Mario].z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/14694-SuperMeleeAdv64.zip,unknown,,
 10466,Forsaken 64,5cdee5503a57d14533c66b35a5848899,Forsaken 64 (USA).z64,nointro,,usa,Forsaken 64 (USA).zip,7003277
 10125,Tony Hawk's Pro Skater 2,29974692808C112B306FBD259273DC96,Tony Hawk's Pro Skater 2 (USA).z64,nointro,,usa,Tony_Hawk’s_Pro_Skater_2.zip,15372528
 10332,WWF WrestleMania 2000,D9030CA30E4D1AF805ACCE1BFED988CC,WWF WrestleMania 2000 (USA).z64,nointro,,usa,WWF_WrestleMania_2000.zip,22365198
 29859,~Hack~ Banjo-Kongzooie,61fee3dab424c57b4370019657ed3860,DK64 - Banjo-Kongzooie (v1.0) (GloriousLiar).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Donkey%20Kong%2064/29859-DK64-Banjo-Kongzooie.zip,unknown,,
-15805,~Prototype~ Tamiya Racing 64,cecab8df02c02f38c9cf1bdd57b1da00,Tamiya Racing 64 (USA) (Proto).z64,nointro,,usa,,
-10430,Rugrats: Scavenger Hunt,8C432235A57D34BC4A9B8B290E21E01E,Rugrats - Scavenger Hunt (USA).z64,nointro,,usa,,
+15805,~Prototype~ Tamiya Racing 64,cecab8df02c02f38c9cf1bdd57b1da00,Tamiya Racing 64 (USA) (Proto).z64,nointro,,usa,Tamiya Racing 64 (USA) (Proto).zip,7894941
+10430,Rugrats: Scavenger Hunt,8C432235A57D34BC4A9B8B290E21E01E,Rugrats - Scavenger Hunt (USA).z64,nointro,,usa,Rugrats - Scavenger Hunt (USA).zip,12988856
 31886,~Hack~ Banjo-Kazooie: New Snow Glow Village,b79594de34304e41ad53968c078fc7b5,Banjo-Kazooie - Snow Glow Village Redone (v1.2.2) (Kurko Mods).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/N64/Hacks/Banjo-Kazooie/31886-BK-SnowGlowVillageRedone.zip,unknown,,
 10561,~Hack~ Luigi's Mansion 64,4d62cb128d949c1b319fa1cce7e31d91,"SM64 - Luigi's Mansion 64  (Mariocrash, me-me).z64",nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/10561-LuigisMansion64.zip,unknown,,
-10325,WWF War Zone,2322da2b9e7dc74678cd683b7a246b49,WWF War Zone (USA).z64,nointro,,usa,,
-10574,Custom Robo,A06D2E83CF2628915E8847F609474661,Custom Robo (Japan).z64,nointro,,japan,,
+10325,WWF War Zone,2322da2b9e7dc74678cd683b7a246b49,WWF War Zone (USA).z64,nointro,,usa,WWF War Zone (USA).zip,11344744
+10574,Custom Robo,A06D2E83CF2628915E8847F609474661,Custom Robo (Japan).z64,nointro,,japan,Custom Robo (Japan).zip,11599188
 30934,~Hack~ Banjo-Kazooie: Bubbling Bog Brewery Redone,7097af235680f8558b3491f0fbcecfe1,Banjo-Kazooie - Bubbling Bog Brewery Redone (v1.2) (Kurko Mods).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Banjo-Kazooie/30934-BK-BBBR.zip,unknown,,
 16228,~Hack~ SimpleFlips' 8th Hacking Competition: Creepypasta,12361cf2e1c3a3d0c754c26734974403,09 - Please Come to the Castle.z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Super%20Mario%2064/16228-SimpleFlips8th.7z,unknown,,
 19485,~Hack~ Banjo-Kazooie: Cheato's Challenges,42f8e2099041ce38942b887ce39b7478,Banjo-Kazooie - Cheato's Challenges (v1.0).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Hacks/Banjo-Kazooie/19485-BK-CheatosChallenges.zip,unknown,,
