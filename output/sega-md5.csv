@@ -67,7 +67,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 180,Battletoads and Double Dragon: The Ultimate Team,78f3ea32bcb4f627e4f9bc9711e017b8,Battletoads-Double Dragon (USA).md,nointro,,usa
 36,Double Dragon,6c34e2fd2b6800194dfad16fadaef820,"Double Dragon (USA, Europe) (Unl).md",nointro,,usa
 119,Road Rash II,062ed2f4e698bd8c61ebb1ee74a08d2b,"Road Rash II (USA, Europe) (RR206).md",nointro,,usa
-2235,~Hack~ Sonic the Hedgehog: Classic Heroes,38a99b9f6e5350f4d2da0c985ac000da,Sonic the Hedgehog - Classic Heroes (SHC2013) (flamewing).md,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/MD/Hacks/Sonic%20the%20Hedgehog%202/2235-Sonic2-ClassicHeroes.zip,unknown
 6718,Barney's Hide and Seek Game,644dcd9ae972b6b63fce63c17d12620d,Barney's Hide & Seek Game (USA).md,nointro,,usa
 4726,Trouble Shooter,f29c5049a48f37a37b811a22dc731e3c,Trouble Shooter (USA).md,nointro,,usa
 65,Shining Force,5111aa25931e6789ce4972bc6bafaa04,Shining Force (USA).md,nointro,,usa
@@ -114,12 +113,10 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 75,Shining Force II,6473b1505334ef5620d13191c18251fe,Shining Force II (USA).md,nointro,,usa
 2439,Gaiares,47e140ae1e70984e6cd638e6e8f8485f,"Gaiares (Japan, USA) (En).md",nointro,,usa
 3684,Advanced Busterhawk: Gley Lancer,8bd4a97783cda077c342173df0a9b51e,Advanced Busterhawk Gley Lancer (Japan).md,nointro,,japan
-205,~Hack~ Sonic the Hedgehog: Megamix,6cc568233290abdf3269c1574fc045e4,Sonic the Hedgehog - Megamix (v3.0) (Team Megamix).md,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/MD/Hacks/Sonic%20the%20Hedgehog/205-Sonic1-MegaMixHack.zip,unknown
 166,Road Rash 3: Tour de Force,dce9b99a3d692cb4463f9f35d278659b,"Road Rash 3 (USA, Europe).md",nointro,,usa
 225,Turbo OutRun,32fb1f12205e350cfe2bb66616043b59,"Turbo OutRun (Japan, Europe) (En).md",nointro,,europe
 4418,Rock n' Roll Racing,530c58317b5626fa15b77adab0aacc9d,Rock n' Roll Racing (USA).md,nointro,,usa
 143,Beyond Oasis,5a79de198ed6b1ece2518574fe78d962,Beyond Oasis (USA).md,nointro,,usa
-11185,~Hack~ Sonic 3D Blast: Director's Cut,742dd5c98d143ff6716800dee6a25dc5,Sonic 3D Blast - Director's Cut (World) (Unl).md,nointro,,world
 178,Mighty Morphin Power Rangers,cdcfb24231942f535a18d2097ab5b68e,Mighty Morphin Power Rangers (USA).md,nointro,,usa
 4169,Bio-Hazard Battle,2d6764f7a96bb8b640a0d18102756ed2,"Bio Hazard Battle (USA, Europe).md",nointro,,usa
 571,Midnight Resistance,809534b635e726f57bf1d95f3e6d7468,Midnight Resistance (USA).md,nointro,,usa
@@ -191,11 +188,9 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 8474,Cannon Fodder,80c93623c29ab70da823860a5f46e70c,Cannon Fodder (Europe).md,nointro,,europe
 4377,OutRun 2019,402a6b80a138eefc426b27c24d4aa3f5,OutRun 2019 (USA).md,nointro,,usa
 561,Landstalker: The Treasures of King Nole,04ae2b65f3a11a7504339e60735beed8,Landstalker (USA).md,nointro,,usa
-25807,~Hack~ Teenage Mutant Ninja Turtles: Shredder's Re-Revenge,415ecac5e01c5101552cc4d29d78b7f2,SoR2 - Teenage Mutant Ninja Turtles - Shredder's Re-Revenge (v1.01) (savok).md,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/MD/Hacks/Streets%20of%20Rage%202/25807-SoR2-TMNT-Shredders-Re-Revenge.zip,unknown
 177,Paperboy,f185e7700fe58f34d1c2968074760cdc,"Paperboy (USA, Europe).md",nointro,,usa
 160,Mutant League Hockey,6a685a81ae70e8724c376779e3a812e4,"Mutant League Hockey (USA, Europe).md",nointro,,usa
 18481,~Unlicensed~ Bomber,fd36dc99f8915416005880427fdae2d9,Bomber (USA) (Sega Gopher).md,nointro,,usa
 4140,Batman Returns,ae267331cfe46a61f65f3cbd5abcbe72,Batman Returns (World).md,nointro,,world
 622,Space Invaders '91,b12002f1e35c5116dc4a2a8d64b4687e,Space Invaders '91 (USA).md,nointro,,usa
-10340,~Hack~ Sonic the Hedgehog 2 XL,224489113ed26aab6b57c95bba244ef7,"Sonic the Hedgehog 2 - Sonic the Hedgehog 2 XL (Captain Bozo, Ranger).md",nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/MD/Hacks/Sonic%20the%20Hedgehog%202/10340-Sonic2-XL.zip,unknown
 4382,Panorama Cotton,422a285546a9755df77da2840fb2c817,Panorama Cotton (Japan).md,nointro,,japan

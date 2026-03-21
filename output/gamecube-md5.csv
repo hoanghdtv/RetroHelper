@@ -10,7 +10,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 7423,Pokémon Colosseum,d38a3d49467f2271f8106ba340fc5b56,Pokemon Colosseum (USA),redump,,usa
 15540,Pikmin,f4161175374ef36d301f5b8eb43f7b4a,Pikmin (USA) (Rev 1),redump,,usa
 2199,The Simpsons: Hit & Run,1c528ffc368e8d3f9c044898aa17f6d2,"Simpsons, The - Hit & Run (USA)",redump,,usa
-28930,~Hack~ Super Mario Eclipse,1938af2aee854415255e3220fc366dd1,SMS - Super Mario Eclipse (v1.0.6) (Eclipse Team),gamebanana|lostlevel,,unknown
 6605,"WarioWare, Inc.: Mega Party Game$!",bb8c17037e5992579ac09915b2cf3be1,"WarioWare, Inc. - Mega Party Game$! (USA)",redump,,usa
 9699,F-Zero GX,15449523ead65939970e336a91bf943b,F-Zero GX (USA),redump,,usa
 2259,Wario World,2e74fff1b7a94b6576f15f3e67780aaf,Wario World (USA),redump,,usa
@@ -47,7 +46,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 7683,Metroid Prime 2: Echoes,f7b7c7e8eb92593837ab13d5d62d636e,Metroid Prime 2 - Echoes (USA),redump,,usa
 25456,Naruto: Clash of Ninja,dd585efef511615d0ae8753a2a5050f0,Naruto - Clash of Ninja (USA),redump,,usa
 6870,Resident Evil 3: Nemesis,7d980856f5f09b295fa3278645cf229f,Resident Evil 3 - Nemesis (USA),redump,,usa
-28371,~Hack~ Shadow the Hedgehog: Reloaded,f7ff03a01acf7d365f6a4294ab3416e0,"Shadow the Hedgehog - Reloaded (v1.2) (LimblessVector,dreamsyntax) (Widescreen)",lostlevel,,unknown
 25486,Ultimate Spider-Man,8f7be241b2ba9d4451bcdca34a4b96f0,Ultimate Spider-Man (USA),redump,,usa
 6343,The Simpsons: Road Rage,25cd098ca8abb5ee642abb9a9459a575,"Simpsons, The - Road Rage (USA)",redump,,usa
 3337,LEGO Star Wars II: The Original Trilogy,7db862c9afe7be8135a04f1047ecc89d,LEGO Star Wars II - The Original Trilogy (USA),redump,,usa
@@ -67,24 +65,20 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 2466,Resident Evil 0,ff3c5cb5020d748897831305979ed22d,Resident Evil Zero (USA) (Disc 1),redump,,usa
 30035,Beyblade V-Force: Super Tournament Battle,9071658ecc76f6fbaabc1c4b8a5f296c,Beyblade VForce - Super Tournament Battle (USA),redump,,usa
 6871,Resident Evil CODE: Veronica X,14a97de5b07ff1a1cfb41ab9e317ce58,Resident Evil - Code - Veronica X (USA) (Disc 1),redump,,usa
-28369,~Hack~ Samus Goes to the Fridge to Get a Glass of Milk 3D,cca9386acfe7d54071ec2c21e158761f,Metroid Prime - Samus Goes to the Fridge to Get a Glass of Milk 3D (v1.00) (kkzero),redump|rapatches|metconst,https://github.com/RetroAchievements/RAPatches/raw/main/GameCube/Hacks/Metroid%20Prime/28369-MetroidPrime-SamusMilk3D.zip,unknown
 25429,Bust-A-Move 3000,cf157e7bf913a9bfe03b368b1227c04d,Bust-A-Move 3000 (USA),redump,,usa
 25434,Custom Robo,ffb892daf7649275eabe555e5aff7f50,Custom Robo (USA),redump,,usa
 28598,GT Cube,7d3bf94f920fd27b9591964d2cfff2ca,GT Cube (Japan) (Rev 1),redump,,japan
-32657,~Hack~ Pikmin 1²,f45d751b8a2131de52cbcdb98e4ac227,Pikmin 2 - Pikmin 1^2 (v1.1) (PikHacker),lostlevel,,unknown
 6916,Spider-Man 2,af82769fe7546675953b24f5ba5301f8,Spider-Man 2 (USA),redump,,usa
 25493,Kururin Squash!,240bd80c2389ba04fa7505fc80a93fce,Kururin Squash! (Japan),redump,,japan
 7724,Rayman 3: Hoodlum Havoc,b14a68fec4c605bfc87e845d0b5aaabe,"Rayman 3 - Hoodlum Havoc (USA) (En,Fr,De,Es,It)",redump,,usa
 15543,Skies of Arcadia Legends,01352040a55de2651d5150d0120579d1,"Skies of Arcadia Legends (Europe) (En,Fr,De,Es)",redump,,europe
 13727,Donkey Konga (USA),858afe0fe5ba117339908ad06eec3e52,Donkey Konga (USA),redump,,usa
-31187,~Hack~ Paper Mario: The Tower of Trials,1c461e3c8884490f767b3235c8a80231,Paper Mario TTYD - The Tower of Trials (v3.13 r58) (Jdaster64),redump|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/GameCube/Hacks/Paper%20Mario%20-%20TTYD/31187-PMTYYD-TowerofTrials.zip,unknown
 7054,Battalion Wars,c375d1851733931a688572ea39a45a6d,Battalion Wars (USA),redump,,usa
 3885,Final Fantasy Crystal Chronicles,d0f0868bf8bf546126cf74b5a4e92a94,Final Fantasy Crystal Chronicles (USA),redump,,usa
 25444,Godzilla: Destroy All Monsters Melee,55cafa0f49774d98d079e640a21357dd,Godzilla - Destroy All Monsters Melee (USA),redump,,usa
 29177,Bloody Roar: Primal Fury,aaded21bb03331297bed18a890a72545,Bloody Roar - Primal Fury (USA),redump,,usa
 7003,Burnout,71df36b96faba297f01a4d72eb247b40,Burnout (USA),redump,,usa
 8577,Harvest Moon: Magical Melody,92c480e1e106d8b681e3c8e611b52e62,Harvest Moon - Magical Melody (USA),redump,,usa
-30151,~Hack~ Luigi's Mansion Beta Restoration,c03d5588464987036d7b7b4ebc9f2cfd,Luigi's Mansion Beta Restoration Revamped (v1.3) (Portable Productions),redump|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GameCube/Hacks/Luigi's%20Mansion/30151-LM-BetaRestoration.zip,unknown
 1442,Bomberman Generation,63e1774ac31e3312f154e57e71a342a3,Bomberman Generation (USA),redump,,usa
 29749,Disney's Extreme Skate Adventure,41a8018344d7abbf27d45fc2f288c8c5,Disney's Extreme Skate Adventure (USA),redump,,usa
 28385,Bleach GC: Tasogare ni Mamieru Shinigami,5e639bfbbc23a3a9e8c0df58f676a372,Bleach GC - Tasogare ni Mamieru Shinigami (Japan),redump,,japan
@@ -102,22 +96,17 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 3829,Beyond Good & Evil,4be27490bb0f2bc3fef2d1384b8c8863,"Beyond Good & Evil (Europe) (Fr,Nl)",redump,,europe
 30287,Disney's Hide & Sneak,4accb5d680a2ebd444b3525a546885ee,Disney's Hide & Sneak (USA) (Rev 1),redump,,usa
 24915,Hunter: The Reckoning,eaf4bf58ffdb7f8a3e4f2370ac18e973,Hunter - The Reckoning (USA),redump,,usa
-28658,~Hack~ Pikmin 251,1d5c5b8377bbdeca3880f8c308dc808d,Pikmin 2 - Pikmin 251 (v2.3.1) (PikHacker),lostlevel,,unknown
 28373,Dragon Ball Z: Budokai 2,efbb9d397524083b762ec88eccc69dbc,Dragon Ball Z - Budokai 2 (USA),redump,,usa
 30125,Mega Man X: Command Mission,57e32a1a711dc792356bc1dd52829c6c,"Mega Man X - Command Mission (Europe) (En,Fr,De)",redump,,europe
 28265,Digimon World 4,ac4b9b7e15524dd3d501006ea87331e2,Digimon World 4 (USA),redump,,usa
 3802,Metal Arms: Glitch in the System,d6766699cd872112e05239d4cec51379,Metal Arms - Glitch in the System (USA),redump,,usa
-28374,~Hack~ Luigi's Mansion: Sweet Home,74fafc6d9cd34c68e7bbf4ce21fd97c1,Luigi's Mansion - Sweet Home (v1.01) (2022-11-04 Hotfix) (Catley),redump|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GameCube/Hacks/Luigi's%20Mansion/28374-LM-SweetHome.zip,unknown
-28854,~Hack~ Super Mario Sunshine Arcade 2,24ab3dda91dd1a156ca68942f44c15d4,SMS - Super Mario Sunshine Arcade 2 (v1.1) (Augs SMSHacks),redump|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/GameCube/Hacks/Super%20Mario%20Sunshine/28854-SMS-SMSArcade2v11.zip,unknown
 6837,Doshin the Giant,c84468779c1698c88f3feb1f46d3d503,"Doshin the Giant (Europe) (En,Fr,De,Es,It)",redump,,europe
-30150,~Hack~ Mario Kart: Double Dash!! Plus,eac6965e4b579397917a72ca108b8a90,Mario Kart - Double Dash!! Plus (v3.3) (That1loser4).iso,lostlevel,,unknown
 25454,Mega Man Network Transmission,e6c4ab21e6a26604da53e75daa119935,Mega Man Network Transmission (USA),redump,,usa
 28263,Radirgy GeneriC,d5ba90daddf3e457452f756b89e537d6,Radirgy Generic (Japan),redump,,japan
 30216,Gotcha Force,f0e0823f69df93a7dca8ee4dfcf0cd0f,Gotcha Force (USA),redump,,usa
 25484,Turok: Evolution,72b6bebe0cd522ef10af08c0513e786c,Turok - Evolution (USA),redump,,usa
 24163,Star Wars: The Clone Wars,9445e2aad2843e568229e66eb6cb1a91,Star Wars - The Clone Wars (USA),redump,,usa
 3342,Baldur's Gate: Dark Alliance,bceab2cf38673bf2eded4283487ce3b0,Baldur's Gate - Dark Alliance (USA),redump,,usa
-30713,~Hack~ Luigi's Mansion: Halloween Haunt,b7e749c5b9367c3efe7b0ca6fbb6182d,Luigi's Mansion - Halloween Haunt (v1.0) (Colby),redump|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GameCube/Hacks/Luigi's%20Mansion/30713-LM-HalloweenHaunt.zip,unknown
 28605,Donkey Konga (Japan),589810a3cd66c4a7a68a83a3a2c9a573,Donkey Konga (Japan),redump,,japan
 30221,Dragon Ball Z: Budokai,38c552475ebe552d3d4436c017b4bf6d,Dragon Ball Z - Budokai (USA),redump,,usa
 30368,18 Wheeler: American Pro Trucker,9e0cc10acd5be05fd2e156d9a03ca23f,18 Wheeler - American Pro Trucker (USA),redump,,usa
@@ -136,15 +125,12 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 30123,Neighbours from Hell,7e27db8b3fc71b991cd31c2f1b6d1afe,"Neighbours from Hell (Europe) (En,Fr,De,Es,It)",redump,,europe
 28607,Donkey Konga 2 (USA),3720b4306b4588ccefb09ed0c5bbcdc9,Donkey Konga 2 (USA),redump,,usa
 30120,Samurai Jack: The Shadow of Aku,d411f20e21155a105a62e68d70f24857,Samurai Jack - The Shadow of Aku (USA),redump,,usa
-29873,~Hack~ Friday Night Pikmin,fcc17c7d5ba68b2e6f17c818a5f9d092,Friday Night Funkin' - Friday Night Pikmin,homebrew|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GameCube/Hacks/Friday%20Night%20Funkin/29873-FridayNightPikmin.zip,unknown
 30280,Zatch Bell! Mamodo Battles,3a5a8ce36d9322efd85e81570507f71c,Zatch Bell! Mamodo Battles (USA),redump,,usa
 30552,Pitfall: The Lost Expedition,1134b5301e40a4453de5d33be174a218,Pitfall - The Lost Expedition (USA),redump,,usa
 30053,Charlie's Angels,e1b226bff48d0f2679189c85051c0c57,"Charlie's Angels (USA) (En,Fr)",redump,,usa
 25466,Ribbit King,0a004f01201a5f26a4f7d3bcea8ad109,"Ribbit King (USA) (En,Es)",redump,,usa
 25428,Bomberman Jetters,e9444fbcaab7c7cd40a077616a4f47c3,Bomberman Jetters (USA),redump,,usa
-30993,~Hack~ Pikmin 2: Caveless Edition,6e875844552132c360421f1af9b0050a,Pikmin 2 - Caveless Edition (v1.21) (Cutscenes and Purple Pikmin) (Bugabread),redump|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/GameCube/Hacks/Pikmin%202/30993-Pikmin2CavelessEdition.zip,unknown
 30317,X-Men: Next Dimension,494dc8045372440eb68a511ab592b010,X-Men - Next Dimension (USA),redump,,usa
-34511,~Hack~ Pikmin 2: Regrown,f861d6f29be496e09a58af3e8e59d958,Pikmin 2 - Regrown (v2.1) (Ochrehorns),redump|gamebanana,,unknown
 30211,One Piece: Grand Battle,2831eb23a43c651970a91a6b8ad47c02,Shonen Jump's One Piece - Grand Battle (USA),redump,,usa
 25485,Ultimate Muscle: Legends vs. New Generation,c12d1e0fdd2f8954c581722de1f96ec0,Ultimate Muscle - Legends vs. New Generation (USA),redump,,usa
 30330,Naruto: Gekitou Ninja Taisen! 4,6c2dc4c76fca3ed8cbf2830e427690b4,Naruto - Gekitou Ninja Taisen! 4 (Japan),redump,,japan
@@ -156,19 +142,11 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 25477,Swingerz Golf,460279d63e7462a0720e9c72c8c33fdd,Swingerz Golf (USA),redump,,usa
 28378,~Homebrew~ Xeno Crisis,e8c02aaf4efff2f901b15e8d97378f76,"Xeno Crisis (World) (En,Ja,Fr,De,Es,It,Nl,Pt-BR) (Aftermarket) (Unl) (USA)",nointro|nonredump,,world
 30396,NHL Hitz 20-02,c5e3b52902eff411d1235a53d15362bc,NHL Hitz 2002 (USA),redump,,usa
-29779,~Hack~ Pikmin 216,a1f348694d654f46621290770f06289a,Pikmin 2 - Pikmin 216 (v1.3) (Teddiursayoshi),lostlevel,,unknown
 29173,Rogue Ops,cd96f43dc35f52162cf12d85e4183ce9,Rogue Ops (USA),redump,,usa
-32108,~Hack~ SpongeBob and the Pit of 100 Trials,62ef4020aa956287ee45294612caf195,SpongeBob and the Pit of 100 Trials (v2.0) (Hacked Header) (Gravity),lostlevel|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GameCube/Hacks/SpongeBob%20SquarePants%20-%20BFBB/32108-SpongeBobBFBB-PitOf100Trials.zip,unknown
-31898,~Hack~ Super Doot Sunshine,5e9758bbb2a79846afc8ddf6c7752449,SMS - Super Doot Sunshine (v1.4.0) (warspyking),redump|gamebanana|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/GameCube/Hacks/Super%20Mario%20Sunshine/31898-SMS-SuperDootSunshine.zip,unknown
 30342,Black & Bruised,30c14b9f18ac54ba0d2f089531370660,Black & Bruised (USA),redump,,usa
 6958,Tomb Raider: Legend,d9c4058243b262d1c0df9205f5d63277,Lara Croft Tomb Raider - Legend (USA),redump,,usa
 30473,Cocoto Funfair,30abfab382c952a1ed3b0fcf23685b45,"Cocoto Funfair (Europe) (En,Fr,De,Es,It)",redump,,europe
 30543,Muppets Party Cruise,1db71ce557c78865a750b1287eb56735,Muppets - Party Cruise (USA),redump,,usa
-33481,~Hack~ Bad-Boon Strikes Back v4.0,f6d1b9e43b40e5ec3ca8422f0a964b3e,Super Monkey Ball 2 - Bad Boon Strikes Back (v4.0) (KartingKoopa),lostlevel,,unknown
-31185,~Hack~ dart monkey 1.5143,0b4fb1873f47b173590d679796c9948c,Super Monkey Ball 2 - Dart Monkey (v1.5143) (SHK),lostlevel,,unknown
-32112,~Hack~ Floating Block Forever,f4af71930f129e21f04f496a99d859cc,SpongeBob SquarePants - The Movie - Floating Block Forever (v2023-02-11) (Eyepie),redump|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/GameCube/Hacks/SpongeBob%20SquarePants%20-%20The%20Movie/32112-SpongeBob-FloatingBlockForever.zip,unknown
-30888,~Hack~ Resident Evil 2: Zombie Crisis,b6dab3cc6cdae3ab4f79b9297701c1a1,Resident Evil 2 - Zombie Crisis (v1.0) (Hunter Beta2),redump|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/GameCube/Hacks/Resident%20Evil%202/30888-RE2-ZombieCrisis.zip,unknown
 28264,Super Bubble Pop,7d8c4170e1cd3498305b146ba253e0d6,Super Bubble Pop (USA),redump,,usa
 25448,Judge Dredd: Dredd vs. Death,9e8681d7df9d73e1dc00c1c0bb3b91b7,Judge Dredd - Dredd vs. Death (USA),redump,,usa
-36636,~Hack~ Metroid Prime: Double Trouble,f7d0fdd44db4982b915e2951f72815a9,Metroid Prime - Double Trouble (v1.15) (Fantaselion),redump|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/GameCube/Hacks/Metroid%20Prime/36636-MetroidPrime-DoubleTrouble.zip,unknown
 30122,Metal Gear Solid: The Twin Snakes - Special Disc,deb0e3199d6c3dc9354599b8023385bd,Metal Gear Solid - The Twin Snakes - Special Disc (Japan),redump,,japan

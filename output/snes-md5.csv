@@ -134,7 +134,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 1016,Marvel Super Heroes: War of the Gems,d3c46f884c50f50236639c5f6303eef7,Marvel Super Heroes in War of the Gems (USA).sfc,nointro,,usa,Marvel Super Heroes in War of the Gems (USA).zip,1310249
 3351,Panel de Pon,ce9b7f3572867f3c1c6ff889b02a63a4,Panel de Pon (Japan).sfc,nointro,,japan,Panel de Pon (Japan).zip,735906
 1278,Top Gear 3000,23eaa07e3f3315fa43f4b4d94ec97a7b,Top Gear 3000 (USA).sfc,nointro,,usa,TOP_GEAR_3000.zip,778783
-12736,~Hack~ Super Mario World: Learn 2 Kaizo,458e8920c1046d37595902b6dce04c17,SMW - Super Mario World - Learn 2 Kaizo (NeXuS15) (1.1).sfc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/SNES/Hacks/Super%20Mario%20World/12736-SMWLearn2Kaizo.zip,unknown,,
 395,Axelay,699bbdffab13c41fa8d4a9b3c25d60e7,Axelay (USA).sfc,nointro,,usa,Axelay (USA).zip,799528
 440,Bonkers,186d7d1585dc6a0e9ad96a5740a1a03a,Bonkers (USA).sfc,nointro,,usa,Bonkers (USA).zip,734652
 3229,Mario's Early Years: Fun With Numbers,d097b8f2871522c7c1d2bbd18e7c9ad4,Mario's Early Years - Fun with Numbers (USA).sfc,nointro,,usa,Mario's Early Years - Fun with Numbers (USA).zip,851339
@@ -143,7 +142,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 1386,Final Fantasy V,d69b2115e17d1cf2cb3590d3f75febb9,Final Fantasy V (Japan).sfc,nointro,,japan,Final_Fantasy_V.zip,1425950
 1361,Ghost Sweeper Mikami: Joreishi wa Nice Body,388cffcebcd3155cae2f2c5cec1f92c1,GS Mikami - Joreishi wa Nice Body (Japan).sfc,nointro,,japan,GS Mikami - Joreishi wa Nice Body (Japan).zip,613710
 1174,Sparkster,e00ef4c1b9e17d5fa2d8367402d28a08,Sparkster (USA).sfc,nointro,,usa,Sparkster (USA).zip,829626
-9784,~Hack~ New Super Mario World 1: The Twelve Magic Orbs,5be238082ff8ed1bc489fd9812cc3c0b,SMW - New Super Mario World 1 - The Twelve Magic Orbs (Pink Gold Peach) (1.4).sfc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/SNES/Hacks/Super%20Mario%20World/9784-NewSMW1TheTwelveMagicOrbs.zip,unknown,,
 1261,Thomas the Tank Engine & Friends,923ec0c22b5083b6e3a32e54f822f4fb,Thomas the Tank Engine & Friends (USA).sfc,nointro,,usa,Thomas the Tank Engine & Friends (USA).zip,798153
 4737,The Firemen,ac995ab6f5667be14eb6471458e491d3,"Firemen, The (Europe) (En,Fr,De).sfc",nointro,,europe,"Firemen, The (Europe) (En,Fr,De).zip",793846
 1295,Uniracers,1066cfd0c6be4dbdfede796751e801c5,Uniracers (USA).sfc,nointro,,usa,Uniracers (USA).zip,1097201
@@ -166,10 +164,8 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 9790,Dr. Mario,dd6661bd75ad233c0778477ad82e19fc,Dr. Mario (Japan) (En) (NP).sfc,nointro,,japan,Dr. Mario (Japan) (En) (NP).zip,104178
 3234,The Mask,c918a40bb2b3f44f3468d6a1ba0a5f88,"Mask, The (USA).sfc",nointro,,usa,"Mask, The (USA).zip",1348241
 412,Barbie: Super Model,fdecc2c3cb3c351dad5d54da7999d3c0,Barbie Super Model (USA).sfc,nointro,,usa,Barbie Super Model (USA).zip,488516
-16121,~Hack~ New Super Mario World 2: Around the World,d4ada8016fa64dfe123d48e9a8a40c3a,SMW - New Super Mario World 2 - Around the World (v1.0) (Pink Gold Peach).sfc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/SNES/Hacks/Super%20Mario%20World/16121-NSMW2AroundtheWorld.zip,unknown,,
 967,Judge Dredd,ce0dd38e1ab7752fd736d526788b5bd1,Judge Dredd (USA).sfc,nointro,,usa,Judge Dredd (USA).zip,1418673
 993,Lemmings,ecf0db12f88db32c4a129ff11af7f73d,Lemmings (USA) (Rev 1).sfc,nointro,,usa,Lemmings Rev 1 (1992)(Sunsoft)(US).zip,563039
-2345,~Hack~ The Legend of Zelda: Parallel Worlds,ef94b014589181d12d566791f8bc8af6,"Legend of Zelda, The - Parallel Worlds (Euclid,SePH) (1.23).sfc",nointro|rapatches,"https://github.com/RetroAchievements/RAPatches/raw/main/SNES/Hacks/Legend%20of%20Zelda,%20The%20-%20A%20Link%20to%20the%20Past/2345-LoZParallelWorlds.zip",unknown,,
 3374,The Pirates of Dark Water,e57ff9a6f8a23935a1171f871c0ce68f,"Pirates of Dark Water, The (USA).sfc",nointro,,usa,"Pirates of Dark Water, The (1994)(Sunsoft)(US).zip",672550
 1302,Ys III: Wanderers from Ys,c8236962fd9f85f6d1961934166d6bd5,Ys III - Wanderers from Ys (USA).sfc,nointro,,usa,Ys III - Wanderers from Ys (USA).zip,549439
 8702,Strike Gunner S.T.G,6041d861ae1e590dee99e45a3eeabd49,Strike Gunner S.T.G (USA).sfc,nointro,,usa,Strike Gunner S.T.G (USA).zip,414898
@@ -181,8 +177,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 1210,Super Bowling,50a1a66163020c19cde18685a928a556,Super Bowling (USA).sfc,nointro,,usa,Super Bowling (USA).zip,205020
 1102,Pocky & Rocky 2,3cfa988d8b0bab8c04af70f24fb7ee90,Pocky & Rocky 2 (USA).sfc,nointro,,usa,Pocky & Rocky 2 (USA).zip,936248
 429,Beethoven's 2nd,4adfa292778a82285d80554ea6ed3497,Beethoven - The Ultimate Canine Caper! (USA).sfc,nointro,,usa,Beethoven - The Ultimate Canine Caper! (USA).zip,315038
-8463,~Hack~ Mega Man X3: Zero Project,7e25e5de94b4cd4145608e6ac50b0f06,Mega Man X3 - Zero Project (v4.6) (Justin3009).sfc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/SNES/Hacks/Mega%20Man%20X3/8463-MMX3ZeroProject.zip,unknown,,
-2865,~Hack~ A Plumber For All Seasons,cdb770284b8f0fb7ad6ca24b7fbb5e44,SMW - A Plumber for All Seasons (v2021-11-22) (WhiteYoshiEgg).sfc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/SNES/Hacks/Super%20Mario%20World/2865-PlumberForAllSeasons.zip,unknown,,
 1346,Yoshi's Cookie,b08d6dc455cbed53799c7495ea71b08c,Yoshi's Cookie (USA).sfc,nointro,,usa,Yoshi's Cookie (USA).zip,289580
 3808,Super Off Road,0c1cc5369a31c988858a087598bab9c3,Super Off Road (USA).sfc,nointro,,usa,Super Off Road (USA).zip,229133
 6231,Dragon Quest III: Soshite Densetsu e...,7c7c7db73b0608a184cc5e1d73d7695b,Dragon Quest III - Soshite Densetsu e... (Japan).sfc,nointro,,japan,Dragon Quest III - Soshite Densetsu e... (Japan).zip,2438344
@@ -197,6 +191,5 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 3166,Krusty's Super Fun House,1b977c1e3af2666a1d348cc0b9cc4a94,Krusty's Super Fun House (USA) (Rev 1).sfc,nointro,,usa,Krusty's Super Fun House (USA) (Rev 1).zip,325338
 1197,Super Adventure Island II,b4e732b3d742af1791605bcd7aa4a1c4,Super Adventure Island II (USA).sfc,nointro,,usa,Super Adventure Island II (USA).zip,794115
 911,Firepower 2000,650e587408e8691c511e831de5f606dc,Firepower 2000 (USA).sfc,nointro,,usa,Firepower 2000 (USA).zip,485479
-8249,~Hack~ Donkey Kong Country: Competition Edition [10 Minutes],611765c13e3087407a9f2fdcfb530410,Donkey Kong Country - Competition Cartridge (USA) (10-Minute Hack).sfc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/SNES/Hacks/Donkey%20Kong%20Country/8249-DKCCompetition-10min.zip,usa,,
 1287,The Twisted Tales of Spike McFang,80d1144dc2d6f7ad5bbbcb1dd448b6cf,"Twisted Tales of Spike McFang, The (USA).sfc",nointro,,usa,"Twisted Tales of Spike McFang, The (USA).zip",763688
 3206,Magic Knight Rayearth,c8fd6fb87f202db2b3dbbccfe1fdaa24,Magic Knight Rayearth (Japan).sfc,nointro,,japan,Magic Knight Rayearth (1995)(Tomy)(JP).zip,891363

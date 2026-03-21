@@ -25,7 +25,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 16197,Pokémon White Version 2,b24b5463d801b87fac81381238667315,"Pokemon - White Version 2 (USA, Europe) (NDSi Enhanced).nds",nointro,,usa
 1199,WarioWare: Touched!,e08a2e48488c7370f0dfce6ac7dddc1e,"WarioWare - Touched! (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
 16298,Ace Attorney Investigations: Miles Edgeworth,97e1dd782b500833d354dd340736013e,Ace Attorney Investigations - Miles Edgeworth (USA).nds,nointro,,usa
-16196,~Hack~ Pokémon Renegade Platinum,60000586a8e1b1e6ae88f9ce6a2f287b,Pokemon Renegade Platinum (v1.3.0) (Drayano) - Following Platinum Integration (v2.0) + 1 in 512 Shiny Rate (chensquared-art).nds,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/NDS/Hacks/Pokemon%20Platinum%20Version/16196-PokemonRenegadePlatinum.zip,unknown
 16274,Resident Evil: Deadly Silence,aabe32cc33b3e445268889b9f3eef2ca,Resident Evil - Deadly Silence (USA).nds,nointro,,usa
 17492,Pokémon Mystery Dungeon: Blue Rescue Team,89f431748ac9c1328106c676adc6d085,"Pokemon Mystery Dungeon - Blue Rescue Team (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
 9093,Dragon Quest IX: Sentinels of the Starry Skies,ebb3e9ee86d520f624ffc701a912779b,"Dragon Quest IX - Sentinels of the Starry Skies (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
@@ -51,12 +50,10 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 6616,Scribblenauts,c1cc02f11a34834c388200470abb05ee,"Scribblenauts (Europe) (En,Fr,De,Es,It,Nl).nds",nointro,,europe
 15429,Dragon Ball Z: Supersonic Warriors 2,7ec61c73c0217e0616978399dac47499,"Dragon Ball Z - Supersonic Warriors 2 (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
 16363,Game & Watch Collection,420fe9e2451fdce12447527b6daa228e,"Game & Watch Collection (USA, Europe) (Club Nintendo).nds",nointro,,usa
-14829,~Hack~ Newer Super Mario Bros. DS,e9bbb39abf88029b04f4d5b5351c956b,Newer Super Mario Bros. DS (V1.16).nds,nointro,https://github.com/RetroAchievements/RAPatches/raw/main/NDS/Hacks/New%20Super%20Mario%20Bros/14829-NewerSMBDS.7z,unknown
 5291,Tomodachi Collection,8b5692269f005fb96a79eabebb91ff32,Tomodachi Collection (Japan) (Rev 1).nds,nointro,,japan
 9985,Rhythm Heaven,ac1462c2f0516f53776d81c69f3263c4,Rhythm Heaven (USA).nds,nointro,,usa
 5626,Advance Wars: Dual Strike,8d54864bf255ab0b2b0513d4213dc76f,"Advance Wars - Dual Strike (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
 16295,Pokémon Ranger,a3d61a457ce077c4c5c16806349aae1b,"Pokemon Ranger (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
-17844,~Hack~ CTGP: Nitro,7648c0e3f28ddedc5e268acfecc7a217,MKDS - CTGP - Nitro (v1.1.0) (CTGP Nitro Team).nds,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/NDS/Hacks/Mario%20Kart%20DS/17844-MKDS-CTGPNItro.7z,unknown
 16279,~Homebrew~ Bubble Wrap DS,318cf0621b0204b5daae3052177778c3,Bubble Wrap (World) (Aftermarket) (Unl).nds,homebrew|lostlevel,,world
 4655,Dragon Quest V: Hand of the Heavenly Bride,f110efe23e9af4cb59740f8939832a73,"Dragon Quest - The Hand of the Heavenly Bride (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
 9898,The Legend of Zelda: Spirit Tracks,7b94041cdde943449d892215873017a9,"Legend of Zelda, The - Spirit Tracks (USA, Australia) (En,Fr,Es).nds",nointro,,usa
@@ -88,7 +85,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 15351,LEGO Star Wars: The Complete Saga,6d5586af4c4b2b5dd02d9462089569c2,"LEGO Star Wars - The Complete Saga (Europe) (En,Fr,De,Es,It,Da).nds",nointro,,europe
 4667,Dementium: The Ward,46ddaa7e77fd48a7ef475cb8921418ef,"Dementium - The Ward (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
 16713,MapleStory DS,6c8bb882721da0b7b90abfc9d95f7163,MapleStory DS (Japan) (En) (v0.6.3) (edo1989).nds,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/NDS/Translation/English/16713-MapleStoryDS-Engilsh.zip,japan
-15375,~Hack~ Another Super Mario 3D,3f39c39315c8d23e6d55841e3143d320,SM64DS - Another Super Mario 3D (v1.09) (Skawo).nds,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/NDS/Hacks/New%20Super%20Mario%20Bros/15375-AnotherSuperMario3D.zip,unknown
 14815,Mario vs. Donkey Kong: Mini-Land Mayhem!,632919065880ea332af4e0a50d1741ae,"Mario vs. Donkey Kong - Mini-Land Mayhem! (Europe) (En,Fr,De,Es,It) (NDSi Enhanced)[Encrypted].nds",nointro,,europe
 18333,TrackMania DS,c491db5b0a14e1b846d10712535fe8cb,"TrackMania DS (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
 16152,Digimon World Dusk,bea76fb98a9073871e48428b4264c257,Digimon World - Dusk (USA).nds,nointro,,usa
@@ -119,7 +115,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 15740,Donkey Kong: Jungle Climber,35157c4611b18a4fcb3c007115f0804f,"Donkey Kong - Jungle Climber (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
 20052,Kikansha Thomas: DS de Hajimeru Chiiku Gakushuu,1fd11e1dc8f5efc2c7e426461caffa28,Kikansha Thomas - DS de Hajimeru Chiiku Gakushuu (Japan).nds,nointro,,japan
 14906,Adventures of Pinocchio,19f1c299901dcd89b912b246d85f3d44,Adventures of Pinocchio (Europe).nds,nointro,,europe
-17554,~Hack~ Castlevania: Dawn of Dissonance - A Juste Story Mode Hack,59ab0afda7fb3e3aa957eda79be68493,Castlevania - Dawn of Dissonance (v1.0.5) (Serbagz).nds,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/NDS/Hacks/Castlevania%20-%20Dawn%20of%20Sorrow/17554-DawnofDissonance.7z,unknown
 1284,Yu-Gi-Oh! 5D's Stardust Accelerator: World Championship 2009,e98328ce7dddef310138b7eade48fa4b,"Yu-Gi-Oh! 5D's - Stardust Accelerator - World Championship 2009 (Europe) (En,Ja,Fr,De,Es,It).nds",nointro,,europe
 22037,Peppa Pig: The Game,19aec7c8814085cf06c604adba1d7a37,Peppa Pig - The Game (Europe).nds,nointro,,europe
 9751,Super Robot Taisen OG Saga: Endless Frontier,caa30b4682c46779e7239fdc480ea6a6,Super Robot Taisen OG Saga - Endless Frontier (USA).nds,nointro,,usa
@@ -132,10 +127,8 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region
 16296,Pokémon Ranger: Shadows of Almia,26ca96f719ec88e9ea90191e386df889,"Pokemon Ranger - Shadows of Almia (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
 17513,Taiko no Tatsujin DS: Touch de Dokodon!,db5a25378f23e47377002f149e6e5b31,Taiko no Tatsujin DS - Touch de Dokodon! (Japan) (Rev 1).nds,nointro,,japan
 16633,Final Fantasy Fables: Chocobo Tales,792934b4033cbf96ade475db5c6831b9,"Final Fantasy Fables - Chocobo Tales (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
-18541,~Hack~ Box Adventure,c89a151405fcc0ad163a1eda1dffaaa7,SM64DS - Box Adventure (0reo).nds,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/NDS/Hacks/Super%20Mario%2064%20DS/18541-BoxAdventure.zip,unknown
 15736,Yu-Gi-Oh! Nightmare Troubadour,2da47dd9b3eb8372d1080fd93cf32228,"Yu-Gi-Oh! - Nightmare Troubadour (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
 9462,Meteos,fa402dd4855a17247544169be73be595,"Meteos (Europe) (En,Fr,De,Es,It).nds",nointro,,europe
-23701,~Hack~ Mega Man Star Force DX,8c252df719b8c462bf69736a02600eb6,Mega Man Star Force DX (v1.2.3) (Prof.9).nds,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/NDS/Hacks/Mega%20Man%20Star%20Force%20-%20Pegasus/23701-MegaManStarForceDX.zip,unknown
 7370,Viva Piñata: Pocket Paradise,0a19cc93abdc0fdbb00b4e20194731e7,"Viva Pinata - Pocket Paradise (USA) (En,Fr,Es).nds",nointro,,usa
 14907,Peter Pan's Playground,ff8f8297d9e03095285fcbc6fad65eb6,Peter Pan's Playground (Europe).nds,nointro,,europe
 16710,Ketsui Death Label: Kizuna Jigoku Tachi,24175d7c714b97a06b97a969e1bddb1d,Ketsui Death Label - Kizuna Jigoku-tachi (Japan).nds,nointro,,japan

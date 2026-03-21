@@ -7,7 +7,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 770,Kirby: Nightmare in Dream Land,35ae64b0f27e60107c14ab956f6cdf70,Kirby - Nightmare in Dream Land (USA).gba,nointro,,usa,Kirby - Nightmare in Dream Land (USA).zip,4712419
 802,"WarioWare, Inc.: Mega Microgame$!",a2d26dc774cec9a0b47388a5dd727b03,"WarioWare, Inc. - Mega Microgame$! (USA).gba",nointro,,usa,"WarioWare, Inc. - Mega Microgame$! (USA).zip",4955189
 793,Sonic Advance,49ecc8ef1988e7ae81fbda1b4cf71eed,"Sonic Advance (USA) (En,Ja).gba",nointro,,usa,"Sonic Advance (USA) (En,Ja).zip",2759774
-17530,~Hack~ Pokémon Unbound,6dc50eda0c537b60c0163be3591773dd,Pokemon FireRed - Unbound (v2.1.0) (Skeli).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Pokemon%20FireRed/17530-PokemonUnbound.zip,unknown,,
 771,Mario & Luigi: Superstar Saga,4b1a5897d89d9e74ec7f630eefdfd435,Mario & Luigi - Superstar Saga (USA).gba,nointro,,usa,Mario & Luigi - Superstar Saga (USA).zip,6916473
 745,Castlevania: Circle of the Moon,50a1089600603a94e15ecf287f8d5a1f,Castlevania - Circle of the Moon (USA).gba,nointro,,usa,Castlevania - Circle of the Moon (USA).zip,3948275
 789,Pokémon Pinball: Ruby & Sapphire,ba6d0fbff297b8937d3c8e7f2c25fa0f,Pokemon Pinball - Ruby & Sapphire (USA).gba,nointro,,usa,Pokemon Pinball - Ruby & Sapphire (USA).zip,2597795
@@ -32,8 +31,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 791,Pokémon Sapphire Version,9bc2b765ca6997175fac51e6cdc29089,"Pokemon - Sapphire Version (USA, Europe) (Rev 2).gba",nointro,,usa,"Pokemon - Sapphire Version (USA, Europe) (Rev 2).zip",4935398
 519,Final Fantasy Tactics Advance,6ea5fc0e4b56a232ac3cbdab4b4a6bcd,"Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
 5081,Aladdin,4bda2a3e0249dfd09330dabc3aa20978,"Aladdin (USA) (En,Fr,De,Es).gba",nointro,,usa,Aladdin_GBA.zip,2418087
-30894,~Hack~ Pokémon Emerald Seaglass,fe5f3a1995ca8bb26c68b5f74360d798,Pokemon Emerald - Seaglass (v3.0) (Nemo622).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/GBA/Hacks/Pokemon%20Emerald/30894-PokemonEmerald-Seaglass.zip,unknown,,
-30137,~Hack~ Pokémon Emerald Rogue V2,d433c84e2a0d267cd2e30bb15fdbfcce,Pokemon Emerald - Emerald Rogue (v2.0-EX) (Pokabbie).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Pokemon%20Emerald/30137-PokemonEmerald-RogueV2.zip,unknown,,
 4033,Rhythm Tengoku,5b2d4704ce570d89ae956025bd1036db,Rhythm Tengoku (Japan) (Rev 1).gba,nointro,,japan,Rhythm_Tengoku.zip,7990379
 2171,Mario Tennis: Power Tour,928c0bd4cf82b3fd6f34b53d4fd02e69,"Mario Tennis - Power Tour (USA, Australia) (En,Fr,De,Es,It).gba",nointro,,usa,"Mario Tennis - Power Tour (USA, Australia) (En,Fr,De,Es,It).zip",12055434
 528,Doom,a4078f38dbb47ab22a9c74b725f3e481,"Doom (USA, Europe).gba",nointro,,usa,DOOM.zip,3148694
@@ -45,7 +42,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 760,Drill Dozer,14dab12e795098988d46b96885170538,Drill Dozer (USA).gba,nointro,,usa,Drill Dozer (USA).zip,3045746
 4206,Sword of Mana,c7e5d28e7c430454aeff766961095561,"Sword of Mana (USA, Australia).gba",nointro,,usa,"Sword of Mana (USA, Australia).zip",8551331
 2588,Summon Night: Swordcraft Story,abfa372f860d0f10037bf28cc78de409,Summon Night - Swordcraft Story (USA).gba,nointro,,usa,Summon Night - Swordcraft Story (USA).zip,5326324
-14408,~Hack~ Pokémon FireRed: Rocket Edition,08dec67ed4d8305d45c575050b2efd7a,Pokemon - FireRed Version - Rocket Edition (v1.0) (colonelsalt).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Pokemon%20FireRed/14408-PokemonFireRed-RocketEd.zip,unknown,,
 533,Mario Kart: Super Circuit,784a036ff1aae709e90167186639b75e,Mario Kart - Super Circuit (USA).gba,nointro,,usa,Mario Kart - Super Circuit (USA).zip,2168997
 1416,Grand Theft Auto Advance,2c8ef9cce9f46b55247468ea449aeade,Grand Theft Auto (USA).gba,nointro,,usa,Grand_Theft_Auto_Advance.zip,5928202
 5255,Sonic Pinball Party,de40b1738a7c670ca28ddf44bb908df6,"Sonic Pinball Party (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,"Sonic Pinball Party (USA) (En,Ja,Fr,De,Es,It).zip",3636426
@@ -60,10 +56,8 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 748,Classic NES Series: The Legend of Zelda,588203bd9de678a55a9f1707931302f2,"Classic NES Series - The Legend of Zelda (USA, Europe).gba",nointro|deprecated,,usa,The_Legend_of_Zelda.zip,4151779
 506,Advance Wars,3e399fdc568d0a0e140a5a277a5c32f3,Advance Wars (USA) (Rev 1) (No Glitch Patch) (Beta) (Bartis1989).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Fix/506-AdvanceWarNoGlitch.zip,usa,,
 27584,~Homebrew~ Goodboy Galaxy,4cbe14d525a54f745523a6fb45f81aef,"Goodboy Galaxy (World) (En,Ja,Fr,De,Es,Pt-BR,Zh,Ar) (v1.2) (itch.io).gba",nointro|homebrew|itchio,,world,,
-21360,~Hack~ Pokémon Emerald Rogue,5edcf2af8c466f414abe5fc1240c39d9,Pokemon Emerald - Rogue EX (v1.3.2a) (Pokabbie).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Pokemon%20Emerald/21360-PokemonRogueEX.zip,unknown,,
 754,Dragon Ball Z: Buu's Fury,3a74fce97f1ea2b28c2a50ec3df0acee,Dragon Ball Z - Buu's Fury (USA).gba,nointro,,usa,Dragon_Ball_Z__Buu’s_Fury.zip,6139671
 9848,Action Man: Robot Atak,d4fecd09b810dba8a76c5766e713e49f,"Action Man - Robot Atak (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
-33063,~Hack~ Pokémon Odyssey,6074f5ee69d1af489a48cfa3d9492ceb,Pokemon FireRed - Pokemon Odyssey (v4.0.0) (Yggdrasil Project).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/GBA/Hacks/Pokemon%20FireRed/33063-PokemonFireRed-PokemonOdyssey.zip,unknown,,
 801,WarioWare: Twisted!,89579f4dfe1ed24a7cd16a6a61a72a17,"WarioWare - Twisted! (USA, Australia).gba",nointro,,usa,WarioWare - Twisted! (USA).zip,10173158
 20277,Super Mario Advance 4: Super Mario Bros. 3,d904485be937fb3e30e4da5019e34a71,Super Mario Advance 4 - Super Mario Bros. 3 (USA) (Rev 1) (Switches - RetroAchievements Edition).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Super%20Mario%20Advance%204/20277-SMA4-SMB3-Switches-RAEdition.zip,usa,,
 9957,The Pinball of the Dead,627b22d7e3c4dbce8191c7765c58e17a,"Pinball of the Dead, The (USA).gba",nointro,,usa,"Pinball of the Dead, The (USA).zip",4224699
@@ -80,8 +74,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 784,Mega Man Zero 4,0d1e88bdb09ff68adf9877a121325f9c,Mega Man Zero 4 (USA).gba,nointro,,usa,Mega Man Zero 4 (USA).zip,10270870
 548,Naruto: Ninja Council 2,60eca5e9057972a76361158cc7ab31b8,Naruto - Ninja Council 2 (USA).gba,nointro,,usa,,
 783,Mega Man Zero 2,182363b0698322e1864ced6e9eed7ead,Mega Man Zero 2 (USA).gba,nointro,,usa,Mega Man Zero 2 (USA).zip,4408482
-6643,~Hack~ Pokémon Ultra Violet Version,48f5c9500f409dd2e14e297e81aa764c,Pokemon - FireRed Version - Ultra Violet (v1.22) (LocksmithArmy).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Pokemon%20FireRed/6643-Pokemon-UltraViolet.zip,unknown,,
-5245,~Hack~ Pokémon AshGray Version,92262059190c05a5615be6b98612fb14,Pokemon - FireRed Version - AshGray (v4.5.3) (metapod23).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Pokemon%20FireRed/5245-Pokemon-AshGray.zip,unknown,,
 4703,Shining Soul,d9b338efe2c15f9493ca0b28714a679b,Shining Soul (USA).gba,nointro,,usa,Shining_Soul.zip,2968411
 5520,Pac-Man Collection,ed4304cc4f5bac34adfaa750316784a8,Pac-Man Collection (USA).gba,nointro,,usa,,
 5987,Hamtaro: Ham-Ham Heartbreak,42cca53c94c0bb8e5146631945bf0cd9,Hamtaro - Ham-Ham Heartbreak (USA).gba,nointro,,usa,Hamtaro__Ham_Ham_Heartbreak.zip,4480706
@@ -95,11 +87,9 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 625,Mega Man Zero 3,aa1d5eeffcd5e4577db9ee6d9b1100f9,Megaman Zero 3 (USA).gba,nointro,,usa,Mega Man Zero 3 (USA).zip,4835953
 2412,Yu-Gi-Oh! Worldwide Edition: Stairway to the Destined Duel,1e52d66f5f8a7c4f207d80ba4fccf55e,"Yu-Gi-Oh! - Worldwide Edition - Stairway to the Destined Duel (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,Yu-Gi-Oh!_Worldwide_Edition__Stairway_to_the_Destined_Duel.zip,6672840
 509,Bomberman Tournament,79aef9bbe1378adfbd688cd66e11a7be,"Bomberman Tournament (USA, Europe).gba",nointro,,usa,,
-18985,~Hack~ Pokémon Sword and Shield Ultimate Plus,63940c626d3b31a3da42e7531f8b43de,Pokemon FireRed - Sword and Shield Ultimate Plus (En) (v1.2.1.2) (PCL.G).gba,nointro|rapatches|pokecommunity,https://github.com/RetroAchievements/RAPatches/raw/refs/heads/main/GBA/Hacks/Pokemon%20FireRed/18985-Pokemon-SwordShield-UltimatePlus.zip,unknown,,
 4201,Harry Potter and the Sorcerer's Stone,4eaac54bc741daae77975b004376174f,"Harry Potter and the Sorcerer's Stone (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da).gba",nointro,,usa,,
 2543,Konami Krazy Racers,c1d1bb9da3a5566a34a92dac25e6bc04,Konami Krazy Racers (USA).gba,nointro,,usa,Konami Krazy Racers (USA).zip,1758633
 4872,Breath of Fire,17a32cfa3d0a5c74f914281ef55c75cd,Breath of Fire (USA).gba,nointro,,usa,Breath_of_Fire.zip,1795873
-4964,~Hack~ Pokémon Liquid Crystal Version,e2cf937901114df0928ea29443525986,"Pokemon FireRed - Liquid Crystal Version (Linkandzelda,Zeikku).gba",nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Pokemon%20FireRed/4964-Pokemon-LiquidCrystal.zip,unknown,Pokémon_Liquid_Crystal.zip,6713937
 4853,Harvest Moon: Friends of Mineral Town,80355c831a7a25b0f70dc021ebd344f1,Harvest Moon - Friends of Mineral Town (USA).gba,nointro,,usa,Harvest Moon - Friends of Mineral Town (USA).zip,3534802
 6184,The Sims: Bustin' Out,e429ce307fe06dbcd7724552ff0339d7,"Sims, The - Bustin' Out (USA, Europe) (En,Fr,De,Es,It,Nl).gba",nointro,,usa,,
 763,Final Fantasy IV: Advance,c74dd5cc3ab6e5d4ac53b1677e1abd69,Final Fantasy IV Advance (USA).gba,nointro,,usa,Final Fantasy IV Advance (USA).zip,4755961
@@ -132,11 +122,8 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 6161,Scurge: Hive,2cd38e2e2d2bbc3eeee2833b8667e962,"Scurge - Hive (USA) (En,Fr,Es).gba",nointro,,usa,,
 29025,~Homebrew~ Apotris,cbbb81a27188b76d68374ec7ef888329,Apotris (World) (v4.0.2) (Aftermarket) (Unl).gba,nointro,,world,,
 5441,Baldur's Gate: Dark Alliance,13fd90ae7070ba25c2ce4223b8f51a1e,Baldur's Gate - Dark Alliance (USA).gba,nointro,,usa,,
-22834,~Hack~ Castlevania: Aria of Sorrow Reprise,b692e46919287e291cb07dd8710d66ae,Castlevania - Aria of Sorrow - Reprise (v1.0) (Xanthus).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Castlevania%20-%20Aria%20of%20Sorrow/22834-Castlevania-AoS-Reprise.zip,unknown,,
 7854,X-Men: Reign of Apocalypse,9457a51730ada0ea9ccdbaab51d93613,"X-Men - Reign of Apocalypse (USA, Europe).gba",nointro,,usa,,
 2155,TMNT,3dac0a2fb322eebbdad45ecc1ec8a943,"TMNT (USA) (En,Fr,Es).gba",nointro,,usa,"TMNT (USA) (En,Fr,Es).zip",3667544
-9595,~Hack~ Pokémon Adventure: Red Chapter,4b866d832fbc58a1575de9475c6003c4,Pokemon - FireRed Version - Pokemon Adventure - Red Chapter (Beta 15) (Expansion Fix) (Aethestode).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Pokemon%20FireRed/9595-PokemonAdvRedCh.zip,unknown,Pokémon_Adventure__Red_Chapter.zip,13875796
-17561,~Hack~ Samus Goes to the Fridge to Get a Glass of Milk,ba993aee48b12e9e5761ae15bf19876b,Metroid Fusion - Samus Goes to the Fridge to Get a Glass of Milk (v0.1) (kkzero).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Metroid%20Fusion/17651-SamusFridge.zip,unknown,,
 6663,Star Wars - Episode III: Revenge of the Sith,6c44b49d69e6c0576197742f20250c40,"Star Wars - Episode III - Revenge of the Sith (USA) (En,Fr,Es).gba",nointro,,usa,,
 5179,Sigma Star Saga,29b048b4b36b3fda168850003f2ee844,"Sigma Star Saga (USA, Europe).gba",nointro,,usa,,
 29837,Who Wants to Be a Millionaire: 2nd Edition,8e2766a5595c4916decf99b300583d16,Who Wants to Be a Millionaire - 2nd Edition (Europe).gba,nointro,,europe,,
@@ -165,7 +152,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 9226,Wolfenstein 3D,d853b5ffa5ef88605a0823d3b4b2df08,"Wolfenstein 3D (USA, Europe).gba",nointro,,usa,,
 4197,Harry Potter and the Chamber of Secrets,b9b42f3e2d54921ee657bc027fa364b9,"Harry Potter and the Chamber of Secrets (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da).gba",nointro,,usa,,
 6209,Guilty Gear X Advance Edition,509139bb43b0fa487056e6068c46ab70,Guilty Gear X - Advance Edition (USA).gba,nointro,,usa,,
-5764,~Hack~ Castlevania: Aria of Sorrow Alter,c39a085bb919a355f26c6a71e20ab1f5,Castlevania - Aria of Sorrow Alter (v1.1) (kseptuple).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Castlevania%20-%20Aria%20of%20Sorrow/5764-AoSAlter.zip,unknown,,
 6407,Nicktoons: Battle for Volcano Island,07f3b7415eb3779ff11e51a38d0ad3f8,Nicktoons - Battle for Volcano Island (USA).gba,nointro,,usa,,
 4092,Shaman King: Master of Spirits 2,5af6a63f85fa386c7889695308dc32a4,Shaman King - Master of Spirits 2 (USA).gba,nointro,,usa,,
 6289,Donald Duck Advance!,8384aa8735b5a036fdddb5da430cb25b,Donald Duck Advance (USA).gba,nointro,,usa,,
@@ -179,16 +165,13 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 749,Classic NES Series: Zelda II: The Adventure of Link,9a18bdc223e591dad8d251e62f755d6e,"Classic NES Series - Zelda II - The Adventure of Link (USA, Europe).gba",nointro|deprecated,,usa,,
 7191,The Lord of the Rings: The Return of the King,53dcb149b4593fba9955f842889445b4,"Lord of the Rings, The - The Return of the King (USA, Europe) (En,Fr,De,Es,It).gba",nointro,,usa,,
 2190,Yu-Gi-Oh! GX: Duel Academy,e1cc21ebf4c3be179738ebbf44f25308,Yu-Gi-Oh! GX - Duel Academy (Europe).gba,nointro,,europe,,
-16160,~Hack~ Hypno's Lullaby,219ec41d577ce72612fb010ecaff7577,Pokemon - FireRed Version - Hypno's Lullaby (7G06).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Pokemon%20FireRed/16160-PokemonFR-HypnosLullaby.zip,unknown,,
 5564,Yu Yu Hakusho: Ghost Files - Tournament Tactics,acefebbe5fdf25ae83a386a6d1c09bca,"Yu Yu Hakusho - Ghostfiles - Tournament Tactics (USA, Europe).gba",nointro,,usa,,
 4707,Shining Force: Resurrection of the Dark Dragon,17a986af456ed994f556f23c330666a8,"Shining Force - Resurrection of the Dark Dragon (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
 7644,Avatar: The Last Airbender,ef9198e16c58c4824efae668da1e7040,"Avatar - The Legend of Aang (Europe) (En,Fr,De,Nl).gba",nointro,,europe,,
 6141,Crash of the Titans,fdef312709444d6d901b8b7c619f5913,"Crash of the Titans (USA) (En,Fr).gba",nointro,,usa,Crash_of_the_Titans.zip,11014766
-9877,~Hack~ Pokémon Theta Emerald Renev,463515a7c47e716cb66c92b5d8857cf2,Pokemon - Emerald Version - Theta Emerald Renev (LCCoolJ95).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Pokemon%20Emerald/9877-PokemonThetaEmeraldRenev.zip,unknown,Pokémon_Theta_Emerald_Renev.zip,16925622
 774,Mega Man Battle Network 3: Blue Version,6fe31df0144759b34ad666badaacc442,Megaman - Battle Network 3 - Blue Version (USA).gba,nointro,,usa,Mega Man Battle Network 3 - Blue Version (USA).zip,4289557
 12786,Dora the Explorer: The Search for Pirate Pig's Treasure,e23047fcf278ca962b8e95690490cc1c,Dora the Explorer - The Search for the Pirate Pig's Treasure (USA).gba,nointro,,usa,,
 6087,Pocky & Rocky with Becky,0f796b33898e0f7c3b001136e6a1c28b,Pocky & Rocky with Becky (USA).gba,nointro,,usa,,
-9842,~Hack~ Super Metroid: GBA Edition,0c0450cf5556ddac9de85f04cbee4c00,Metroid - Zero Mission - Super Metroid GBA Edition (v4.0) (The Brothers Crafters).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Metroid%20-%20Zero%20Mission/17846-SuperMetroidGBAEdition.zip,unknown,,
 24054,SpongeBob's Atlantis SquarePantis,6cf0014cf59609e976d4a82b01db90be,SpongeBob's Atlantis SquarePantis (USA).gba,nointro,,usa,,
 4738,The King of Fighters EX: Neo Blood,1266f7f9d73252d70b25ebfe966c9a2b,"King of Fighters EX, The - NeoBlood (USA).gba",nointro,,usa,,
 4881,DemiKids: Dark Version,4a28daa8f0c619ad90ca97b3b941353d,DemiKids - Dark Version (USA).gba,nointro,,usa,,

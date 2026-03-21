@@ -19,7 +19,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 697,Dragon Quest III,b74b6132326bafcd75e415ddcd9a2932,Dragon Warrior III (USA).gbc,nointro,,usa,Dragon Warrior III (USA).zip,2006425
 8569,Mr. Driller,76fa4014bfbb0ee2b63267af7ac373f2,Mr. Driller (USA).gbc,nointro,,usa,Mr. Driller (USA).zip,172801
 7107,Bomberman Max: Blue Champion,c987f711dfb9cba8dc1174219877360f,Bomberman Max - Blue Champion (USA).gbc,nointro,,usa,Bomberman Max - Blue Champion (USA).zip,429123
-13389,~Hack~ Crystal Clear,1123cb2949f5bb4d53a3eab8e4805687,Pokemon Crystal - Crystal Clear (v2.5.11) (ShockSlayer).gbc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Hacks/Pokemon%20Crystal/13389-Pokemon-CrystalClear.zip,unknown,,
 16597,~Prototype~ Pokémon Picross,35d2e7924408a3460e5c1a770acf3a8a,Pokemon Picross (Japan) (Proto).gbc,nointro,,japan,,
 2501,Astérix & Obélix,6efc4c27d06564f9000667c029ad02a3,"Asterix & Obelix (Europe) (En,Fr,De,Es).gbc",nointro,,europe,"Asterix & Obelix (Europe) (En,Fr,De,Es).zip",297711
 3608,Dragon Quest Monsters,1ca6579359f21d8e27b446f865bf6b83,"Dragon Warrior Monsters (USA, Europe) (SGB Enhanced) (GB Compatible).gbc",nointro,,usa,"Dragon Warrior Monsters (USA, Europe) (SGB Enhanced) (GB Compatible).zip",789515
@@ -37,8 +36,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 5065,Pac-Man: Special Color Edition,b81ddb7d86302384efe1675f75cc35f6,Pac-Man - Special Color Edition (USA) (SGB Enhanced) (GB Compatible).gbc,nointro,,usa,,
 6385,Crystalis,f36a0ed25a601c039b1171d9daf241d6,Crystalis (USA).gbc,nointro,,usa,Crystalis (USA).zip,672980
 30725,~Homebrew~ Hatsune Miku Bomb Squad,6364d4ca7ea0f83981e97c12fd08ea97,Hatsune Miku Bomb Squad (World) (v1.3) (Aftermarket) (Unl).gbc,homebrew|itchio|lostlevel,,world,,
-16191,~Hack~ Pokémon Polished Crystal,53d90e468c9eae4d602feacc6295a021,Pokemon Crystal - Polished Crystal (v3.2.3) (Rangi).gbc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Hacks/Pokemon%20Crystal/16191-PokemonPolishedCrystal.zip,unknown,,
-9491,~Hack~ Pokémon Prism Version,3cd828587eb8d3fe818d57f99b3a3c95,"Pokemon - Crystal Version - Pokemon Prism (v0.94,Build 237) (Koolboyman,RainbowDevs).gbc",nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Hacks/Pokemon%20Crystal/9491-PokemonPrism.zip,unknown,,
 31200,~Homebrew~ Super Mario Bros. Mini,14a2442e6b50b2617e58ffe10ed6a970,Super Mario Bros. Mini (World) (v2.0.8) (Aftermarket) (Unl).gbc,homebrew|itchio|lostlevel,,world,,
 4893,Conker's Pocket Tales,fee6336f969c9e72e9b78be53d512c1e,"Conker's Pocket Tales (USA, Europe) (En,Fr,De) (SGB Enhanced) (GB Compatible).gbc",nointro,,usa,"Conker's Pocket Tales (USA, Europe) (En,Fr,De) (SGB Enhanced) (GB Compatible).zip",902122
 5021,Donkey Kong Country,7841066ac7182f036e85682a18ad8134,"Donkey Kong Country (USA, Europe) (En,Fr,De,Es,It) (Sample).gbc",nointro,,usa,,
@@ -61,7 +58,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 6494,Pocket Bomberman,2f6b6379f8c7ce5d66a198162f345eaa,"Pocket Bomberman (USA, Europe) (SGB Enhanced) (GB Compatible).gbc",nointro,,usa,"Pocket Bomberman (USA, Europe) (SGB Enhanced) (GB Compatible).zip",174193
 6135,Beatmania GB,e7c022031cb882912e81970eb63d4f61,Beatmania GB (Japan) (SGB Enhanced) (GB Compatible).gbc,nointro,,japan,,
 11149,Hello Kitty no Magical Museum,b868fa9f3cecfa2d39df43a5d1b13b60,Hello Kitty no Magical Museum (Japan) (SGB Enhanced) (GB Compatible).gbc,nointro,,japan,,
-6081,~Hack~ Pokémon Pinball Generations,2eff5bdfc65a4d6419f2e9e7cd396339,Pokemon Pinball Generations (v1.5) (RainbowDevs).gbc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Hacks/Pokemon%20Pinball/6081-PokemonPinballGenerations.zip,unknown,,
 3819,John Romero's Daikatana,d1934b308085c92b2ee492faa0d159c2,"John Romero's Daikatana (Europe) (En,Fr,It).gbc",nointro,,europe,"John Romero's Daikatana (Europe) (En,Fr,It).zip",480602
 6080,Daffy Duck: Fowl Play,882a7b4d2cadedd7ed2e21d22ca8f93d,"Daffy Duck - Fowl Play (USA, Europe) (GB Compatible).gbc",nointro,,usa,,
 13182,Top Gear Pocket 2,7d9585c947a7637703fb8ccd6a691ed7,Top Gear Pocket 2 (USA).gbc,nointro,,usa,,
@@ -85,7 +81,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 4192,Monkey Puncher,65da43aef4c10cfd8feee70e842a46ae,Monkey Puncher (Europe) (SGB Enhanced) (GB Compatible).gbc,nointro,,europe,Monkey Puncher (Europe) (SGB Enhanced) (GB Compatible).zip,658242
 4922,Warlocked,b5eb859e6ea60a0bd83100a10206d9c9,Warlocked (USA).gbc,nointro,,usa,Warlocked (USA).zip,433336
 24391,~Homebrew~ Retro Quiz Tower: JAM Edition,93d1eae88ac42199afa4e45a9900182d,Retro Quiz Tower (World) (v1.2) (GB Compatible) (Aftermarket) (Unl).gbc,nointro,,world,,
-16252,~Hack~ Pokémon Fool's Gold,b59b68a73e51cc88fbe03a444ee99cce,"Pokemon - Fool's Gold (v1.3) (Kingbigb0y, Froqpond, G.eeb).gbc",nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Hacks/Pokemon%20Crystal/16252-PokemonFoolsGold.zip,unknown,,
 5143,Harvest Moon 3 GBC,0ff9df46aca45161d1dfa7eee8509c1f,Harvest Moon 3 GBC (USA).gbc,nointro,,usa,Harvest Moon 3 GBC (USA).zip,639736
 4080,Alfred's Adventure,bcc135b000c1c54f12f4ae87c7673b0c,"Alfred's Adventure (Europe) (En,Fr,De,Es,It).gbc",nointro,,europe,,
 18707,~Homebrew~ ~Demo~ Mina the Hollower GBC Demake,ae74b0c434f0097cfd674a66d47062cc,Mina the Hollower GBC Demake (World) (Aftermarket) (Unl).gbc,homebrew|lostlevel,,world,,
@@ -104,7 +99,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 29578,Trip World DX,55bd8b9da0d4bf94a93e56d91c8219dc,Trip World DX (USA) (Limited Run Games).gbc,nointro,,usa,,
 29790,~Homebrew~ My Saturday Grounded,02d5f8a622ba5255eb544fc38ef81728,My Saturday Grounded (World) (v2.0) (Aftermarket) (Unl).gbc,homebrew|itchio|lostlevel,,world,,
 8926,~Unlicensed~ Terrifying 911,a7a2c27cb6fc2c6cf67eb8af2b99c612,Terrifying 911 (China) (En) (Unl).gbc,nointro,,china,,
-17429,~Hack~ Pokémon Gold 97: Reforged | Pokémon Silver 97: Reforged,ebb39e56cc46891de74e890395f34df9,Pokemon - Crystal Version - Gold & Silver 97 Reforged (v6.0a) (Camerupt).gbc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Hacks/Pokemon%20Crystal/17429-PokemonGaS97Reforged.zip,unknown,,
 6342,NSYNC: Get to the Show,9017ebe4c004fd9597557e28d711316a,NSYNC - Get to the Show (USA).gbc,nointro,,usa,,
 3632,Dexter's Laboratory: Robot Rampage,2a147b2d7731ac26a999390c3f5ff2ac,"Dexter's Laboratory - Robot Rampage (USA, Europe).gbc",nointro,,usa,"Dexter's Laboratory - Robot Rampage (USA, Europe).zip",138399
 4702,Die Original Moorhuhnjagd,2382edc04a323a227ea793e33c749c79,"Original Moorhuhn Jagd, Die (Germany).gbc",nointro,,germany,,
@@ -124,7 +118,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 4919,Quest: Brian's Journey,93ff3f6b4bfe0a138d8a8897899e8cb0,Quest - Brian's Journey (USA) (GB Compatible).gbc,nointro,,usa,,
 18594,Dancing Furby,ed517a9923865f4e4945ca4095313fe2,Dancing Furby (Japan) (GB Compatible).gbc,nointro,,japan,,
 14356,Tony Hawk's Pro Skater,75be6e3561908e705d9e790b34eddb4d,"Tony Hawk's Pro Skater (USA, Europe).gbc",nointro,,usa,,
-25072,~Hack~ Pokémon TCG Neo,f41d48344cea1846a014820aae02d73f,Pokemon Trading Card Game - TCG Neo (v1.11) (Cataclyptic).gbc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Hacks/Pokemon%20Trading%20Card%20Game/25072-PokemonTCG-Neo.zip,unknown,,
 16089,Medarot 3: Kabuto Version,cbc55f3bb98f8c0443917ae477e56e51,Medarot 3 - Kabuto Version (Japan).gbc,nointro,,japan,,
 20036,~Homebrew~ Postie,fcdeae417e8bdf89f1300311e4be5c57,Postie (World) (v1.1) (GB Compatible) (Aftermarket) (Unl).gbc,nointro,,world,,
 6181,Dance Dance Revolution GB: Disney Mix,dbada1fdfaba283bede36852843f5ed8,Dance Dance Revolution GB - Disney Mix (Japan).gbc,nointro,,japan,,
@@ -153,8 +146,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 30882,~Homebrew~ Little Dungeon Renovator,c93bd5f1928944452cee933dce345f89,Little Dungeon Renovator (World) (v1.0) (GBCompo2023) (Aftermarket) (Unl).gbc,homebrew|itchio|lostlevel,,world,,
 17975,Das Geheimnis der Happy Hippo-Insel,3bc2db27baff012307501c31d49922ac,"Geheimnis der Happy Hippo-Insel, Das (Germany).gbc",nointro,,germany,,
 7450,Return of the Ninja,178ea5a9eba6e7f35e894bad1ec34f77,Return of the Ninja (USA).gbc,nointro,,usa,Return of the Ninja (USA).zip,305964
-22849,~Hack~ The Legend of Zelda: Archipelago,0eb06307fe73c3d23744987457c93515,"Legend of Zelda, The - Archipelago (Nobody).gbc",nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Hacks/Legend%20of%20Zelda%20-%20Oracle%20of%20Ages/22849-LoZ-Archipelago.zip,unknown,,
-9269,~Hack~ Pokémon Kalos Crystal,2263a0286dced3d5b2a8b3ce543cd6ee,Pokemon - Kalos Crystal (Azure_Keys).gbc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Hacks/Pokemon%20Crystal/9269-PokemonKalosCrystal.zip,unknown,,
 6009,Barbie: Fashion Pack Games,45eeade46bd85f80af13af9dce572b9c,"Barbie - Fashion Pack Games (USA, Europe) (GB Compatible).gbc",nointro,,usa,,
 2499,Noddy and the Birthday Party,a67cb573673f041098f23f868a153019,"Noddy and the Birthday Party (Europe) (En,Fr,De,Es).gbc",nointro,,europe,,
 13053,Monopoly,5f1481260760c69843a61e9060ad7154,Monopoly (USA) (GB Compatible).gbc,nointro,,usa,,
@@ -166,7 +157,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 3671,Pooh and Tigger's Hunny Safari,5f872189d58f841b5672d4cb11ec3bbb,Pooh and Tigger's Hunny Safari (USA).gbc,nointro,,usa,,
 4526,Beatmania GB: GotchaMix 2,490cf7b762f7b735f249c3a3107c3e55,Beatmania GB - Gotcha Mix 2 (Japan).gbc,nointro,,japan,,
 6556,Woody Woodpecker: Escape from Buzz Buzzard Park,2a26b9d248bf62788e23aa897e8e355c,Woody Woodpecker (USA).gbc,nointro,,usa,,
-6251,~Hack~ The Legend of Zelda: Hard Awakening DX,004f82ab432f77c3114644337fdd5b08,"Legend of Zelda, The - Link's Awakening DX (USA, Europe) - Hard Awakening (v1.1) (Jeville).gbc",nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Hacks/Legend%20of%20Zelda%20-%20Link's%20Awakening%20DX/6251-LoZHardAwakening.zip,usa,,
 11165,Bugs Bunny and Lola Bunny: Operation Carrot Patch,d5a558f3f63771ac1e40d53976e090ef,"Bugs Bunny & Lola Bunny - Operation Carrot Patch (Europe) (En,Fr,De,Es,It,Nl) (GB Compatible).gbc",nointro,,europe,,
 8539,~Unlicensed~ Donkey Kong 5: The Journey of Over Time and Space,8b886cb1735b86e7547fc59e52312edf,Donkey Kong 5 - The Journey of Over Time and Space (Taiwan) (En) (Unl) (Fixed).gbc,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBC/Fix/8539-DK5-Fix.zip,unknown,,
 30128,~Homebrew~ Enceladus,70b4c73e34c53ac818d15daa6682c396,Enceladus (World) (v3.0) (GBCompo2023) (Aftermarket) (Unl).gbc,homebrew|itchio|lostlevel,,world,,
