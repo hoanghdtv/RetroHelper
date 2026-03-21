@@ -15,21 +15,21 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 767,Golden Sun,1cdd7f33c9a27061201e1d1ce029a700,"Golden Sun (USA, Europe).gba",nointro,,usa,"Golden Sun (USA, Europe).zip",7174195
 526,Crash Bandicoot: The Huge Adventure,32d74527bfe723470c2c5406c325fb59,Crash Bandicoot - The Huge Adventure (USA).gba,nointro,,usa,Crash_Bandicoot__The_Huge_Adventure.zip,4452331
 782,Mega Man Zero,b24a17d080a01a404cbf018ba42b9803,"Mega Man Zero (USA, Europe).gba",nointro,,usa,"Mega Man Zero (USA, Europe).zip",3674897
-677,Mother 3,af8b0b175f7ec8914cb87b3161ba1aaa,Mother 3 (Japan).gba,nointro,,japan,,
+677,Mother 3,af8b0b175f7ec8914cb87b3161ba1aaa,Mother 3 (Japan).gba,nointro,,japan,Mother 3 (Japan).zip,15449059
 5068,Alien Hominid,18ef4ec828a4bf14b6fd241230bb349a,"Alien Hominid (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Alien Hominid (Europe) (En,Fr,De,Es,It).zip",2553542
 750,Donkey Kong Country,b3806462180cda73d1f8f48d72236394,Donkey Kong Country (USA).gba,nointro,,usa,Donkey_Kong_Country.zip,5642914
 2816,Pokémon Mystery Dungeon: Red Rescue Team,2100cf6f17e12cd34f1513647dfa506b,"Pokemon Mystery Dungeon - Red Rescue Team (USA, Australia).gba",nointro,,usa,"Pokemon Mystery Dungeon - Red Rescue Team (USA, Australia).zip",11379442
 2445,Mario Pinball Land,08c41541eb69a1d652937ed3f88824be,"Mario Pinball Land (USA, Australia).gba",nointro,,usa,"Mario Pinball Land (USA, Australia).zip",5129533
 554,Fire Emblem: The Blazing Blade,f1a1b9742fcd467a531dd4314c4e7d19,"Fire Emblem (USA, Australia).gba",nointro,,usa,"Fire Emblem (USA, Australia).zip",11413206
 790,Pokémon Ruby Version,3e1b2065b3837c14ffbd03fe205fdfd7,"Pokemon - Ruby Version (USA, Europe) (Rev 2).gba",nointro,,usa,"Pokemon - Ruby Version (USA, Europe) (Rev 2).zip",4935028
-1376,Dragon Ball: Advanced Adventure,cb14df09ea41694532a9327510bb28c1,"Dragon Ball - Advanced Adventure (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
+1376,Dragon Ball: Advanced Adventure,cb14df09ea41694532a9327510bb28c1,"Dragon Ball - Advanced Adventure (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Dragon Ball - Advanced Adventure (Europe) (En,Fr,De,Es,It).zip",5650859
 557,Sonic Advance 2,3fb865c5f142a8fc1f82105bfc6b8935,"Sonic Advance 2 (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,"Sonic Advance 2 (USA) (En,Ja,Fr,De,Es,It).zip",4525307
 505,Super Mario Advance,ff6b0c48065389b888c7a78731d4b58d,"Super Mario Advance (USA, Europe).gba",nointro,,usa,"Super Mario Advance (USA, Europe).zip",2158269
 762,Final Fantasy I & II: Dawn of Souls,5d29999685413c4d2bec10d3160f6ee6,Final Fantasy I & II - Dawn of Souls (USA).gba,nointro,,usa,Final Fantasy I & II - Dawn of Souls (USA).zip,10526808
 794,Sonic Advance 3,e0533faf6aa36e3111669574f1c5df92,"Sonic Advance 3 (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,"Sonic Advance 3 (USA) (En,Ja,Fr,De,Es,It).zip",4417747
 758,Dragon Ball Z: The Legacy of Goku,3100fc5a4427a7b0cc20b861134e60f2,Dragon Ball Z - The Legacy of Goku (USA).gba,nointro,,usa,Dragon_Ball_Z__The_Legacy_of_Goku.zip,4695890
 791,Pokémon Sapphire Version,9bc2b765ca6997175fac51e6cdc29089,"Pokemon - Sapphire Version (USA, Europe) (Rev 2).gba",nointro,,usa,"Pokemon - Sapphire Version (USA, Europe) (Rev 2).zip",4935398
-519,Final Fantasy Tactics Advance,6ea5fc0e4b56a232ac3cbdab4b4a6bcd,"Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
+519,Final Fantasy Tactics Advance,6ea5fc0e4b56a232ac3cbdab4b4a6bcd,"Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Final Fantasy Tactics Advance (USA, Australia).zip",7308220
 5081,Aladdin,4bda2a3e0249dfd09330dabc3aa20978,"Aladdin (USA) (En,Fr,De,Es).gba",nointro,,usa,Aladdin_GBA.zip,2418087
 4033,Rhythm Tengoku,5b2d4704ce570d89ae956025bd1036db,Rhythm Tengoku (Japan) (Rev 1).gba,nointro,,japan,Rhythm_Tengoku.zip,7990379
 2171,Mario Tennis: Power Tour,928c0bd4cf82b3fd6f34b53d4fd02e69,"Mario Tennis - Power Tour (USA, Australia) (En,Fr,De,Es,It).gba",nointro,,usa,"Mario Tennis - Power Tour (USA, Australia) (En,Fr,De,Es,It).zip",12055434
@@ -37,7 +37,7 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 514,Metal Slug Advance,6838eb5df807a0f3299ad76066d59d26,Metal Slug Advance (USA).gba,nointro,,usa,Metal Slug Advance (USA).zip,3854567
 2188,Sonic Battle,100579ef01225c620560f88e65ca423a,"Sonic Battle (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,"Sonic Battle (USA) (En,Ja,Fr,De,Es,It).zip",5798570
 5077,Gunstar Super Heroes,a5b75829debc9262b08076a94c8473eb,Gunstar Super Heroes (USA).gba,nointro,,usa,Gunstar Super Heroes (USA).zip,5180983
-759,Dragon Ball Z: The Legacy of Goku II,4e1565aa1f0627c2bf5e51019440cb70,Dragon Ball Z - The Legacy of Goku II (USA).gba,nointro,,usa,,
+759,Dragon Ball Z: The Legacy of Goku II,4e1565aa1f0627c2bf5e51019440cb70,Dragon Ball Z - The Legacy of Goku II (USA).gba,nointro,,usa,Dragon Ball Z - The Legacy of Goku II (USA).zip,6527544
 3706,Final Fight One,c6af74aeeabfd6d7ee2875e355f49af2,Final Fight One (USA).gba,nointro,,usa,Final Fight One (USA).zip,2459701
 760,Drill Dozer,14dab12e795098988d46b96885170538,Drill Dozer (USA).gba,nointro,,usa,Drill Dozer (USA).zip,3045746
 4206,Sword of Mana,c7e5d28e7c430454aeff766961095561,"Sword of Mana (USA, Australia).gba",nointro,,usa,"Sword of Mana (USA, Australia).zip",8551331
@@ -46,139 +46,128 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 1416,Grand Theft Auto Advance,2c8ef9cce9f46b55247468ea449aeade,Grand Theft Auto (USA).gba,nointro,,usa,Grand_Theft_Auto_Advance.zip,5928202
 5255,Sonic Pinball Party,de40b1738a7c670ca28ddf44bb908df6,"Sonic Pinball Party (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,"Sonic Pinball Party (USA) (En,Ja,Fr,De,Es,It).zip",3636426
 5234,Super Mario Advance 3: Yoshi's Island,bb09508c782f37934c9519c5f8a7350c,Super Mario Advance 3 - Yoshi's Island (USA).gba,nointro,,usa,Super Mario Advance 3 - Yoshi's Island (USA).zip,2597514
-787,Naruto: Ninja Council,dffc7306234751e18b163fbf3e925f1b,Naruto - Ninja Council (USA).gba,nointro,,usa,,
+787,Naruto: Ninja Council,dffc7306234751e18b163fbf3e925f1b,Naruto - Ninja Council (USA).gba,nointro,,usa,Naruto - Ninja Council (USA).zip,2355388
 764,Final Fantasy V: Advance,9ed82843cc54876362be56faccb15d75,Final Fantasy V Advance (USA).gba,nointro,,usa,Final Fantasy V Advance (USA).zip,5065262
-5004,Yu-Gi-Oh! The Eternal Duelist Soul,ec3f000ffde5754cb164a05d2d6f9053,Yu-Gi-Oh! - The Eternal Duelist Soul (USA).gba,nointro,,usa,,
-16209,~Homebrew~ Celeste Classic,9bcd687293600451abdd0f181b2427e8,Celeste Classic (World) (v1.2) (Aftermarket) (Unl).gba,nointro|github,,world,,
-5719,LEGO Star Wars: The Video Game,caa2d80d5c14a76d1f482f7589281c22,"LEGO Star Wars - The Video Game (USA, Europe) (En,Fr,De,Es,It,Nl,Da).gba",nointro,,usa,,
+5004,Yu-Gi-Oh! The Eternal Duelist Soul,ec3f000ffde5754cb164a05d2d6f9053,Yu-Gi-Oh! - The Eternal Duelist Soul (USA).gba,nointro,,usa,Yu-Gi-Oh! - The Eternal Duelist Soul (USA).zip,5282793
+16209,~Homebrew~ Celeste Classic,9bcd687293600451abdd0f181b2427e8,Celeste Classic (World) (v1.2) (Aftermarket) (Unl).gba,nointro|github,,world,Celeste.Classic.v1.2.Homebrew.zip,891998
+5719,LEGO Star Wars: The Video Game,caa2d80d5c14a76d1f482f7589281c22,"LEGO Star Wars - The Video Game (USA, Europe) (En,Fr,De,Es,It,Nl,Da).gba",nointro,,usa,"LEGO Star Wars - The Video Game (USA, Europe) (En,Fr,De,Es,It,Nl,Da).zip",12873358
 5127,Crash Nitro Kart,9e6ff628db81caa74dca356eaadadac9,Crash Nitro Kart (USA).gba,nointro,,usa,Crash Nitro Kart (USA).zip,4119735
-2482,Fire Emblem: The Sacred Stones,8f0dad780f01ce002331693f4733f27e,"Fire Emblem - The Sacred Stones (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
+2482,Fire Emblem: The Sacred Stones,8f0dad780f01ce002331693f4733f27e,"Fire Emblem - The Sacred Stones (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Fire Emblem - The Sacred Stones (USA, Australia).zip",13816469
 748,Classic NES Series: The Legend of Zelda,588203bd9de678a55a9f1707931302f2,"Classic NES Series - The Legend of Zelda (USA, Europe).gba",nointro|deprecated,,usa,The_Legend_of_Zelda.zip,4151779
-506,Advance Wars,3e399fdc568d0a0e140a5a277a5c32f3,Advance Wars (USA) (Rev 1) (No Glitch Patch) (Beta) (Bartis1989).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Fix/506-AdvanceWarNoGlitch.zip,usa,,
-27584,~Homebrew~ Goodboy Galaxy,4cbe14d525a54f745523a6fb45f81aef,"Goodboy Galaxy (World) (En,Ja,Fr,De,Es,Pt-BR,Zh,Ar) (v1.2) (itch.io).gba",nointro|homebrew|itchio,,world,,
+27584,~Homebrew~ Goodboy Galaxy,4cbe14d525a54f745523a6fb45f81aef,"Goodboy Galaxy (World) (En,Ja,Fr,De,Es,Pt-BR,Zh,Ar) (v1.2) (itch.io).gba",nointro|homebrew|itchio,,world,Goodboy Galaxy (USA).zip,9935820
 754,Dragon Ball Z: Buu's Fury,3a74fce97f1ea2b28c2a50ec3df0acee,Dragon Ball Z - Buu's Fury (USA).gba,nointro,,usa,Dragon_Ball_Z__Buu’s_Fury.zip,6139671
-9848,Action Man: Robot Atak,d4fecd09b810dba8a76c5766e713e49f,"Action Man - Robot Atak (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
+9848,Action Man: Robot Atak,d4fecd09b810dba8a76c5766e713e49f,"Action Man - Robot Atak (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Action Man - Robot Atak (Europe) (En,Fr,De,Es,It).zip",2986642
 801,WarioWare: Twisted!,89579f4dfe1ed24a7cd16a6a61a72a17,"WarioWare - Twisted! (USA, Australia).gba",nointro,,usa,WarioWare - Twisted! (USA).zip,10173158
-20277,Super Mario Advance 4: Super Mario Bros. 3,d904485be937fb3e30e4da5019e34a71,Super Mario Advance 4 - Super Mario Bros. 3 (USA) (Rev 1) (Switches - RetroAchievements Edition).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Hacks/Super%20Mario%20Advance%204/20277-SMA4-SMB3-Switches-RAEdition.zip,usa,,
 9957,The Pinball of the Dead,627b22d7e3c4dbce8191c7765c58e17a,"Pinball of the Dead, The (USA).gba",nointro,,usa,"Pinball of the Dead, The (USA).zip",4224699
 4106,Rayman Advance,616f80f482ade86d88021b41587aa600,"Rayman Advance (USA) (En,Fr,De,Es,It).gba",nointro,,usa,"Rayman Advance (USA) (En,Fr,De,Es,It).zip",3706792
 2138,Double Dragon Advance,9f738e440d5a6ebbe5e5dcf8b727bbb3,Double Dragon Advance (USA).gba,nointro,,usa,Double Dragon Advance (USA).zip,1864757
-529,Mario vs. Donkey Kong,a3dca1a3167cb855aacdca650c4ce39f,"Mario vs. Donkey Kong (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
-6946,Bookworm,c64b677831500e85222d85c70e2d23b6,Bookworm (USA).gba,nointro,,usa,,
+529,Mario vs. Donkey Kong,a3dca1a3167cb855aacdca650c4ce39f,"Mario vs. Donkey Kong (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Mario vs. Donkey Kong (Europe) (En,Fr,De,Es,It).zip",6841679
+6946,Bookworm,c64b677831500e85222d85c70e2d23b6,Bookworm (USA).gba,nointro,,usa,Bookworm (USA).zip,1850456
 5117,Yu-Gi-Oh! The Sacred Cards,0a7c58069d5390165482e88a22158bd2,Yu-Gi-Oh! - The Sacred Cards (USA).gba,nointro,,usa,Yu-Gi-Oh!_–_The_Sacred_Cards.zip,9918211
 752,Donkey Kong Country 3,f577a97d679e669f8063910eb060e864,Donkey Kong Country 3 (USA).gba,nointro,,usa,DONKEY_KONG_COUNTRY_3.zip,11805789
-4970,Dr. Mario & Puzzle League,279297081bab92bdc469f3b9127ab4fc,2 Games in One! - Dr. Mario + Puzzle League (USA).gba,nointro,,usa,,
+4970,Dr. Mario & Puzzle League,279297081bab92bdc469f3b9127ab4fc,2 Games in One! - Dr. Mario + Puzzle League (USA).gba,nointro,,usa,"2 Games in One! - Dr. Mario + Puzzle League (USA, Australia).zip",2331234
 2592,Golden Sun: The Lost Age,8efe8b2aaed97149e897570cd123ff6e,"Golden Sun - The Lost Age (USA, Europe).gba",nointro,,usa,"Golden Sun - The Lost Age (USA, Europe).zip",13085552
-3700,Who Wants to Be a Millionaire,204f81fba1f395db9e7966039ef48840,Who Wants to Be a Millionaire (Europe).gba,nointro,,europe,,
-12748,~Prototype~ Resident Evil 2,e9385f1a0876c563dc42a0ee9c8700ce,Resident Evil 2 (Unknown) (Proto).gba,nointro,,unknown,,
+3700,Who Wants to Be a Millionaire,204f81fba1f395db9e7966039ef48840,Who Wants to Be a Millionaire (Europe).gba,nointro,,europe,Who Wants to Be a Millionaire (Europe).zip,3048604
+12748,~Prototype~ Resident Evil 2,e9385f1a0876c563dc42a0ee9c8700ce,Resident Evil 2 (Unknown) (Proto).gba,nointro,,unknown,Resident Evil 2 (Unknown) (Proto).zip,1587589
 784,Mega Man Zero 4,0d1e88bdb09ff68adf9877a121325f9c,Mega Man Zero 4 (USA).gba,nointro,,usa,Mega Man Zero 4 (USA).zip,10270870
-548,Naruto: Ninja Council 2,60eca5e9057972a76361158cc7ab31b8,Naruto - Ninja Council 2 (USA).gba,nointro,,usa,,
+548,Naruto: Ninja Council 2,60eca5e9057972a76361158cc7ab31b8,Naruto - Ninja Council 2 (USA).gba,nointro,,usa,Naruto - Ninja Council 2 (USA).zip,3815664
 783,Mega Man Zero 2,182363b0698322e1864ced6e9eed7ead,Mega Man Zero 2 (USA).gba,nointro,,usa,Mega Man Zero 2 (USA).zip,4408482
 4703,Shining Soul,d9b338efe2c15f9493ca0b28714a679b,Shining Soul (USA).gba,nointro,,usa,Shining_Soul.zip,2968411
-5520,Pac-Man Collection,ed4304cc4f5bac34adfaa750316784a8,Pac-Man Collection (USA).gba,nointro,,usa,,
+5520,Pac-Man Collection,ed4304cc4f5bac34adfaa750316784a8,Pac-Man Collection (USA).gba,nointro,,usa,Pac-Man Collection (USA).zip,2717615
 5987,Hamtaro: Ham-Ham Heartbreak,42cca53c94c0bb8e5146631945bf0cd9,Hamtaro - Ham-Ham Heartbreak (USA).gba,nointro,,usa,Hamtaro__Ham_Ham_Heartbreak.zip,4480706
-5080,Tim Burton's The Nightmare Before Christmas: The Pumpkin King,2de53bf040953ad79cc8135c37b47aa0,"Tim Burton's The Nightmare Before Christmas - The Pumpkin King (USA, Europe) (En,Fr,De,Es,It).gba",nointro,,usa,,
-4879,Fire Emblem: Fuuin no Tsurugi,8643fe7632d4895dcaaca230475e70fb,Fire Emblem - Fuuin no Tsurugi (Japan).gba,nointro,,japan,,
-8701,Classic NES Series: Castlevania,1f90a64fb3b26abee5ff9284fe628758,Classic NES Series - Castlevania (USA).gba,nointro,,usa,,
+5080,Tim Burton's The Nightmare Before Christmas: The Pumpkin King,2de53bf040953ad79cc8135c37b47aa0,"Tim Burton's The Nightmare Before Christmas - The Pumpkin King (USA, Europe) (En,Fr,De,Es,It).gba",nointro,,usa,"Tim Burton's The Nightmare Before Christmas - The Pumpkin King (USA, Europe) (En,Fr,De,Es,It).zip",4611759
+4879,Fire Emblem: Fuuin no Tsurugi,8643fe7632d4895dcaaca230475e70fb,Fire Emblem - Fuuin no Tsurugi (Japan).gba,nointro,,japan,Fire Emblem - Fuuin no Tsurugi (Japan).zip,5732478
 532,Mario Golf: Advance Tour,2e8814e664675572a43b01900bbbb16b,Mario Golf - Advance Tour (USA).gba,nointro,,usa,Mario Golf - Advance Tour (USA).zip,12058408
-7128,Elf: The Movie,1fe0aa775a55230c0cf8236f4376dbe9,"Elf - The Movie (USA) (En,Fr,De,Es,It).gba",nointro,,usa,,
-572,Magical Quest 3 Starring Mickey & Donald,47fe0fe1ee054ac37e286fb909e49be0,"Magical Quest 3 Starring Mickey & Donald (USA) (En,Fr,De).gba",nointro,,usa,,
+7128,Elf: The Movie,1fe0aa775a55230c0cf8236f4376dbe9,"Elf - The Movie (USA) (En,Fr,De,Es,It).gba",nointro,,usa,"Elf - The Movie (USA) (En,Fr,De,Es,It).zip",1839189
+572,Magical Quest 3 Starring Mickey & Donald,47fe0fe1ee054ac37e286fb909e49be0,"Magical Quest 3 Starring Mickey & Donald (USA) (En,Fr,De).gba",nointro,,usa,"Magical Quest 3 Starring Mickey & Donald (USA) (En,Fr,De).zip",2478415
 5312,The King of Fighters EX2: Howling Blood,6be741eea41598baeed52e4dd7ddb9f5,"King of Fighters EX 2, The - Howling Blood (USA).gba",nointro,,usa,The_King_of_Fighters_EX2__Howling_Blood.zip,5752469
 625,Mega Man Zero 3,aa1d5eeffcd5e4577db9ee6d9b1100f9,Megaman Zero 3 (USA).gba,nointro,,usa,Mega Man Zero 3 (USA).zip,4835953
 2412,Yu-Gi-Oh! Worldwide Edition: Stairway to the Destined Duel,1e52d66f5f8a7c4f207d80ba4fccf55e,"Yu-Gi-Oh! - Worldwide Edition - Stairway to the Destined Duel (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,Yu-Gi-Oh!_Worldwide_Edition__Stairway_to_the_Destined_Duel.zip,6672840
-509,Bomberman Tournament,79aef9bbe1378adfbd688cd66e11a7be,"Bomberman Tournament (USA, Europe).gba",nointro,,usa,,
-4201,Harry Potter and the Sorcerer's Stone,4eaac54bc741daae77975b004376174f,"Harry Potter and the Sorcerer's Stone (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da).gba",nointro,,usa,,
+509,Bomberman Tournament,79aef9bbe1378adfbd688cd66e11a7be,"Bomberman Tournament (USA, Europe).gba",nointro,,usa,"Bomberman Tournament (USA, Europe).zip",2483395
+4201,Harry Potter and the Sorcerer's Stone,4eaac54bc741daae77975b004376174f,"Harry Potter and the Sorcerer's Stone (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da).gba",nointro,,usa,"Harry Potter and the Sorcerer's Stone (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da).zip",5657393
 2543,Konami Krazy Racers,c1d1bb9da3a5566a34a92dac25e6bc04,Konami Krazy Racers (USA).gba,nointro,,usa,Konami Krazy Racers (USA).zip,1758633
 4872,Breath of Fire,17a32cfa3d0a5c74f914281ef55c75cd,Breath of Fire (USA).gba,nointro,,usa,Breath_of_Fire.zip,1795873
 4853,Harvest Moon: Friends of Mineral Town,80355c831a7a25b0f70dc021ebd344f1,Harvest Moon - Friends of Mineral Town (USA).gba,nointro,,usa,Harvest Moon - Friends of Mineral Town (USA).zip,3534802
-6184,The Sims: Bustin' Out,e429ce307fe06dbcd7724552ff0339d7,"Sims, The - Bustin' Out (USA, Europe) (En,Fr,De,Es,It,Nl).gba",nointro,,usa,,
+6184,The Sims: Bustin' Out,e429ce307fe06dbcd7724552ff0339d7,"Sims, The - Bustin' Out (USA, Europe) (En,Fr,De,Es,It,Nl).gba",nointro,,usa,"Sims, The - Bustin' Out (USA, Europe) (En,Fr,De,Es,It,Nl).zip",10974006
 763,Final Fantasy IV: Advance,c74dd5cc3ab6e5d4ac53b1677e1abd69,Final Fantasy IV Advance (USA).gba,nointro,,usa,Final Fantasy IV Advance (USA).zip,4755961
 766,Game & Watch Gallery 4,89bd27cd7228736d9c00461abd20c208,Game & Watch Gallery 4 (USA).gba,nointro,,usa,Game & Watch Gallery 4 (USA).zip,2694079
-7274,Pac-Man Pinball Advance,4d7b955b9c19b13d1d776e35ce007f78,Pac-Man Pinball Advance (USA).gba,nointro,,usa,,
+7274,Pac-Man Pinball Advance,4d7b955b9c19b13d1d776e35ce007f78,Pac-Man Pinball Advance (USA).gba,nointro,,usa,Pac-Man Pinball Advance (USA).zip,2265403
 4203,Spyro: Season of Ice,76aad0726be3ac24f3c5a7a8e64379d3,Spyro - Season of Ice (USA).gba,nointro,,usa,Spyro - Season of Ice (USA).zip,4075252
-4200,Harry Potter and the Prisoner of Azkaban,3fe499f2a6b141ec2959e2d109e3f321,"Harry Potter and the Prisoner of Azkaban (USA, Europe) (En,Fr,De,Es,It,Nl,Da).gba",nointro,,usa,,
-5093,Mario Party Advance,9D0D27345BF88DE8B025AA24D54D6BAD,Mario Party Advance (USA).gba,nointro,,usa,,
-2598,One Piece,ce153a5ce176b608edd035e3b9a27dad,One Piece (USA).gba,nointro,,usa,,
-527,Shaman King: Master of Spirits,1c92edbad07a372ee382d16cf624dc4b,Shaman King - Master of Spirits (USA).gba,nointro,,usa,,
+4200,Harry Potter and the Prisoner of Azkaban,3fe499f2a6b141ec2959e2d109e3f321,"Harry Potter and the Prisoner of Azkaban (USA, Europe) (En,Fr,De,Es,It,Nl,Da).gba",nointro,,usa,"Harry Potter and the Prisoner of Azkaban (USA, Europe) (En,Fr,De,Es,It,Nl,Da).zip",12854010
+5093,Mario Party Advance,9D0D27345BF88DE8B025AA24D54D6BAD,Mario Party Advance (USA).gba,nointro,,usa,Mario Party Advance (USA).zip,6245599
+2598,One Piece,ce153a5ce176b608edd035e3b9a27dad,One Piece (USA).gba,nointro,,usa,One Piece (USA).zip,2533392
+527,Shaman King: Master of Spirits,1c92edbad07a372ee382d16cf624dc4b,Shaman King - Master of Spirits (USA).gba,nointro,,usa,Shaman King - Master of Spirits (USA).zip,6152734
 5030,Digimon Battle Spirit,a4e3e4754c7bd16e5e2a52ee83ab2be1,Digimon - Battle Spirit (USA).gba,nointro,,usa,Digimon_Battle_Spirit.zip,1228783
-5057,The Urbz: Sims in the City,0821eea9bf87804ec1d700ec458a04e5,"Urbz, The - Sims in the City (USA, Europe) (En,Fr,De,Es,It,Nl).gba",nointro,,usa,,
+5057,The Urbz: Sims in the City,0821eea9bf87804ec1d700ec458a04e5,"Urbz, The - Sims in the City (USA, Europe) (En,Fr,De,Es,It,Nl).gba",nointro,,usa,"Urbz, The - Sims in the City (USA, Europe) (En,Fr,De,Es,It,Nl).zip",25282810
 2531,Doom II,efefee9082a83fc6e49f87510746eac0,Doom II (USA).gba,nointro,,usa,Doom_II.zip,8799324
 2179,Mega Man & Bass,88792ae1fbc74f4a5425d0c6f0482023,Mega Man & Bass (USA).gba,nointro,,usa,Mega Man & Bass (USA).zip,4804355
-5114,Yu-Gi-Oh! World Championship Tournament 2004,8517049ce498d84530c953d6a8b3112e,"Yu-Gi-Oh! - World Championship Tournament 2004 (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,,
-7159,The Polar Express,d325f3b46025ec8df4a3761cb529e7b8,"Polar Express, The (USA, Europe) (En,Fr,De,Es,It).gba",nointro,,usa,,
+5114,Yu-Gi-Oh! World Championship Tournament 2004,8517049ce498d84530c953d6a8b3112e,"Yu-Gi-Oh! - World Championship Tournament 2004 (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,"Yu-Gi-Oh! - World Championship Tournament 2004 (USA) (En,Ja,Fr,De,Es,It).zip",8329588
+7159,The Polar Express,d325f3b46025ec8df4a3761cb529e7b8,"Polar Express, The (USA, Europe) (En,Fr,De,Es,It).gba",nointro,,usa,"Polar Express, The (USA, Europe) (En,Fr,De,Es,It).zip",2929260
 3681,Lady Sia,94b847814fee8e4e5d9fdbf1d3d25107,"Lady Sia (USA) (En,Fr,De,Es,It,Nl).gba",nointro,,usa,"Lady Sia (USA) (En,Fr,De,Es,It,Nl).zip",2786315
-503,Tetris Worlds,08aecb6882d9a73b2cac1316a5fbf31b,"Tetris Worlds (Europe) (En,Es,It).gba",nointro,,europe,,
-18464,Classic NES Series: Metroid,5d9da9584ee479f0f096963ba713710e,"Classic NES Series - Metroid (USA, Europe).gba",nointro|deprecated,,usa,,
-3653,Klonoa: Empire of Dreams,31d227735fbc8220de9f1a93da10e199,Klonoa - Empire of Dreams (Europe).gba,nointro,,europe,,
-3618,Crash Bandicoot Purple: Ripto's Rampage,24ef180602e0658bbe38fabc5d09894c,Crash Bandicoot Purple - Ripto's Rampage (USA) (Rev 1).gba,nointro,,usa,,
-6818,Sonic the Hedgehog: Genesis,8105a6012737aac2907b27e4a05ad794,Sonic The Hedgehog - Genesis (USA).gba,nointro,,usa,,
-22659,~Homebrew~ Sips,03a47a034c02e457fb6f8412b81ae56c,Sips (World) (Aftermarket) (Unl).gba,nointro,,world,,
-2595,Mother 1+2,f41e36204356974c94fabf7d144dd32a,Mother 1+2 (Japan).gba,nointro,,japan,,
-26278,Who Wants to Be a Millionaire: Junior,94194788e55c1d3c256d816601ee7530,Who Wants to Be a Millionaire Junior (Europe).gba,nointro,,europe,,
-5501,SpongeBob SquarePants: SuperSponge,c2bfa5c822f33eaed02ad2f94a0414b4,"SpongeBob SquarePants - SuperSponge (USA, Europe).gba",nointro,,usa,,
+503,Tetris Worlds,08aecb6882d9a73b2cac1316a5fbf31b,"Tetris Worlds (Europe) (En,Es,It).gba",nointro,,europe,"Tetris Worlds (Europe) (En,Es,It).zip",1703451
+18464,Classic NES Series: Metroid,5d9da9584ee479f0f096963ba713710e,"Classic NES Series - Metroid (USA, Europe).gba",nointro|deprecated,,usa,"Classic NES Series - Metroid (USA, Europe).zip",4074977
+3653,Klonoa: Empire of Dreams,31d227735fbc8220de9f1a93da10e199,Klonoa - Empire of Dreams (Europe).gba,nointro,,europe,Klonoa - Empire of Dreams (Europe).zip,2538467
+3618,Crash Bandicoot Purple: Ripto's Rampage,24ef180602e0658bbe38fabc5d09894c,Crash Bandicoot Purple - Ripto's Rampage (USA) (Rev 1).gba,nointro,,usa,Crash Bandicoot Purple - Ripto's Rampage (USA) (Rev 1).zip,7779573
+6818,Sonic the Hedgehog: Genesis,8105a6012737aac2907b27e4a05ad794,Sonic The Hedgehog - Genesis (USA).gba,nointro,,usa,Sonic the Hedgehog - Genesis (USA).zip,1143512
+22659,~Homebrew~ Sips,03a47a034c02e457fb6f8412b81ae56c,Sips (World) (Aftermarket) (Unl).gba,nointro,,world,Sips (World) (GBA WinterJam 2023) (Aftermarket) (Unl).zip,3183879
+2595,Mother 1+2,f41e36204356974c94fabf7d144dd32a,Mother 1+2 (Japan).gba,nointro,,japan,Mother 1+2 (Japan).zip,3985584
+5501,SpongeBob SquarePants: SuperSponge,c2bfa5c822f33eaed02ad2f94a0414b4,"SpongeBob SquarePants - SuperSponge (USA, Europe).gba",nointro,,usa,"SpongeBob SquarePants - SuperSponge (USA, Europe).zip",2024561
 6011,Mr. Driller 2,d7118be078b9a61284a99d3f1f7e972f,Mr. Driller 2 (USA).gba,nointro,,usa,Mr. Driller 2 (USA).zip,2294056
 2585,Super Street Fighter II Turbo Revival,7a36a7486ef2c534111ee417b8acf9b7,Super Street Fighter II Turbo - Revival (USA).gba,nointro,,usa,Super Street Fighter II Turbo - Revival (USA).zip,4993012
-4690,Iridion 3D,f88df40fedb9d31a6e59dba4a9be1b2a,"Iridion 3D (USA, Europe).gba",nointro,,usa,,
-6161,Scurge: Hive,2cd38e2e2d2bbc3eeee2833b8667e962,"Scurge - Hive (USA) (En,Fr,Es).gba",nointro,,usa,,
-29025,~Homebrew~ Apotris,cbbb81a27188b76d68374ec7ef888329,Apotris (World) (v4.0.2) (Aftermarket) (Unl).gba,nointro,,world,,
-5441,Baldur's Gate: Dark Alliance,13fd90ae7070ba25c2ce4223b8f51a1e,Baldur's Gate - Dark Alliance (USA).gba,nointro,,usa,,
-7854,X-Men: Reign of Apocalypse,9457a51730ada0ea9ccdbaab51d93613,"X-Men - Reign of Apocalypse (USA, Europe).gba",nointro,,usa,,
+4690,Iridion 3D,f88df40fedb9d31a6e59dba4a9be1b2a,"Iridion 3D (USA, Europe).gba",nointro,,usa,"Iridion 3D (USA, Europe).zip",2539069
+6161,Scurge: Hive,2cd38e2e2d2bbc3eeee2833b8667e962,"Scurge - Hive (USA) (En,Fr,Es).gba",nointro,,usa,"Scurge - Hive (USA) (En,Fr,Es)(1).zip",6073124
+5441,Baldur's Gate: Dark Alliance,13fd90ae7070ba25c2ce4223b8f51a1e,Baldur's Gate - Dark Alliance (USA).gba,nointro,,usa,Baldur's Gate - Dark Alliance (USA).zip,5678465
+7854,X-Men: Reign of Apocalypse,9457a51730ada0ea9ccdbaab51d93613,"X-Men - Reign of Apocalypse (USA, Europe).gba",nointro,,usa,"X-Men - Reign of Apocalypse (USA, Europe).zip",3797266
 2155,TMNT,3dac0a2fb322eebbdad45ecc1ec8a943,"TMNT (USA) (En,Fr,Es).gba",nointro,,usa,"TMNT (USA) (En,Fr,Es).zip",3667544
-6663,Star Wars - Episode III: Revenge of the Sith,6c44b49d69e6c0576197742f20250c40,"Star Wars - Episode III - Revenge of the Sith (USA) (En,Fr,Es).gba",nointro,,usa,,
-5179,Sigma Star Saga,29b048b4b36b3fda168850003f2ee844,"Sigma Star Saga (USA, Europe).gba",nointro,,usa,,
-29837,Who Wants to Be a Millionaire: 2nd Edition,8e2766a5595c4916decf99b300583d16,Who Wants to Be a Millionaire - 2nd Edition (Europe).gba,nointro,,europe,,
+6663,Star Wars - Episode III: Revenge of the Sith,6c44b49d69e6c0576197742f20250c40,"Star Wars - Episode III - Revenge of the Sith (USA) (En,Fr,Es).gba",nointro,,usa,"Star Wars - Episode III - Revenge of the Sith (USA) (En,Fr,Es).zip",3514602
+5179,Sigma Star Saga,29b048b4b36b3fda168850003f2ee844,"Sigma Star Saga (USA, Europe).gba",nointro,,usa,"Sigma Star Saga (USA, Europe).zip",3591031
+29837,Who Wants to Be a Millionaire: 2nd Edition,8e2766a5595c4916decf99b300583d16,Who Wants to Be a Millionaire - 2nd Edition (Europe).gba,nointro,,europe,Who Wants to Be a Millionaire - 2nd Edition (Europe).zip,3168339
 796,Spyro 2: Season of Flame,8d9fbf8bde7941ca97dcba7757d60e81,Spyro 2 - Season of Flame (USA).gba,nointro,,usa,Spyro 2 - Season of Flame (USA).zip,4588391
-8010,~Homebrew~ Flappy Bird,38f78ab97bbbb9bd210d8c96497f788a,Flappy Bird (World) (Aftermarket) (Unl).gba,nointro,,world,,
-5119,Tokyo Xtreme Racer Advance,51664a136b5c9383258e58b384a8d9a8,Tokyo Xtreme Racer Advance (USA).gba,nointro,,usa,,
-29874,"~Demo~ WarioWare, Inc.: Trial Version",39891f6dc6233821d27e3319095de733,"WarioWare, Inc. - Trial Version (USA).gba",nointro,,usa,,
+5119,Tokyo Xtreme Racer Advance,51664a136b5c9383258e58b384a8d9a8,Tokyo Xtreme Racer Advance (USA).gba,nointro,,usa,Tokyo Xtreme Racer Advance (USA).zip,1423249
 2509,River City Ransom EX,0b95fb20b9f487eb64431e9db9f75c7f,River City Ransom EX (USA).gba,nointro,,usa,River City Ransom EX (USA).zip,1373876
-2540,The Simpsons: Road Rage,8f0fdaeda361783ee74abd980b418388,"Simpsons, The - Road Rage (USA, Europe).gba",nointro,,usa,,
-5491,Digimon Battle Spirit 2,db4a8ed843dfb471622f37a8efb35111,"Digimon - Battle Spirit 2 (USA) (En,Fr,De,Es,It).gba",nointro,,usa,,
-2506,Teenage Mutant Ninja Turtles,dc4ea1eb92d51b8c18b58611ad652ccc,"Teenage Mutant Ninja Turtles (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
-5284,Spider-Man,6ea428eabf05d2c51ed21b5608c5db21,"Spider-Man (USA, Europe).gba",nointro,,usa,,
+2540,The Simpsons: Road Rage,8f0fdaeda361783ee74abd980b418388,"Simpsons, The - Road Rage (USA, Europe).gba",nointro,,usa,"Simpsons, The - Road Rage (USA, Europe).zip",2616375
+5491,Digimon Battle Spirit 2,db4a8ed843dfb471622f37a8efb35111,"Digimon - Battle Spirit 2 (USA) (En,Fr,De,Es,It).gba",nointro,,usa,"Digimon - Battle Spirit 2 (USA) (En,Fr,De,Es,It).zip",1543273
+2506,Teenage Mutant Ninja Turtles,dc4ea1eb92d51b8c18b58611ad652ccc,"Teenage Mutant Ninja Turtles (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Teenage Mutant Ninja Turtles (Europe) (En,Fr,De,Es,It).zip",3948792
+5284,Spider-Man,6ea428eabf05d2c51ed21b5608c5db21,"Spider-Man (USA, Europe).gba",nointro,,usa,"Spider-Man (USA, Europe).zip",3662538
 4723,Medabots: Metabee Version,b186a9ba291a156c45640cb3c6b8a710,Medabots - Metabee (USA).gba,nointro,,usa,Medabots - Metabee (USA).zip,5741502
-7095,Shining Soul II,49aa688745111aaa51076a345f8f18c3,"Shining Soul II (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
-7202,The Lord of the Rings: The Two Towers,e3bebb876bf45ca598800e3a90d6b2f0,"Lord of the Rings, The - The Two Towers (USA, Europe) (En,Fr,De,Es,It,Nl).gba",nointro,,usa,,
-535,Super Puzzle Fighter II Turbo,622addba536f937a1c5b66dddb20c8b7,Super Puzzle Fighter II (Europe).gba,nointro,,europe,,
+7095,Shining Soul II,49aa688745111aaa51076a345f8f18c3,"Shining Soul II (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Shining Soul II (Europe) (En,Fr,De,Es,It).zip",6651622
+7202,The Lord of the Rings: The Two Towers,e3bebb876bf45ca598800e3a90d6b2f0,"Lord of the Rings, The - The Two Towers (USA, Europe) (En,Fr,De,Es,It,Nl).gba",nointro,,usa,"Lord of the Rings, The - The Two Towers (USA, Europe) (En,Fr,De,Es,It,Nl).zip",12672564
+535,Super Puzzle Fighter II Turbo,622addba536f937a1c5b66dddb20c8b7,Super Puzzle Fighter II (Europe).gba,nointro,,europe,Super Puzzle Fighter II (Europe).zip,4464740
 4204,Spyro: Attack of the Rhynocs,4a15b07b4dc292e9003c377c55372287,Spyro - Attack of the Rhynocs (USA).gba,nointro,,usa,Spyro - Attack of the Rhynocs (USA).zip,4096038
-8677,Classic NES Series: Donkey Kong,e0e75f6c714550e652dbaaaba49a1d53,"Classic NES Series - Donkey Kong (USA, Europe).gba",nointro,,usa,,
-8915,Dora the Explorer: Dora's World Adventure,81df4456e398f87e893c522810cc8cda,Dora the Explorer - Dora's World Adventure! (USA).gba,nointro,,usa,,
+8915,Dora the Explorer: Dora's World Adventure,81df4456e398f87e893c522810cc8cda,Dora the Explorer - Dora's World Adventure! (USA).gba,nointro,,usa,Dora the Explorer - Dora's World Adventure! (USA).zip,2034779
 5910,The Incredibles,97cc2aeb06142aedc38b672e90e04a11,"Incredibles, The (USA, Europe).gba",nointro,,usa,The_Incredibles.zip,5062424
-12963,3 Game Pack!: The Game of Life + Payday + Yahtzee,a40e7bbd268202da470950335a6793f5,3 Game Pack! - The Game of Life + Payday + Yahtzee (USA).gba,nointro,,usa,,
-773,Mega Man Battle Network 2,76a3ca72300db4cff7bb87873cde2b9c,Mega Man - Battle Network 2 (USA) (Purple Star) (v1.1) (Souzooka).gba,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/GBA/Fix/773-MMBN2-NoMPHardMode.zip,usa,,
-3701,Duke Nukem Advance,dfca43fb18b5ee86b3ecab2631862d6f,Duke Nukem Advance (USA).gba,nointro,,usa,,
-5116,Yu-Gi-Oh! 7 Trials to Glory: World Championship Tournament 2005,27f9f0e73752cc2df3b73bc46048e8a2,"Yu-Gi-Oh! - 7 Trials to Glory - World Championship Tournament 2005 (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,,
-1420,Super Ghouls 'n Ghosts,37ff7a1de0322b72a6b41dea0ba53673,"Super Ghouls'n Ghosts (USA, Europe).gba",nointro,,usa,,
-9226,Wolfenstein 3D,d853b5ffa5ef88605a0823d3b4b2df08,"Wolfenstein 3D (USA, Europe).gba",nointro,,usa,,
-4197,Harry Potter and the Chamber of Secrets,b9b42f3e2d54921ee657bc027fa364b9,"Harry Potter and the Chamber of Secrets (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da).gba",nointro,,usa,,
-6209,Guilty Gear X Advance Edition,509139bb43b0fa487056e6068c46ab70,Guilty Gear X - Advance Edition (USA).gba,nointro,,usa,,
-6407,Nicktoons: Battle for Volcano Island,07f3b7415eb3779ff11e51a38d0ad3f8,Nicktoons - Battle for Volcano Island (USA).gba,nointro,,usa,,
-4092,Shaman King: Master of Spirits 2,5af6a63f85fa386c7889695308dc32a4,Shaman King - Master of Spirits 2 (USA).gba,nointro,,usa,,
-6289,Donald Duck Advance!,8384aa8735b5a036fdddb5da430cb25b,Donald Duck Advance (USA).gba,nointro,,usa,,
-5747,The Lost Vikings,36c04fe38ba46cff285b060907db94f6,"Lost Vikings, The (USA).gba",nointro,,usa,,
-5720,LEGO Star Wars II: The Original Trilogy,bd64515fa58ec5052ce4d231e6241f23,LEGO Star Wars II - The Original Trilogy (USA).gba,nointro,,usa,,
-9301,Frogger's Adventures: Temple of the Frog,228cbf6936579b32b8cc6d7b092dad9c,"Frogger's Adventures - Temple of the Frog (USA) (En,Fr,De,Es,It).gba",nointro,,usa,,
+12963,3 Game Pack!: The Game of Life + Payday + Yahtzee,a40e7bbd268202da470950335a6793f5,3 Game Pack! - The Game of Life + Payday + Yahtzee (USA).gba,nointro,,usa,3 Game Pack! - The Game of Life + Payday + Yahtzee (USA).zip,1493886
+3701,Duke Nukem Advance,dfca43fb18b5ee86b3ecab2631862d6f,Duke Nukem Advance (USA).gba,nointro,,usa,Duke Nukem Advance (USA).zip,5133757
+5116,Yu-Gi-Oh! 7 Trials to Glory: World Championship Tournament 2005,27f9f0e73752cc2df3b73bc46048e8a2,"Yu-Gi-Oh! - 7 Trials to Glory - World Championship Tournament 2005 (USA) (En,Ja,Fr,De,Es,It).gba",nointro,,usa,"Yu-Gi-Oh! - 7 Trials to Glory - World Championship Tournament 2005 (USA) (En,Ja,Fr,De,Es,It).zip",9404253
+1420,Super Ghouls 'n Ghosts,37ff7a1de0322b72a6b41dea0ba53673,"Super Ghouls'n Ghosts (USA, Europe).gba",nointro,,usa,"Super Ghouls'n Ghosts (USA, Europe).zip",2302704
+9226,Wolfenstein 3D,d853b5ffa5ef88605a0823d3b4b2df08,"Wolfenstein 3D (USA, Europe).gba",nointro,,usa,"Wolfenstein 3D (USA, Europe).zip",2950396
+4197,Harry Potter and the Chamber of Secrets,b9b42f3e2d54921ee657bc027fa364b9,"Harry Potter and the Chamber of Secrets (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da).gba",nointro,,usa,"Harry Potter and the Chamber of Secrets (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da).zip",4379722
+6209,Guilty Gear X Advance Edition,509139bb43b0fa487056e6068c46ab70,Guilty Gear X - Advance Edition (USA).gba,nointro,,usa,Guilty Gear X - Advance Edition (USA).zip,3726323
+6407,Nicktoons: Battle for Volcano Island,07f3b7415eb3779ff11e51a38d0ad3f8,Nicktoons - Battle for Volcano Island (USA).gba,nointro,,usa,Nicktoons - Battle for Volcano Island (USA).zip,1738295
+4092,Shaman King: Master of Spirits 2,5af6a63f85fa386c7889695308dc32a4,Shaman King - Master of Spirits 2 (USA).gba,nointro,,usa,Shaman King - Master of Spirits 2 (USA).zip,6338513
+6289,Donald Duck Advance!,8384aa8735b5a036fdddb5da430cb25b,Donald Duck Advance (USA).gba,nointro,,usa,Donald Duck Advance (USA).zip,4286008
+5747,The Lost Vikings,36c04fe38ba46cff285b060907db94f6,"Lost Vikings, The (USA).gba",nointro,,usa,"Lost Vikings, The (USA).zip",2284698
+5720,LEGO Star Wars II: The Original Trilogy,bd64515fa58ec5052ce4d231e6241f23,LEGO Star Wars II - The Original Trilogy (USA).gba,nointro,,usa,LEGO Star Wars II - The Original Trilogy (USA).zip,13809660
+9301,Frogger's Adventures: Temple of the Frog,228cbf6936579b32b8cc6d7b092dad9c,"Frogger's Adventures - Temple of the Frog (USA) (En,Fr,De,Es,It).gba",nointro,,usa,"Frogger's Adventures - Temple of the Frog (USA) (En,Fr,De,Es,It).zip",1598669
 6950,Jet Grind Radio,ff50e8973adf12604ca70e15acb108db,Jet Grind Radio (USA).gba,nointro,,usa,Jet Grind Radio (USA).zip,4787311
-8038,~Homebrew~ Sushi the Cat,b01251955731bf7509cb09af8f49ad1d,Sushi the Cat (World) (Aftermarket) (Unl).gba,nointro,,world,,
 5029,Tactics Ogre: The Knight of Lodis,5d4f385e4e1cfa4a057d0ac828993906,Tactics Ogre - The Knight of Lodis (USA).gba,nointro,,usa,Tactics Ogre - The Knight of Lodis (USA).zip,4446179
-25306,~Homebrew~ Neo Racing Genesis,fba9751b89d92a80965d9a61009ed1aa,Neo Racing Genesis (World) (v0.21) (Aftermarket) (Unl).gba,homebrew|lostlevel,,world,,
-749,Classic NES Series: Zelda II: The Adventure of Link,9a18bdc223e591dad8d251e62f755d6e,"Classic NES Series - Zelda II - The Adventure of Link (USA, Europe).gba",nointro|deprecated,,usa,,
-7191,The Lord of the Rings: The Return of the King,53dcb149b4593fba9955f842889445b4,"Lord of the Rings, The - The Return of the King (USA, Europe) (En,Fr,De,Es,It).gba",nointro,,usa,,
-2190,Yu-Gi-Oh! GX: Duel Academy,e1cc21ebf4c3be179738ebbf44f25308,Yu-Gi-Oh! GX - Duel Academy (Europe).gba,nointro,,europe,,
-5564,Yu Yu Hakusho: Ghost Files - Tournament Tactics,acefebbe5fdf25ae83a386a6d1c09bca,"Yu Yu Hakusho - Ghostfiles - Tournament Tactics (USA, Europe).gba",nointro,,usa,,
-4707,Shining Force: Resurrection of the Dark Dragon,17a986af456ed994f556f23c330666a8,"Shining Force - Resurrection of the Dark Dragon (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
-7644,Avatar: The Last Airbender,ef9198e16c58c4824efae668da1e7040,"Avatar - The Legend of Aang (Europe) (En,Fr,De,Nl).gba",nointro,,europe,,
+749,Classic NES Series: Zelda II: The Adventure of Link,9a18bdc223e591dad8d251e62f755d6e,"Classic NES Series - Zelda II - The Adventure of Link (USA, Europe).gba",nointro|deprecated,,usa,"Classic NES Series - Zelda II - The Adventure of Link (USA, Europe).zip",2231961
+7191,The Lord of the Rings: The Return of the King,53dcb149b4593fba9955f842889445b4,"Lord of the Rings, The - The Return of the King (USA, Europe) (En,Fr,De,Es,It).gba",nointro,,usa,"Lord of the Rings, The - The Return of the King (USA, Europe) (En,Fr,De,Es,It).zip",13271460
+2190,Yu-Gi-Oh! GX: Duel Academy,e1cc21ebf4c3be179738ebbf44f25308,Yu-Gi-Oh! GX - Duel Academy (Europe).gba,nointro,,europe,Yu-Gi-Oh! GX - Duel Academy (Europe).zip,22911959
+5564,Yu Yu Hakusho: Ghost Files - Tournament Tactics,acefebbe5fdf25ae83a386a6d1c09bca,"Yu Yu Hakusho - Ghostfiles - Tournament Tactics (USA, Europe).gba",nointro,,usa,"Yu Yu Hakusho - Ghostfiles - Tournament Tactics (USA, Europe).zip",3883059
+4707,Shining Force: Resurrection of the Dark Dragon,17a986af456ed994f556f23c330666a8,"Shining Force - Resurrection of the Dark Dragon (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Shining Force - Resurrection of the Dark Dragon (Europe) (En,Fr,De,Es,It).zip",5567227
+7644,Avatar: The Last Airbender,ef9198e16c58c4824efae668da1e7040,"Avatar - The Legend of Aang (Europe) (En,Fr,De,Nl).gba",nointro,,europe,"Avatar - The Legend of Aang (Europe) (En,Fr,De,Nl).zip",3003358
 6141,Crash of the Titans,fdef312709444d6d901b8b7c619f5913,"Crash of the Titans (USA) (En,Fr).gba",nointro,,usa,Crash_of_the_Titans.zip,11014766
 774,Mega Man Battle Network 3: Blue Version,6fe31df0144759b34ad666badaacc442,Megaman - Battle Network 3 - Blue Version (USA).gba,nointro,,usa,Mega Man Battle Network 3 - Blue Version (USA).zip,4289557
-12786,Dora the Explorer: The Search for Pirate Pig's Treasure,e23047fcf278ca962b8e95690490cc1c,Dora the Explorer - The Search for the Pirate Pig's Treasure (USA).gba,nointro,,usa,,
-6087,Pocky & Rocky with Becky,0f796b33898e0f7c3b001136e6a1c28b,Pocky & Rocky with Becky (USA).gba,nointro,,usa,,
-24054,SpongeBob's Atlantis SquarePantis,6cf0014cf59609e976d4a82b01db90be,SpongeBob's Atlantis SquarePantis (USA).gba,nointro,,usa,,
-4738,The King of Fighters EX: Neo Blood,1266f7f9d73252d70b25ebfe966c9a2b,"King of Fighters EX, The - NeoBlood (USA).gba",nointro,,usa,,
-4881,DemiKids: Dark Version,4a28daa8f0c619ad90ca97b3b941353d,DemiKids - Dark Version (USA).gba,nointro,,usa,,
-6620,Zooo: Action Puzzle Game,e0ec4f5cd24d2f7b93eac7f7d7b89398,"Zooo - Action Puzzle Game (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
-6772,Scooby-Doo! Unmasked,803ff345f4df60a7f00db44fd25730bc,"Scooby-Doo! - Unmasked (USA) (En,Fr).gba",nointro,,usa,,
-761,Earthworm Jim,54a50dbaea5a9154cc820f3fc13a34bb,"Earthworm Jim (USA, Europe).gba",nointro,,usa,,
+12786,Dora the Explorer: The Search for Pirate Pig's Treasure,e23047fcf278ca962b8e95690490cc1c,Dora the Explorer - The Search for the Pirate Pig's Treasure (USA).gba,nointro,,usa,Dora the Explorer - The Search for the Pirate Pig's Treasure (USA).zip,2606995
+6087,Pocky & Rocky with Becky,0f796b33898e0f7c3b001136e6a1c28b,Pocky & Rocky with Becky (USA).gba,nointro,,usa,Pocky & Rocky with Becky (USA).zip,2023970
+24054,SpongeBob's Atlantis SquarePantis,6cf0014cf59609e976d4a82b01db90be,SpongeBob's Atlantis SquarePantis (USA).gba,nointro,,usa,SpongeBob's Atlantis SquarePantis (USA).zip,2829168
+4738,The King of Fighters EX: Neo Blood,1266f7f9d73252d70b25ebfe966c9a2b,"King of Fighters EX, The - NeoBlood (USA).gba",nointro,,usa,"King of Fighters EX, The - NeoBlood (USA).zip",4334220
+4881,DemiKids: Dark Version,4a28daa8f0c619ad90ca97b3b941353d,DemiKids - Dark Version (USA).gba,nointro,,usa,DemiKids - Dark Version (USA).zip,5655608
+6620,Zooo: Action Puzzle Game,e0ec4f5cd24d2f7b93eac7f7d7b89398,"Zooo - Action Puzzle Game (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Zooo (Europe) (En,Fr,De,Es,It).zip",4779431
+6772,Scooby-Doo! Unmasked,803ff345f4df60a7f00db44fd25730bc,"Scooby-Doo! - Unmasked (USA) (En,Fr).gba",nointro,,usa,"Scooby-Doo! - Unmasked (USA) (En,Fr).zip",3917657
+761,Earthworm Jim,54a50dbaea5a9154cc820f3fc13a34bb,"Earthworm Jim (USA, Europe).gba",nointro,,usa,"Earthworm Jim (USA, Europe).zip",2468829
 2589,Summon Night: Swordcraft Story 2,03eea2d57de9c16b5f10055e8e4e2893,Summon Night - Swordcraft Story 2 (USA).gba,nointro,,usa,Summon Night - Swordcraft Story 2 (USA).zip,11339239
 6759,Denki Blocks!,8b7a6c21e2619dbfb5064c76d074f582,"Denki Blocks! (USA) (En,Es).gba",nointro,,usa,"Denki Blocks! (USA) (En,Es).zip",1121700
-2172,Mortal Kombat: Deadly Alliance,8e066c35a484308421c3eebcc45ec329,"Mortal Kombat - Deadly Alliance (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,,
-4909,Mega Man Battle Chip Challenge,d996f6cbb36eb15063b290d8f00ad654,Megaman - Battle Chip Challenge (USA).gba,nointro,,usa,,
+2172,Mortal Kombat: Deadly Alliance,8e066c35a484308421c3eebcc45ec329,"Mortal Kombat - Deadly Alliance (Europe) (En,Fr,De,Es,It).gba",nointro,,europe,"Mortal Kombat - Deadly Alliance (Europe) (En,Fr,De,Es,It)(1).zip",11566112
+4909,Mega Man Battle Chip Challenge,d996f6cbb36eb15063b290d8f00ad654,Megaman - Battle Chip Challenge (USA).gba,nointro,,usa,Mega Man Battle Chip Challenge (USA).zip,2475300

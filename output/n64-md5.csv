@@ -19,7 +19,7 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 10270,Pokémon Puzzle League,E722576A15182CFED6782379CE4BC8BE,Pokemon Puzzle League (USA).z64,nointro,,usa,Pokemon Puzzle League (USA).zip,22610884
 10648,Star Wars: Rogue Squadron,2E458D7CC355D7918493B0E0362C9A20,Star Wars - Rogue Squadron (USA) (Rev 1).z64,nointro,,usa,Star Wars - Rogue Squadron (USA) (Rev 1).zip,14430639
 10259,Mario Golf,903E6929666531D72D05D1E4C522E305,Mario Golf (USA).z64,nointro,,usa,Mario Golf (USA).zip,17314913
-10110,Perfect Dark,7F4171B0C8D17815BE37913F535E4E93,Perfect Dark (USA).z64,nointro,,usa,,
+10110,Perfect Dark,7F4171B0C8D17815BE37913F535E4E93,Perfect Dark (USA).z64,nointro,,usa,Perfect Dark (USA).zip,30013942
 10264,Mario Party 2,04840612A35ECE222AFDB2DFBF926409,Mario Party 2 (USA).z64,nointro,,usa,Mario Party 2 (USA).zip,24939478
 10162,Blast Corps,5875FC73069077C93E214233B60F0BDC,Blast Corps (USA) (Rev 1).z64,nointro,,usa,Blast Corps (USA) (Rev 1).zip,7227718
 10108,Mario Party 3,76A8BBC81BC2060EC99C9645867237CC,Mario Party 3 (USA).z64,nointro,,usa,Mario Party 3 (USA).zip,25479420
@@ -30,19 +30,19 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 10077,Resident Evil 2,1add2c0217662b307cdfd876b35fbf7a,Resident Evil 2 (USA) (Rev 1).z64,nointro,,usa,Resident_Evil_2_(Biohazard_2).zip,65160025
 10085,Cruis'n USA,00A3E885F8D899646228A21D946B2102,Cruis'n USA (USA).z64,nointro,,usa,Cruis'n USA (USA).zip,4582207
 10116,Mortal Kombat 4,C70B91430866300CE38B49098019EF9D,Mortal Kombat 4 (USA).z64,nointro,,usa,Mortal_Kombat_4.zip,13674259
-10148,Army Men: Sarge's Heroes,B8085C2EDB1C6D23E52ED8C06D92B4F8,Army Men - Sarge's Heroes (USA).z64,nointro,,usa,,
-10256,Mickey's Speedway USA,0BF64427CF68E49C70E9EC2C9D815209,Mickey's Speedway USA (USA).z64,nointro,,usa,,
+10148,Army Men: Sarge's Heroes,B8085C2EDB1C6D23E52ED8C06D92B4F8,Army Men - Sarge's Heroes (USA).z64,nointro,,usa,Army Men_ Sarge's Heroes.zip,5255661
+10256,Mickey's Speedway USA,0BF64427CF68E49C70E9EC2C9D815209,Mickey's Speedway USA (USA).z64,nointro,,usa,Mickey's Speedway USA.zip,22491503
 10309,Glover,87aa5740dff79291ee97832da1f86205,Glover (USA).z64,nointro,,usa,Glover (USA).zip,5837142
 10120,Bomberman 64,093058ECE14C8CC1A887B2087EB5CFE9,Bomberman 64 (USA).z64,nointro,,usa,Bomberman 64 (USA).zip,5338172
 10328,South Park,1730119B0455EF89C4E495DEC8E950A5,South Park (USA).z64,nointro,,usa,South_Park.zip,14062615
 10157,Harvest Moon 64,6DA848A70D83ECE130D274124760928E,Harvest Moon 64 (USA).z64,nointro,,usa,Harvest Moon 64 (USA).zip,6561688
 10093,Hexen,EB98F1B8C6898AF7417F6882946DA9B3,Hexen (USA).z64,nointro,,usa,Hexen.zip,7834582
-16231,Donald Duck: Goin' Quackers,56bcdfc8f0b41bf60e6a54bc60144251,"Donald Duck - Goin' Quackers (USA) (En,Fr,De,Es,It).z64",nointro,,usa,,
+16231,Donald Duck: Goin' Quackers,0e0e920ab13ef13508f5a98cc4cd2ff8,"Donald Duck - Goin' Quackers (USA) (En,Fr,De,Es,It).z64",nointro,,usa,"Donald Duck - Goin' Quackers (USA) (En,Fr,De,Es,It).n64.zip",11761469
 10080,Doom 64,B67748B64A2CC7EFD2F3AD4504561E0E,Doom 64 (USA).z64,nointro,,usa,Doom 64 (USA).zip,7306335
-10166,Cruis'n World,aada4cbd938e58a447b399a1d46f03e6,Cruis'n World (USA).z64,nointro,,usa,,
+10166,Cruis'n World,aada4cbd938e58a447b399a1d46f03e6,Cruis'n World (USA).z64,nointro,,usa,Cruis'n World (USA).zip,11132055
 10081,Mystical Ninja Starring Goemon,643CCE1AB06F97E9590241D27E5C2363,Mystical Ninja Starring Goemon (USA).z64,nointro,,usa,Mystical Ninja Starring Goemon (USA).zip,13318408
 30,Jet Force Gemini,772CC6EAB2620D2D3CDC17BBC26C4F68,Jet Force Gemini (USA).z64,nointro,,usa,Jet Force Gemini (USA).zip,29786319
-10912,Hot Wheels: Turbo Racing,4311A1AEF1898678331F7E3486055307,Hot Wheels - Turbo Racing (USA).z64,nointro,,usa,,
+10912,Hot Wheels: Turbo Racing,4311A1AEF1898678331F7E3486055307,Hot Wheels - Turbo Racing (USA).z64,nointro,,usa,Hot Wheels - Turbo Racing (USA).zip,11337205
 10331,WWF No Mercy,66b8ec24557a50514a814f15429bd559,WWF No Mercy (USA) (Rev 1).z64,nointro,,usa,WWF No Mercy (USA) (Rev 1).zip,25911528
 10135,007: The World Is Not Enough,9d58996a8aa91263b5cd45c385f45fe4,007 - The World Is Not Enough (USA).z64,nointro,,usa,007 - The World Is Not Enough (USA).zip,26574277
 10329,Rampage 2: Universal Tour,8113D0EA2008402D4631F241F625D16B,Rampage 2 - Universal Tour (USA).z64,nointro,,usa,Rampage_2_–_Universal_Tour.zip,10954559
@@ -51,35 +51,35 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 10448,WCW/nWo Revenge,C1384F3637D7A381B29341FED3EF3CEB,WCW-nWo Revenge (USA).z64,nointro,,usa,WCW-nWo_Revenge.zip,12072504
 10298,Tarzan,EAE7E0EE5328ED9F13B9CF9990189928,Tarzan (USA).z64,nointro,,usa,Tarzan.zip,14755850
 10115,Mega Man 64,3620674ACB51E436D5150738AC1C0969,Mega Man 64 (USA).z64,nointro,,usa,Mega Man 64 (USA).zip,28139096
-10118,Toy Story 2: Buzz Lightyear to the Rescue!,B44E9C2D9D2F2DE3AF4793B824CCF936,Toy Story 2 - Buzz Lightyear to the Rescue! (USA).z64,nointro,,usa,,
+10118,Toy Story 2: Buzz Lightyear to the Rescue!,B44E9C2D9D2F2DE3AF4793B824CCF936,Toy Story 2 - Buzz Lightyear to the Rescue! (USA).z64,nointro,,usa,Toy Story 2 - Buzz Lightyear to the Rescue! (USA).zip,10024598
 10285,Bomberman Hero,EF2453BFF7AD0C4BFA9AB0BD6324EBF3,Bomberman Hero (USA).z64,nointro,,usa,Bomberman_Hero.zip,9792140
-10182,Turok: Dinosaur Hunter,AE5107EFDD3C210E1EDD4ACD9B3CAC31,Turok - Dinosaur Hunter (USA).z64,nointro,,usa,,
+10182,Turok: Dinosaur Hunter,AE5107EFDD3C210E1EDD4ACD9B3CAC31,Turok - Dinosaur Hunter (USA).z64,nointro,,usa,Turok - Dinosaur Hunter (USA).zip,7587355
 10337,Spider-Man,7F1991B8861E7E532EC21ECF2AF82191,Spider-Man (USA).z64,nointro,,usa,Spider-Man (USA).zip,28795082
 10136,1080° Snowboarding,FA27089C425DBAB99F19245C5C997613,"1080 Snowboarding (Japan, USA) (En,Ja).z64",nointro,,usa,"1080 Snowboarding (Japan, USA) (En,Ja).zip",11827167
 10129,Fighting Force 64,E7008D17FD71D9C2BDA1362C885388B2,Fighting Force 64 (USA).z64,nointro,,usa,Fighting_Force_64.zip,10268053
 10124,Tony Hawk's Pro Skater,aff424a1883dc7bb92c7b2ebe9342f85,Tony Hawk's Pro Skater (USA) (Rev 1).z64,nointro,,usa,Tony_Hawk’s_Pro_Skater.zip,12047738
-10269,Rayman 2: The Great Escape,5dbbfd5ace8222fa8fe51be113453c13,"Rayman 2 - The Great Escape (Europe) (En,Fr,De,Es,It).z64",nointro,,europe,,
-10347,Quake 64,097605021951024C3ECB2D502C0C2A9F,Quake (USA).z64,nointro,,usa,,
+10269,Rayman 2: The Great Escape,5dbbfd5ace8222fa8fe51be113453c13,"Rayman 2 - The Great Escape (Europe) (En,Fr,De,Es,It).z64",nointro,,europe,"Rayman 2 - The Great Escape (Europe) (En,Fr,De,Es,It).zip",19075576
+10347,Quake 64,097605021951024C3ECB2D502C0C2A9F,Quake (USA).z64,nointro,,usa,Quake 64 (U) [!].zip,11578923
 10216,Quest 64,EA552E33973468233A0712C251ABDB6B,Quest 64 (USA).z64,nointro,,usa,Quest 64 (USA).zip,6999927
 10168,LEGO Racers,26B5EAA13DC5B5E35307FE8C0CF5B6BA,"LEGO Racers (USA) (En,Fr,De,Es,It,Nl,Sv,No,Da,Fi).z64",nointro,,usa,LEGO_Racers.zip,10487976
-10685,Sesame Street: Elmo's Letter Adventure,15df97a59b2354b130dec3fb86bba513,Sesame Street - Elmo's Letter Adventure (USA).z64,nointro,,usa,,
+10685,Sesame Street: Elmo's Letter Adventure,15df97a59b2354b130dec3fb86bba513,Sesame Street - Elmo's Letter Adventure (USA).z64,nointro,,usa,Elmo's Letter Adventure (USA).zip,5608126
 10198,Goemon's Great Adventure,29BC5C1A24D3979D376AD421000AC9CB,Goemon's Great Adventure (USA).z64,nointro,,usa,Goemon's Great Adventure (USA).zip,14710516
 10186,Ridge Racer 64,990F97D56456FC23E52BD263E709E21E,RR64 - Ridge Racer 64 (USA).z64,nointro,,usa,RR64 - Ridge Racer 64 (USA).zip,18768632
 10159,Castlevania: Legacy of Darkness,25258460F98F567497B24844ABE3A05B,Castlevania - Legacy of Darkness (USA).z64,nointro,,usa,Castlevania - Legacy of Darkness (USA).zip,13727606
-10326,Bust-A-Move '99,8567382d3cd5bc0406b7b4c780f621dc,Bust-A-Move '99 (USA).z64,nointro,,usa,,
+10326,Bust-A-Move '99,8567382d3cd5bc0406b7b4c780f621dc,Bust-A-Move '99 (USA).z64,nointro,,usa,Bust-A-Move '99 (USA).zip,7051080
 10170,Beetle Adventure Racing!,CF97C336479DDBF1217E4DDE89D9D2D3,"Beetle Adventure Racing! (USA) (En,Fr,De).z64",nointro,,usa,"Beetle Adventure Racing! (USA) (En,Fr,De).zip",12799387
-22859,Clay Fighter 63 1/3,3207bf22e305c488109b09a03706f36f,Clay Fighter 63 1-3 (USA).z64,nointro,,usa,,
+22859,Clay Fighter 63 1/3,3207bf22e305c488109b09a03706f36f,Clay Fighter 63 1-3 (USA).z64,nointro,,usa,Clay Fighter 63 1-3 (USA).zip,10306820
 10457,Cruis'n Exotica,DB7A03B77D44DB81B8A3FCDFC4B72D8C,Cruis'n Exotica (USA).z64,nointro,,usa,Cruis’n_Exotica.zip,14345595
-10586,Clay Fighter: Sculptor's Cut,30e7e083b978408d5b7760d0ce4dc61d,Clay Fighter - Sculptor's Cut (USA).z64,nointro,,usa,,
-10459,Sesame Street: Elmo's Number Journey,f733453ed26afa0aca8d3eb3b5b6d8ea,Sesame Street - Elmo's Number Journey (USA).z64,nointro,,usa,,
-10271,Re-Volt,3FC4D3187435443455F8355B2D3F8934,Re-Volt (USA).z64,nointro,,usa,,
-10119,Sin and Punishment,a0657bc99e169153fd46aeccfde748f3,Tsumi to Batsu - Hoshi no Keishousha (Japan).z64,nointro,,japan,,
+10586,Clay Fighter: Sculptor's Cut,30e7e083b978408d5b7760d0ce4dc61d,Clay Fighter - Sculptor's Cut (USA).z64,nointro,,usa,Clay Fighter - Sculptor's Cut (USA).zip,14180401
+10459,Sesame Street: Elmo's Number Journey,f733453ed26afa0aca8d3eb3b5b6d8ea,Sesame Street - Elmo's Number Journey (USA).z64,nointro,,usa,Elmo's Number Journey (USA).zip,6173446
+10271,Re-Volt,3FC4D3187435443455F8355B2D3F8934,Re-Volt (USA).z64,nointro,,usa,Re-Volt (USA).zip,10325958
+10119,Sin and Punishment,a0657bc99e169153fd46aeccfde748f3,Tsumi to Batsu - Hoshi no Keishousha (Japan).z64,nointro,,japan,Tsumi to Batsu - Hoshi no Keishousha (Japan).zip,25369276
 10407,Buck Bumble,41417FCE2B37EAAE787C5A845A0015C4,Buck Bumble (USA).z64,nointro,,usa,Buck_Bumble.zip,5281363
-10114,Mortal Kombat Trilogy,3DCB15043063BD656A0223C519218CFB,Mortal Kombat Trilogy (USA) (Rev 2).z64,nointro,,usa,,
-10158,Destruction Derby 64,7FCCB47498EEC06E96AE9372247D1E90,Destruction Derby 64 (USA).z64,nointro,,usa,,
-10272,StarCraft 64,559F71B861F639B6376D891E3023414B,StarCraft 64 (USA).z64,nointro,,usa,,
-10137,A Bug's Life,7fd6bffb80f920e01ef869829d485ea3,"Bug's Life, A (USA).z64",nointro,,usa,,
-10489,Namco Museum 64,E61251D2819E3BF3A9C0B95329F60F70,Namco Museum 64 (USA).z64,nointro,,usa,,
+10114,Mortal Kombat Trilogy,3DCB15043063BD656A0223C519218CFB,Mortal Kombat Trilogy (USA) (Rev 2).z64,nointro,,usa,Mortal Kombat Trilogy (USA) (Rev 2).zip,10661445
+10158,Destruction Derby 64,7FCCB47498EEC06E96AE9372247D1E90,Destruction Derby 64 (USA).z64,nointro,,usa,Destruction Derby 64 (USA).zip,10287462
+10272,StarCraft 64,559F71B861F639B6376D891E3023414B,StarCraft 64 (USA).z64,nointro,,usa,StarCraft 64 (USA)(1).zip,26971970
+10137,A Bug's Life,7fd6bffb80f920e01ef869829d485ea3,"Bug's Life, A (USA).z64",nointro,,usa,"Bug's Life, A (USA).zip",11249484
+10489,Namco Museum 64,E61251D2819E3BF3A9C0B95329F60F70,Namco Museum 64 (USA).z64,nointro,,usa,Namco Museum 64 (USA).zip,3059370
 10394,Ms. Pac-Man Maze Madness,08bea3310e778a6584eb64cd3f15f86e,Ms. Pac-Man - Maze Madness (USA).z64,nointro,,usa,Ms._Pac-Man_–_Maze_Madness.zip,10407980
 10452,Bio F.R.E.A.K.S.,B90AB8F7605D971CC7A6D9BA5E67D1AF,Bio F.R.E.A.K.S. (USA).z64,nointro,,usa,Bio_F.R.E.A.K.S..zip,12610730
 10683,Hybrid Heaven,C47E95BB32AB132C41D67BD243F9E02A,Hybrid Heaven (USA).z64,nointro,,usa,Hybrid Heaven (USA).zip,11666425
@@ -88,15 +88,13 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 10614,Shadowgate 64: Trials of the Four Towers,407a1a18bd7dbe0485329296c3f84eb8,"Shadowgate 64 - Trials of the Four Towers (USA) (En,Es).z64",nointro,,usa,Shadowgate_64_–_Trials_Of_The_Four_Towers.zip,13355983
 10392,South Park Rally,1C494719032FF99382B167C43FB11762,South Park Rally (USA).z64,nointro,,usa,South_Park_Rally.zip,14115471
 10121,Duke Nukem 64,C7F1A43764A26DA2E43F2A36A5F76E4C,Duke Nukem 64 (USA).z64,nointro,,usa,Duke_Nukem_64.zip,7474182
-10607,Chameleon Twist,397BE52D4FB7DF1E26C6275E05425571,Chameleon Twist (USA).z64,nointro,,usa,,
-10530,WCW vs. nWo: World Tour,203c3bbfdd10c5a0b7c5d0cdb085d853,WCW vs. nWo - World Tour (USA).z64,nointro,,usa,,
-10627,South Park: Chef's Luv Shack,6af573eb055648a8542aa82d9524fb2f,South Park - Chef's Luv Shack (USA).z64,nointro,,usa,,
+10607,Chameleon Twist,397BE52D4FB7DF1E26C6275E05425571,Chameleon Twist (USA).z64,nointro,,usa,Chameleon Twist (USA).zip,6083662
+10530,WCW vs. nWo: World Tour,203c3bbfdd10c5a0b7c5d0cdb085d853,WCW vs. nWo - World Tour (USA).z64,nointro,,usa,WCW vs. nWo - World Tour (USA)(1).zip,8144785
+10627,South Park: Chef's Luv Shack,6af573eb055648a8542aa82d9524fb2f,South Park - Chef's Luv Shack (USA).z64,nointro,,usa,South Park - Chef's Luv Shack (USA).zip,14214426
 10171,Tetris 64,7C8EFCF4FBA28F9F5B5EA10A71283BF3,Tetris 64 (Japan) (En).z64,nointro,,japan,Tetris_64.zip,6742290
-13113,Puyo Puyo Sun 64,b8267c225583a02acc3b74b3178b87e9,Puyo Puyo Sun 64 (Japan) (En) (Zoinkity) (1.1).z64,nointro|rapatches|main,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Translation/English/13113-PuyoPuyoSun64-English.zip,japan,,
 10127,Duke Nukem: Zero Hour,026789D47DB5FE202A76F89797B33AC7,Duke Nukem - Zero Hour (USA).z64,nointro,,usa,Duke Nukem - Zero Hour (USA).zip,24960332
 10223,Gex 3: Deep Cover Gecko,6770DDEC84EB21A5E0D0F55DFD52A01A,Gex 3 - Deep Cover Gecko (USA).z64,nointro,,usa,Gex_3_–_Deep_Cover_Gecko.zip,26555932
 10587,Monopoly,D51506EDB0A941A00EB45850703B32CB,Monopoly (USA).z64,nointro,,usa,Monopoly.zip,2870001
-27401,~Homebrew~ Portal 64,a1cc17627435a9bb10210d513b70143f,Portal64 (World) (v0.13 - 2023-11-16) (Aftermarket) (Unl).z64,homebrew|lostlevel,,world,,
 10255,Shadow Man,b457298b87b85bbf950f24867daa9475,Shadow Man (USA).z64,nointro,,usa,Shadow Man (USA).zip,30137769
 10429,Fighters Destiny,d61d97a7658c419a25a9bac96b0a3df8,Fighters Destiny (USA).z64,nointro,,usa,Fighters_Destiny_(Fighting_Cup).zip,8890764
 10330,Bomberman 64: The Second Attack!,AEC1FDB0F1CAAD86C9F457989A4CE482,Bomberman 64 - The Second Attack! (USA).z64,nointro,,usa,Bomberman 64 - The Second Attack! (USA).zip,11470499
@@ -109,7 +107,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 10532,Wipeout 64,73C6D87DBE50F73F3B44E0F237A546D7,Wipeout 64 (USA).z64,nointro,,usa,Wipeout 64 (USA).zip,6034467
 10926,Mortal Kombat Mythologies: Sub-Zero,deec4faec416f4e02d934c2e42c0caad,Mortal Kombat Mythologies - Sub-Zero (USA).z64,nointro,,usa,Mortal_Kombat_Mythologies__Sub-Zero.zip,13742095
 10360,San Francisco Rush: Extreme Racing,F015FC28E1D62A36B4EBF4C79CA8F285,"San Francisco Rush - Extreme Racing (USA) (En,Fr,De).z64",nointro,,usa,"San Francisco Rush - Extreme Racing (USA) (En,Fr,De).zip",7949859
-10307,Space Station Silicon Valley,92ee9af3dfeb19a1339f3c75baed1e6b,SpaceStation Silicon Valley (USA) (ExpFBMLSelect Fix) (v1.2) (oz).z64,nointro|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/N64/Fix/Space%20Station%20Silicon%20Valley/10307-SSSV-Fixes.zip,usa,,
 10265,Body Harvest,3B8585ED03E8DDB89D7DE456317545E7,Body Harvest (USA).z64,nointro,,usa,Body Harvest (USA).zip,7122897
 10473,Killer Instinct Gold,8E33AD20C31FEB61D7230FAD28846C5C,Killer Instinct Gold (USA).z64,nointro,,usa,Killer Instinct Gold (USA).zip,12065797
 10520,Turok 2: Seeds of Evil,166221365DB70D446C4206083D422DD1,Turok 2 - Seeds of Evil (USA) (Rev 1).z64,nointro,,usa,Turok 2 - Seeds of Evil (USA) (Rev 1).zip,29547145
