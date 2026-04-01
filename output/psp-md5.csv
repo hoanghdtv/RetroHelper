@@ -1,6 +1,6 @@
 gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
-3537,God of War: Chains of Olympus,799b09290b80129d6d0a880f7bac59b6,"God of War - Chains of Olympus (Europe, Australia) (En,Fr,De,Es,It).iso",redump,,europe,,
-17976,Monster Hunter Portable 3rd,f169d84a13732812d75a1d02dea3341c,Monster Hunter Portable 3rd HD ver. (Japan) (En) (v5) (Team Maverick ONE),redump|rapatches,https://github.com/RetroAchievements/RAPatches/raw/main/PlayStation%20Portable/Translation/English/17976-MonsterHunterPortable3rdHD-English.zip,japan,,
+3537,God of War: Chains of Olympus,799b09290b80129d6d0a880f7bac59b6,"God of War - Chains of Olympus (Europe, Australia) (En,Fr,De,Es,It).iso",redump,,europe,"",
+17976,Monster Hunter Portable 3rd,f169d84a13732812d75a1d02dea3341c,Monster Hunter Portable 3rd HD ver. (Japan) (En) (v5) (Team Maverick ONE),redump|rapatches,,japan,,
 3727,Dante's Inferno,9c80f421a1bcd0cc51503e479f090c40,Dante's Inferno (USA).iso,redump,,usa,,
 3538,God of War: Ghost of Sparta,42c08dd581fca2db6dbe3cbe3ef6703a,"God of War - Ghost of Sparta (Europe, Australia) (En,Fr,De,Es,It).iso",redump,,europe,,
 3161,LittleBigPlanet,a8703172016952d001c5a4ef61a14625,"LittleBigPlanet (USA) (En,Fr,De,Es,It,Pt).iso",redump,,usa,,
@@ -9,7 +9,7 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 10387,Crisis Core: Final Fantasy VII,fc2099ae9b174c54ee02e9827da9cea9,Crisis Core - Final Fantasy VII (USA).iso,redump|nointro,,usa,,
 3732,Monster Hunter Freedom Unite,cfc5625956c606b5d0333033d28daffb,"Monster Hunter Freedom Unite (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,,
 3219,Mega Man Maverick Hunter X,8a99ed01468c44bbb78a944e2db4bc58,Mega Man - Maverick Hunter X (USA).iso,redump|nointro,,usa,,
-3186,Tekken 6,38f4fcd5d786c98bf19077c9eefde9bd,"Tekken 6 (Europe) (En,Ja,Fr,De,Es,It,Ko,Ru).iso",redump,,europe,Tekken.6.Europe.EnJaFrDeEsItKoRu.zip ,
+3186,Tekken 6,38f4fcd5d786c98bf19077c9eefde9bd,"Tekken 6 (Europe) (En,Ja,Fr,De,Es,It,Ko,Ru).iso",redump,,europe,"",
 3471,Metal Slug: Anthology,a2bf0aa8e9de1c63707ea2abee7c1d03,Metal Slug Anthology (USA).iso,redump|nointro,,usa,,
 3910,Dragon Ball Z: Shin Budokai,8c86349972d11db42f4cfe0bd32f31b5,Dragon Ball Z - Shin Budokai (USA).iso,redump|nointro,,usa,,
 3185,Burnout Legends,cf787bff43a0309fbb6b9e32159be9bc,"Burnout Legends (USA) (En,Fr,De,Es,It,Nl).iso",redump,,usa,,
@@ -23,4 +23,4 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 15626,Gran Turismo: The Real Driving Simulator,e5860491dbaaa87e116cf6cbd2e3eb52,"Gran Turismo (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru) (v2.00).iso",redump,,europe,,
 3738,Phantasy Star Portable,5c7de53c9d8fc8aa09ef258f57acb44b,Phantasy Star Portable (USA).iso,redump|nointro,,usa,,
 18128,Dragon Ball Z: Shin Budokai 2 - Another Road,f968173f7992b0b173af77ddd94d3fb6,"Dragon Ball Z - Shin Budokai 2 (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,,
-3165,Castlevania: The Dracula X Chronicles,59b37df8ade6d7020391eb96a5acd549,"Castlevania - The Dracula X Chronicles (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,,
+3165,Castlevania: The Dracula X Chronicles,59b37df8ade6d7020391eb96a5acd549,"Castlevania - The Dracula X Chronicles (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,"",
