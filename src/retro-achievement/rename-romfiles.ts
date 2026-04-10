@@ -14,6 +14,7 @@ function transformRomFileName(name: string): string {
   return name
     .replace(/ /g, '.')    // space → dot
     .replace(/,/g, '.')    // comma → dot
+    .replace(/'/g, '.')    // comma → dot
     .replace(/\(/g, '')    // remove (
     .replace(/\)/g, '')    // remove )
     .replace(/\.{2,}/g, '.'); // collapse multiple dots → single dot
