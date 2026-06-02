@@ -922,31 +922,37 @@ NES/Famicom,5553,Final Fantasy III,45a7d02ed0dc92665a30da1d9b4af35d,Final Fantas
 NES/Famicom,1498,Rygar,50dd77437fafae2ddf89dc6b8967b494,Rygar (USA) (Rev 1).nes,nointro,,usa,Rygar (USA) (Rev 1).zip,76274
 NES/Famicom,1591,Bram Stoker's Dracula,d8c7ed973232990fa1b7542e6876bd3c,Bram Stoker's Dracula (USA).nes,nointro,,usa,Bram Stokers Dracula (USA).zip,115710
 NES/Famicom,2078,Willow,831d2e895fd5424ffa0db8ad2a009293,Willow (USA).nes,nointro,,usa,Willow (USA).zip,138016
-PSP,3537,God of War: Chains of Olympus,799b09290b80129d6d0a880f7bac59b6,"God of War - Chains of Olympus (Europe, Australia) (En,Fr,De,Es,It).iso",redump,,europe,God.of.War.-.Chains.of.Olympus.Europe.En.Fr.De.Es.It.PSN.iso ,
-PSP,17976,Monster Hunter Portable 3rd,f169d84a13732812d75a1d02dea3341c,Monster Hunter Portable 3rd HD ver. (Japan) (En) (v5) (Team Maverick ONE),redump|rapatches,,japan,Monster.Hunter.Portable.3rd.HD.ver.iso ,1450000000
-PSP,3727,Dante's Inferno,9c80f421a1bcd0cc51503e479f090c40,Dante's Inferno (USA).iso,redump,,usa,Dante.s.Inferno.USA.iso ,1230000000
-PSP,3538,God of War: Ghost of Sparta,42c08dd581fca2db6dbe3cbe3ef6703a,"God of War - Ghost of Sparta (Europe, Australia) (En,Fr,De,Es,It).iso",redump,,europe,God.of.War.-.Ghost.of.Sparta.Europe.Australia.En.Fr.De.Es.It.iso,1660000000
-PSP,3161,LittleBigPlanet,a8703172016952d001c5a4ef61a14625,"LittleBigPlanet (USA) (En,Fr,De,Es,It,Pt).iso",redump,,usa,LittleBigPlanet.USA.En.Fr.De.Es.It.Pt.iso ,1400000000
-PSP,3582,Mega Man: Powered Up,4e7ff49beb64ecb8d59f8b4e881af6e8,Mega Man - Powered Up (USA).iso,redump|nointro,,usa,Mega.Man.-.Powered.Up.USA.iso ,197000000
-PSP,3515,Dissidia 012: Duodecim Final Fantasy,12c89cbee6684728e3a15bb4988b5f5a,"Dissidia 012 - Duodecim Final Fantasy (USA) (En,Fr,De,Es,It).iso",redump,,usa,Dissidia.012.-.Duodecim.Final.Fantasy.USA.En.Fr.De.Es.It.iso,1630000000
-PSP,10387,Crisis Core: Final Fantasy VII,fc2099ae9b174c54ee02e9827da9cea9,Crisis Core - Final Fantasy VII (USA).iso,redump|nointro,,usa,Crisis.Core.-.Final.Fantasy.VII.USA.iso ,1600000000
-PSP,3732,Monster Hunter Freedom Unite,cfc5625956c606b5d0333033d28daffb,"Monster Hunter Freedom Unite (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,Monster.Hunter.Freedom.Unite.Europe.En.Fr.De.Es.It.iso ,846000000
-PSP,3219,Mega Man Maverick Hunter X,8a99ed01468c44bbb78a944e2db4bc58,Mega Man - Maverick Hunter X (USA).iso,redump|nointro,,usa,Mega.Man.-.Maverick.Hunter.X.USA.iso,449000000
-PSP,3186,Tekken 6,38f4fcd5d786c98bf19077c9eefde9bd,"Tekken 6 (Europe) (En,Ja,Fr,De,Es,It,Ko,Ru).iso",redump,,europe,Tekken.6.Europe.En.Ja.Fr.De.Es.It.Ko.Ru.iso,816000000
-PSP,3471,Metal Slug: Anthology,a2bf0aa8e9de1c63707ea2abee7c1d03,Metal Slug Anthology (USA).iso,redump|nointro,,usa,Metal.Slug.Anthology.USA.iso,1200000000
-PSP,3910,Dragon Ball Z: Shin Budokai,8c86349972d11db42f4cfe0bd32f31b5,Dragon Ball Z - Shin Budokai (USA).iso,redump|nointro,,usa,Dragon.Ball.Z.-.Shin.Budokai.USA.iso,312000000
-PSP,3185,Burnout Legends,cf787bff43a0309fbb6b9e32159be9bc,"Burnout Legends (USA) (En,Fr,De,Es,It,Nl).iso",redump,,usa,Burnout.Legends.USA.En.Fr.De.Es.It.Nl.v1.00.iso,477000000
-PSP,3891,Shin Megami Tensei: Persona,105fbe4883e86f6d5cd5c03ddd530fb1,Shin Megami Tensei - Persona (USA).iso,redump,,usa,Shin.Megami.Tensei.-.Persona.USA.iso,783000000
-PSP,3509,Jeanne D'Arc,9468c9f3b1cc569e1b07370b553ad968,Jeanne d'Arc (USA).iso,redump|nointro,,usa,Jeanne.d.Arc.USA.iso,1160000000
-PSP,10533,Metal Gear Solid: Peace Walker,bfbcf84b371fe46282c8b96969ec1a5a,"Metal Gear Solid - Peace Walker (USA) (En,Fr,Es) (v1.01).iso",redump|nointro,,usa,Metal.Gear.Solid.-.Peace.Walker.USA.En.Fr.Es.v2.00.iso,1530000000
-PSP,3215,Final Fantasy,f78e6368f595fd0bcbef19b1750af666,"Final Fantasy - 20th Anniversary Edition (USA) (En,Ja) (FW6.00).iso",redump|nointro,,usa,Final.Fantasy.-.20th.Anniversary.Edition.USA.En.Ja.FW6.00.iso,189000000
-PSP,3971,Grand Theft Auto: Vice City Stories,689064ef742a45013e4fdd6b2e27b02a,"Grand Theft Auto - Vice City Stories (Europe) (En,Fr,De,Es,It).iso",redump,,europe,Grand.Theft.Auto.-.Vice.City.Stories.Europe.En.Fr.De.Es.It.iso ,1580000000
-PSP,10525,Patapon,455f09f185068567a2b87978d6623909,"Patapon (Europe) (En,Fr,De,Es,It).iso",redump,,europe,Patapon.Europe.En.Fr.De.Es.It.iso,338000000
-PSP,3164,Shin Megami Tensei: Persona 3 Portable,f56e60e76a5f53ac8fb18da480c86f4a,Shin Megami Tensei - Persona 3 Portable (USA).iso,redump|nointro,,usa,Shin.Megami.Tensei.-.Persona.3.Portable.USA.iso,1230000000
-PSP,15626,Gran Turismo: The Real Driving Simulator,e5860491dbaaa87e116cf6cbd2e3eb52,"Gran Turismo (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru) (v2.00).iso",redump,,europe,Gran.Turismo.Europe.En.Fr.De.Es.It.Nl.Pt.Ru.v2.00.iso,1120000000
-PSP,3738,Phantasy Star Portable,5c7de53c9d8fc8aa09ef258f57acb44b,Phantasy Star Portable (USA).iso,redump|nointro,,usa,Phantasy.Star.Portable.USA.iso,1020000000
-PSP,3165,Castlevania: The Dracula X Chronicles,59b37df8ade6d7020391eb96a5acd549,"Castlevania - The Dracula X Chronicles (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,Castlevania.-.The.Dracula.X.Chronicles.Europe.En.Fr.De.Es.It.iso,1090000000
-PSP,18128,Dragon Ball Z: Shin Budokai 2 - Another Road,59b37df8ade6d7020391eb96a5acd549,"Dragon Ball Z - Shin Budokai 2 (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,Dragon.Ball.Z.-.Shin.Budokai.2.Europe.EnFrDeEsIt.iso,500000000
+PSP,3537,God of War: Chains of Olympus,799b09290b80129d6d0a880f7bac59b6,"God of War - Chains of Olympus (Europe, Australia) (En,Fr,De,Es,It).iso",redump,,europe,God.of.War.-.Chains.of.Olympus.Europe.En.Fr.De.Es.It.PSN.zip,
+PSP,17976,Monster Hunter Portable 3rd,f169d84a13732812d75a1d02dea3341c,Monster Hunter Portable 3rd HD ver. (Japan) (En) (v5) (Team Maverick ONE),redump|rapatches,,japan,Monster.Hunter.Portable.3rd.HD.ver.zip,1450000000
+PSP,3727,Dante's Inferno,9c80f421a1bcd0cc51503e479f090c40,Dante's Inferno (USA).iso,redump,,usa,Dante.s.Inferno.USA.zip,1230000000
+PSP,3538,God of War: Ghost of Sparta,42c08dd581fca2db6dbe3cbe3ef6703a,"God of War - Ghost of Sparta (Europe, Australia) (En,Fr,De,Es,It).iso",redump,,europe,God.of.War.-.Ghost.of.Sparta.Europe.Australia.En.Fr.De.Es.It.zip,1660000000
+PSP,3161,LittleBigPlanet,a8703172016952d001c5a4ef61a14625,"LittleBigPlanet (USA) (En,Fr,De,Es,It,Pt).iso",redump,,usa,LittleBigPlanet.USA.En.Fr.De.Es.It.Pt.zip,1400000000
+PSP,3582,Mega Man: Powered Up,4e7ff49beb64ecb8d59f8b4e881af6e8,Mega Man - Powered Up (USA).iso,redump|nointro,,usa,Mega.Man.-.Powered.Up.USA.zip,197000000
+PSP,3515,Dissidia 012: Duodecim Final Fantasy,12c89cbee6684728e3a15bb4988b5f5a,"Dissidia 012 - Duodecim Final Fantasy (USA) (En,Fr,De,Es,It).iso",redump,,usa,Dissidia.012.-.Duodecim.Final.Fantasy.USA.En.Fr.De.Es.It.zip,1630000000
+PSP,10387,Crisis Core: Final Fantasy VII,fc2099ae9b174c54ee02e9827da9cea9,Crisis Core - Final Fantasy VII (USA).iso,redump|nointro,,usa,Crisis.Core.-.Final.Fantasy.VII.USA.zip,1600000000
+PSP,3732,Monster Hunter Freedom Unite,cfc5625956c606b5d0333033d28daffb,"Monster Hunter Freedom Unite (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,Monster.Hunter.Freedom.Unite.Europe.En.Fr.De.Es.It.zip,846000000
+PSP,3219,Mega Man Maverick Hunter X,8a99ed01468c44bbb78a944e2db4bc58,Mega Man - Maverick Hunter X (USA).iso,redump|nointro,,usa,Mega.Man.-.Maverick.Hunter.X.USA.zip,449000000
+PSP,3186,Tekken 6,38f4fcd5d786c98bf19077c9eefde9bd,"Tekken 6 (Europe) (En,Ja,Fr,De,Es,It,Ko,Ru).iso",redump,,europe,Tekken.6.Europe.En.Ja.Fr.De.Es.It.Ko.Ru.zip,816000000
+PSP,3471,Metal Slug: Anthology,a2bf0aa8e9de1c63707ea2abee7c1d03,Metal Slug Anthology (USA).iso,redump|nointro,,usa,Metal.Slug.Anthology.USA.zip,1200000000
+PSP,3910,Dragon Ball Z: Shin Budokai,8c86349972d11db42f4cfe0bd32f31b5,Dragon Ball Z - Shin Budokai (USA).iso,redump|nointro,,usa,Dragon.Ball.Z.-.Shin.Budokai.USA.zip,312000000
+PSP,3185,Burnout Legends,cf787bff43a0309fbb6b9e32159be9bc,"Burnout Legends (USA) (En,Fr,De,Es,It,Nl).iso",redump,,usa,Burnout.Legends.USA.En.Fr.De.Es.It.Nl.v1.00.zip,477000000
+PSP,3891,Shin Megami Tensei: Persona,105fbe4883e86f6d5cd5c03ddd530fb1,Shin Megami Tensei - Persona (USA).iso,redump,,usa,Shin.Megami.Tensei.-.Persona.USA.zip,783000000
+PSP,3509,Jeanne D'Arc,9468c9f3b1cc569e1b07370b553ad968,Jeanne d'Arc (USA).iso,redump|nointro,,usa,Jeanne.d.Arc.USA.zip,1160000000
+PSP,10533,Metal Gear Solid: Peace Walker,bfbcf84b371fe46282c8b96969ec1a5a,"Metal Gear Solid - Peace Walker (USA) (En,Fr,Es) (v1.01).iso",redump|nointro,,usa,Metal.Gear.Solid.-.Peace.Walker.USA.En.Fr.Es.v2.00.zip,1530000000
+PSP,3215,Final Fantasy,f78e6368f595fd0bcbef19b1750af666,"Final Fantasy - 20th Anniversary Edition (USA) (En,Ja) (FW6.00).iso",redump|nointro,,usa,Final.Fantasy.-.20th.Anniversary.Edition.USA.En.Ja.FW6.00.zip,189000000
+PSP,3971,Grand Theft Auto: Vice City Stories,689064ef742a45013e4fdd6b2e27b02a,"Grand Theft Auto - Vice City Stories (Europe) (En,Fr,De,Es,It).iso",redump,,europe,Grand.Theft.Auto.-.Vice.City.Stories.Europe.En.Fr.De.Es.It.zip,1580000000
+PSP,10525,Patapon,455f09f185068567a2b87978d6623909,"Patapon (Europe) (En,Fr,De,Es,It).iso",redump,,europe,Patapon.Europe.En.Fr.De.Es.It.zip,338000000
+PSP,3164,Shin Megami Tensei: Persona 3 Portable,f56e60e76a5f53ac8fb18da480c86f4a,Shin Megami Tensei - Persona 3 Portable (USA).iso,redump|nointro,,usa,Shin.Megami.Tensei.-.Persona.3.Portable.USA.zip,1230000000
+PSP,15626,Gran Turismo: The Real Driving Simulator,e5860491dbaaa87e116cf6cbd2e3eb52,"Gran Turismo (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru) (v2.00).iso",redump,,europe,Gran.Turismo.Europe.En.Fr.De.Es.It.Nl.Pt.Ru.v2.00.zip,1120000000
+PSP,3738,Phantasy Star Portable,5c7de53c9d8fc8aa09ef258f57acb44b,Phantasy Star Portable (USA).iso,redump|nointro,,usa,Phantasy.Star.Portable.USA.zip,1020000000
+PSP,3165,Castlevania: The Dracula X Chronicles,59b37df8ade6d7020391eb96a5acd549,"Castlevania - The Dracula X Chronicles (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,Castlevania.-.The.Dracula.X.Chronicles.Europe.En.Fr.De.Es.It.zip,1090000000
+PSP,18128,Dragon Ball Z: Shin Budokai 2 - Another Road,59b37df8ade6d7020391eb96a5acd549,"Dragon Ball Z - Shin Budokai 2 (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,Dragon.Ball.Z.-.Shin.Budokai.2.Europe.EnFrDeEsIt.zip,500000000
+PSP,18174,Spider-Man 3,0263b5f5ddbbaf3be204bbb1206c3073,Spider-Man 3 (USA).iso,redump,,usa,Spider-Man.3.USA.zip,1310000000
+PSP,3214,Assassin's Creed: Bloodlines,a2450c9ada6a53b157d8001b3de0804d,"Assassin's Creed - Bloodlines (Europe) (En,Fr,De,Es,It,Ru).iso",redump,,europe,Assassins.Creed.-.Bloodlines.Europe.EnFrDeEsItRu.zip,600000000
+PSP,23966,FIFA 14,ac4dd5faa5e160f32f033a45261b495b,FIFA 14 (Europe).iso,redump,,europe,FIFA.14.Europe.zip,600000000
+PSP,18268,FIFA Street 2,958bea67daa71df795ac5a3013e4edc3,"FIFA Street 2 (Europe) (En,Fr,De).iso",redump,,europe,FIFA.Street.2.Europe.EnFrDe.zip,600000000
+PSP,3970,Grand Theft Auto: Liberty City Stories,b49a2b71ba9409d74ccb9f5accac11c6,"Grand Theft Auto - Liberty City Stories (Europe) (En,Fr,De,Es,It) (v3.00).iso",redump,,europe,Grand.Theft.Auto.-.Liberty.City.Stories.Europe.EnFrDeEsIt.v3.00.zip,600000000
+PSP,25899,Pro Evolution Soccer 6,5b3651357c8d875b2ba3f3f4f4029238,Pro Evolution Soccer 6 (Europe),redump,,europe,Pro.Evolution.Soccer.6.Europe.EnFrDeEsIt.zip,600000000
 PlayStation,11240,Castlevania: Symphony of the Night,bf7e0e90d8e8d5738c7332bc6af666da,Castlevania - Symphony of the Night (USA),redump,,usa,Castlevania.-.Symphony.of.the.Night.USA.zip,
 PlayStation,10434,Crash Bandicoot,35386fd0891e594c9b6d8a4a5baa0027,Crash Bandicoot (USA),redump,,usa,Crash.Bandicoot.USA.zip,
 PlayStation,11252,Silent Hill,469d5cf1428d3f6f2234aa5be058f3ec,Silent Hill (USA),redump,,usa,,

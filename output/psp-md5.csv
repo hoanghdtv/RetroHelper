@@ -1,13 +1,13 @@
 gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
-3537,God of War: Chains of Olympus,799b09290b80129d6d0a880f7bac59b6,"God of War - Chains of Olympus (Europe, Australia) (En,Fr,De,Es,It).iso",redump,,europe,"God.of.War.-.Chains.of.Olympus.Europe.En.Fr.De.Es.It.PSN.zip",
-17976,Monster Hunter Portable 3rd,f169d84a13732812d75a1d02dea3341c,Monster Hunter Portable 3rd HD ver. (Japan) (En) (v5) (Team Maverick ONE),redump|rapatches,,japan,"Monster.Hunter.Portable.3rd.HD.ver.zip",1450000000
-3727,Dante's Inferno,9c80f421a1bcd0cc51503e479f090c40,Dante's Inferno (USA).iso,redump,,usa,"Dante.s.Inferno.USA.zip",1230000000
+3537,God of War: Chains of Olympus,799b09290b80129d6d0a880f7bac59b6,"God of War - Chains of Olympus (Europe, Australia) (En,Fr,De,Es,It).iso",redump,,europe,God.of.War.-.Chains.of.Olympus.Europe.En.Fr.De.Es.It.PSN.zip,
+17976,Monster Hunter Portable 3rd,f169d84a13732812d75a1d02dea3341c,Monster Hunter Portable 3rd HD ver. (Japan) (En) (v5) (Team Maverick ONE),redump|rapatches,,japan,Monster.Hunter.Portable.3rd.HD.ver.zip,1450000000
+3727,Dante's Inferno,9c80f421a1bcd0cc51503e479f090c40,Dante's Inferno (USA).iso,redump,,usa,Dante.s.Inferno.USA.zip,1230000000
 3538,God of War: Ghost of Sparta,42c08dd581fca2db6dbe3cbe3ef6703a,"God of War - Ghost of Sparta (Europe, Australia) (En,Fr,De,Es,It).iso",redump,,europe,God.of.War.-.Ghost.of.Sparta.Europe.Australia.En.Fr.De.Es.It.zip,1660000000
-3161,LittleBigPlanet,a8703172016952d001c5a4ef61a14625,"LittleBigPlanet (USA) (En,Fr,De,Es,It,Pt).iso",redump,,usa,"LittleBigPlanet.USA.En.Fr.De.Es.It.Pt.zip",1400000000
-3582,Mega Man: Powered Up,4e7ff49beb64ecb8d59f8b4e881af6e8,Mega Man - Powered Up (USA).iso,redump|nointro,,usa,"Mega.Man.-.Powered.Up.USA.zip",197000000
+3161,LittleBigPlanet,a8703172016952d001c5a4ef61a14625,"LittleBigPlanet (USA) (En,Fr,De,Es,It,Pt).iso",redump,,usa,LittleBigPlanet.USA.En.Fr.De.Es.It.Pt.zip,1400000000
+3582,Mega Man: Powered Up,4e7ff49beb64ecb8d59f8b4e881af6e8,Mega Man - Powered Up (USA).iso,redump|nointro,,usa,Mega.Man.-.Powered.Up.USA.zip,197000000
 3515,Dissidia 012: Duodecim Final Fantasy,12c89cbee6684728e3a15bb4988b5f5a,"Dissidia 012 - Duodecim Final Fantasy (USA) (En,Fr,De,Es,It).iso",redump,,usa,Dissidia.012.-.Duodecim.Final.Fantasy.USA.En.Fr.De.Es.It.zip,1630000000
-10387,Crisis Core: Final Fantasy VII,fc2099ae9b174c54ee02e9827da9cea9,Crisis Core - Final Fantasy VII (USA).iso,redump|nointro,,usa,"Crisis.Core.-.Final.Fantasy.VII.USA.zip",1600000000
-3732,Monster Hunter Freedom Unite,cfc5625956c606b5d0333033d28daffb,"Monster Hunter Freedom Unite (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,"Monster.Hunter.Freedom.Unite.Europe.En.Fr.De.Es.It.zip",846000000
+10387,Crisis Core: Final Fantasy VII,fc2099ae9b174c54ee02e9827da9cea9,Crisis Core - Final Fantasy VII (USA).iso,redump|nointro,,usa,Crisis.Core.-.Final.Fantasy.VII.USA.zip,1600000000
+3732,Monster Hunter Freedom Unite,cfc5625956c606b5d0333033d28daffb,"Monster Hunter Freedom Unite (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,Monster.Hunter.Freedom.Unite.Europe.En.Fr.De.Es.It.zip,846000000
 3219,Mega Man Maverick Hunter X,8a99ed01468c44bbb78a944e2db4bc58,Mega Man - Maverick Hunter X (USA).iso,redump|nointro,,usa,Mega.Man.-.Maverick.Hunter.X.USA.zip,449000000
 3186,Tekken 6,38f4fcd5d786c98bf19077c9eefde9bd,"Tekken 6 (Europe) (En,Ja,Fr,De,Es,It,Ko,Ru).iso",redump,,europe,Tekken.6.Europe.En.Ja.Fr.De.Es.It.Ko.Ru.zip,816000000
 3471,Metal Slug: Anthology,a2bf0aa8e9de1c63707ea2abee7c1d03,Metal Slug Anthology (USA).iso,redump|nointro,,usa,Metal.Slug.Anthology.USA.zip,1200000000
@@ -17,10 +17,16 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 3509,Jeanne D'Arc,9468c9f3b1cc569e1b07370b553ad968,Jeanne d'Arc (USA).iso,redump|nointro,,usa,Jeanne.d.Arc.USA.zip,1160000000
 10533,Metal Gear Solid: Peace Walker,bfbcf84b371fe46282c8b96969ec1a5a,"Metal Gear Solid - Peace Walker (USA) (En,Fr,Es) (v1.01).iso",redump|nointro,,usa,Metal.Gear.Solid.-.Peace.Walker.USA.En.Fr.Es.v2.00.zip,1530000000
 3215,Final Fantasy,f78e6368f595fd0bcbef19b1750af666,"Final Fantasy - 20th Anniversary Edition (USA) (En,Ja) (FW6.00).iso",redump|nointro,,usa,Final.Fantasy.-.20th.Anniversary.Edition.USA.En.Ja.FW6.00.zip,189000000
-3971,Grand Theft Auto: Vice City Stories,689064ef742a45013e4fdd6b2e27b02a,"Grand Theft Auto - Vice City Stories (Europe) (En,Fr,De,Es,It).iso",redump,,europe,"Grand.Theft.Auto.-.Vice.City.Stories.Europe.En.Fr.De.Es.It.zip",1580000000
+3971,Grand Theft Auto: Vice City Stories,689064ef742a45013e4fdd6b2e27b02a,"Grand Theft Auto - Vice City Stories (Europe) (En,Fr,De,Es,It).iso",redump,,europe,Grand.Theft.Auto.-.Vice.City.Stories.Europe.En.Fr.De.Es.It.zip,1580000000
 10525,Patapon,455f09f185068567a2b87978d6623909,"Patapon (Europe) (En,Fr,De,Es,It).iso",redump,,europe,Patapon.Europe.En.Fr.De.Es.It.zip,338000000
 3164,Shin Megami Tensei: Persona 3 Portable,f56e60e76a5f53ac8fb18da480c86f4a,Shin Megami Tensei - Persona 3 Portable (USA).iso,redump|nointro,,usa,Shin.Megami.Tensei.-.Persona.3.Portable.USA.zip,1230000000
 15626,Gran Turismo: The Real Driving Simulator,e5860491dbaaa87e116cf6cbd2e3eb52,"Gran Turismo (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru) (v2.00).iso",redump,,europe,Gran.Turismo.Europe.En.Fr.De.Es.It.Nl.Pt.Ru.v2.00.zip,1120000000
 3738,Phantasy Star Portable,5c7de53c9d8fc8aa09ef258f57acb44b,Phantasy Star Portable (USA).iso,redump|nointro,,usa,Phantasy.Star.Portable.USA.zip,1020000000
 3165,Castlevania: The Dracula X Chronicles,59b37df8ade6d7020391eb96a5acd549,"Castlevania - The Dracula X Chronicles (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,Castlevania.-.The.Dracula.X.Chronicles.Europe.En.Fr.De.Es.It.zip,1090000000
 18128,Dragon Ball Z: Shin Budokai 2 - Another Road,59b37df8ade6d7020391eb96a5acd549,"Dragon Ball Z - Shin Budokai 2 (Europe) (En,Fr,De,Es,It).iso",redump|nointro,,europe,Dragon.Ball.Z.-.Shin.Budokai.2.Europe.EnFrDeEsIt.zip,500000000
+18174,Spider-Man 3,0263b5f5ddbbaf3be204bbb1206c3073,Spider-Man 3 (USA).iso,redump,,usa,Spider-Man.3.USA.zip,1310000000
+3214,Assassin's Creed: Bloodlines,a2450c9ada6a53b157d8001b3de0804d,"Assassin's Creed - Bloodlines (Europe) (En,Fr,De,Es,It,Ru).iso",redump,,europe,Assassins.Creed.-.Bloodlines.Europe.EnFrDeEsItRu.zip ,600000000
+23966,FIFA 14,ac4dd5faa5e160f32f033a45261b495b,FIFA 14 (Europe).iso,redump,,europe,FIFA.14.Europe.zip ,600000000
+18268,FIFA Street 2,958bea67daa71df795ac5a3013e4edc3,"FIFA Street 2 (Europe) (En,Fr,De).iso",redump,,europe,FIFA.Street.2.Europe.EnFrDe.zip ,600000000
+3970,Grand Theft Auto: Liberty City Stories,b49a2b71ba9409d74ccb9f5accac11c6,"Grand Theft Auto - Liberty City Stories (Europe) (En,Fr,De,Es,It) (v3.00).iso",redump,,europe,Grand.Theft.Auto.-.Liberty.City.Stories.Europe.EnFrDeEsIt.v3.00.zip,600000000
+25899,Pro Evolution Soccer 6,5b3651357c8d875b2ba3f3f4f4029238,Pro Evolution Soccer 6 (Europe),redump,,europe,Pro.Evolution.Soccer.6.Europe.EnFrDeEsIt.zip ,600000000
