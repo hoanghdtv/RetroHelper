@@ -39,4 +39,6 @@ gameId,gameTitle,md5,romName,labels,patchUrl,region,romFile,romSize
 11296,Dino Crisis 2,a1cb59bac4ee4cdb9eb85f4c9c2bd529,Dino Crisis 2 (USA) (Pt) (v1.0) (Nemesis Fandubs),lostlevel,,usa,Dino.Crisis.2.USA.chd ,
 11401,Tekken,138a1ee7a95f5733fc6039723a170381,Tekken (USA),redump,,usa,Tekken.USA.chd ,
 11354,Mortal Kombat Trilogy,b4de55870a0bf555e4c17569c47aff8e,Mortal Kombat Trilogy (USA) (Rev 1),redump,,usa,Mortal.Kombat.Trilogy.USA.Rev.1.chd ,
-11411,Fighting Force,1a32b099b7e1a0a642639d186b616405,Fighting Force (USA),redump,,usa,,
+11411,Fighting Force,1a32b099b7e1a0a642639d186b616405,Fighting Force (USA),redump,,usa,Fighting.Force.USA.chd,
+11250,Harvest Moon: Back to Nature,25392ec4167fa54080fb744eae45497c,Harvest Moon - Back to Nature (USA),redump,,usa,Harvest.Moon.-.Back.to.Nature.USA.zip,
+11406,Mortal Kombat 4,f082959ea15c209c1060e45a6d33d68e,Mortal Kombat 4 (USA),redump,,usa,Mortal.Kombat.4.USA.chd,
